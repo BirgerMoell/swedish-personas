@@ -1,0 +1,10 @@
+Swedish Personas dataset: Creative Commons Attribution 4.0 International
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+Attribution: Swedish Personas project; source statistics from Statistics Sweden
+(SCB), "Population by region, marital status, age and sex", 2025, table
+000007ME. Changes: synthetic weighted sampling, municipality sampling and
+rule-based generation of illustrative attributes and Swedish prose.
+
+The license applies to the released synthetic dataset and derived statistical
+input files. The software and website source are separately MIT licensed.

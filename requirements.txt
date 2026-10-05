@@ -1,0 +1,2 @@
+pyarrow>=18,<23
+huggingface_hub>=0.34,<2

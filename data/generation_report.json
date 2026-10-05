@@ -1,0 +1,33 @@
+{
+  "rows": 100000,
+  "seed": 20251005,
+  "source_year": 2025,
+  "county_counts": {
+    "Norrbotten": 2369,
+    "Stockholm": 23438,
+    "Skåne": 13534,
+    "Västra Götaland": 16635,
+    "Uppsala": 3910,
+    "Östergötland": 4504,
+    "Västerbotten": 2594,
+    "Blekinge": 1441,
+    "Dalarna": 2762,
+    "Örebro": 2912,
+    "Kronoberg": 1878,
+    "Västernorrland": 2256,
+    "Gävleborg": 2717,
+    "Värmland": 2718,
+    "Halland": 3172,
+    "Södermanland": 2814,
+    "Jämtland": 1265,
+    "Västmanland": 2710,
+    "Kalmar": 2306,
+    "Jönköping": 3478,
+    "Gotland": 587
+  },
+  "sex_counts": {
+    "man": 50344,
+    "kvinna": 49656
+  },
+  "note": "SCB-weighted: joint county/age/sex/marital status; municipality county totals. Other attributes are illustrative heuristics, not calibrated to SCB."
+}

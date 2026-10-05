@@ -1,0 +1,11 @@
+{
+  "source": "https://api.scb.se/OV0104/v1/doris/en/ssd/BE/BE0101/BE0101A/BefolkningCKM",
+  "table": "Population by region, marital status, age, sex, observations and year",
+  "year": 2025,
+  "county_cells": 16968,
+  "municipalities": 290,
+  "accessed": "2026-10-05",
+  "note": "SCB applies Cell Key Method disclosure control to 2025 cells; margins may differ slightly.",
+  "county_population_sum": 10605545,
+  "municipality_population_sum": 10605520
+}
