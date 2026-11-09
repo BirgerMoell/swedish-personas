@@ -25,6 +25,10 @@ for local, remote in (
     (DATA / "source.json", "sources/source.json"),
     (DATA / "scb_county_age_sex_marital_2025.csv", "sources/scb_county_age_sex_marital_2025.csv"),
     (DATA / "scb_municipality_2025.csv", "sources/scb_municipality_2025.csv"),
+    (DATA / "swedish_personas_100k_conditions.parquet", "data/swedish_personas_100k_conditions.parquet"),
+    (DATA / "health_socialstyrelsen.csv", "sources/health_socialstyrelsen.csv"),
+    (DATA / "health_folkhalsomyndigheten.csv", "sources/health_folkhalsomyndigheten.csv"),
+    (DATA / "health_source.json", "sources/health_source.json"),
 ):
     api.upload_file(path_or_fileobj=str(local), path_in_repo=remote, repo_id=repo_id, repo_type="dataset")
 print(f"Published https://huggingface.co/datasets/{repo_id}")

@@ -1,0 +1,1432 @@
+icd10,label,age_band,sex,patients_per_100k,year
+I25,Kronisk ischemisk hjärtsjukdom,0-4,Man,0.4,2024
+I25,Kronisk ischemisk hjärtsjukdom,0-4,Kvinna,0.4,2024
+I25,Kronisk ischemisk hjärtsjukdom,5-9,Man,0.3,2024
+I25,Kronisk ischemisk hjärtsjukdom,5-9,Kvinna,0.3,2024
+I25,Kronisk ischemisk hjärtsjukdom,10-14,Man,1.2,2024
+I25,Kronisk ischemisk hjärtsjukdom,10-14,Kvinna,0.3,2024
+I25,Kronisk ischemisk hjärtsjukdom,15-19,Man,1.6,2024
+I25,Kronisk ischemisk hjärtsjukdom,15-19,Kvinna,0.3,2024
+I25,Kronisk ischemisk hjärtsjukdom,20-24,Man,1.0,2024
+I25,Kronisk ischemisk hjärtsjukdom,20-24,Kvinna,0.7,2024
+I25,Kronisk ischemisk hjärtsjukdom,25-29,Man,5.2,2024
+I25,Kronisk ischemisk hjärtsjukdom,25-29,Kvinna,2.3,2024
+I25,Kronisk ischemisk hjärtsjukdom,30-34,Man,9.1,2024
+I25,Kronisk ischemisk hjärtsjukdom,30-34,Kvinna,3.4,2024
+I25,Kronisk ischemisk hjärtsjukdom,35-39,Man,29.7,2024
+I25,Kronisk ischemisk hjärtsjukdom,35-39,Kvinna,12.2,2024
+I25,Kronisk ischemisk hjärtsjukdom,40-44,Man,87.2,2024
+I25,Kronisk ischemisk hjärtsjukdom,40-44,Kvinna,18.9,2024
+I25,Kronisk ischemisk hjärtsjukdom,45-49,Man,200.0,2024
+I25,Kronisk ischemisk hjärtsjukdom,45-49,Kvinna,43.1,2024
+I25,Kronisk ischemisk hjärtsjukdom,50-54,Man,389.3,2024
+I25,Kronisk ischemisk hjärtsjukdom,50-54,Kvinna,102.3,2024
+I25,Kronisk ischemisk hjärtsjukdom,55-59,Man,618.7,2024
+I25,Kronisk ischemisk hjärtsjukdom,55-59,Kvinna,166.2,2024
+I25,Kronisk ischemisk hjärtsjukdom,60-64,Man,1043.5,2024
+I25,Kronisk ischemisk hjärtsjukdom,60-64,Kvinna,276.6,2024
+I25,Kronisk ischemisk hjärtsjukdom,65-69,Man,1367.4,2024
+I25,Kronisk ischemisk hjärtsjukdom,65-69,Kvinna,414.2,2024
+I25,Kronisk ischemisk hjärtsjukdom,70-74,Man,1744.1,2024
+I25,Kronisk ischemisk hjärtsjukdom,70-74,Kvinna,524.4,2024
+I25,Kronisk ischemisk hjärtsjukdom,75-79,Man,1909.9,2024
+I25,Kronisk ischemisk hjärtsjukdom,75-79,Kvinna,623.1,2024
+I25,Kronisk ischemisk hjärtsjukdom,80-84,Man,1899.1,2024
+I25,Kronisk ischemisk hjärtsjukdom,80-84,Kvinna,639.9,2024
+I25,Kronisk ischemisk hjärtsjukdom,85+,Man,1285.0,2024
+I25,Kronisk ischemisk hjärtsjukdom,85+,Kvinna,426.5,2024
+I21,Akut hjärtinfarkt,0-4,Man,0.0,2024
+I21,Akut hjärtinfarkt,15-19,Kvinna,0.3,2024
+I21,Akut hjärtinfarkt,25-29,Man,2.7,2024
+I21,Akut hjärtinfarkt,25-29,Kvinna,1.3,2024
+I21,Akut hjärtinfarkt,30-34,Man,7.4,2024
+I21,Akut hjärtinfarkt,30-34,Kvinna,1.1,2024
+I21,Akut hjärtinfarkt,35-39,Man,18.0,2024
+I21,Akut hjärtinfarkt,35-39,Kvinna,5.0,2024
+I21,Akut hjärtinfarkt,40-44,Man,43.4,2024
+I21,Akut hjärtinfarkt,40-44,Kvinna,11.1,2024
+I21,Akut hjärtinfarkt,45-49,Man,98.8,2024
+I21,Akut hjärtinfarkt,45-49,Kvinna,17.5,2024
+I21,Akut hjärtinfarkt,50-54,Man,177.6,2024
+I21,Akut hjärtinfarkt,50-54,Kvinna,50.6,2024
+I21,Akut hjärtinfarkt,55-59,Man,279.9,2024
+I21,Akut hjärtinfarkt,55-59,Kvinna,79.2,2024
+I21,Akut hjärtinfarkt,60-64,Man,417.5,2024
+I21,Akut hjärtinfarkt,60-64,Kvinna,126.6,2024
+I21,Akut hjärtinfarkt,65-69,Man,492.3,2024
+I21,Akut hjärtinfarkt,65-69,Kvinna,183.7,2024
+I21,Akut hjärtinfarkt,70-74,Man,635.3,2024
+I21,Akut hjärtinfarkt,70-74,Kvinna,268.6,2024
+I21,Akut hjärtinfarkt,75-79,Man,752.6,2024
+I21,Akut hjärtinfarkt,75-79,Kvinna,346.9,2024
+I21,Akut hjärtinfarkt,80-84,Man,854.1,2024
+I21,Akut hjärtinfarkt,80-84,Kvinna,488.5,2024
+I21,Akut hjärtinfarkt,85+,Man,1261.8,2024
+I21,Akut hjärtinfarkt,85+,Kvinna,776.9,2024
+I48,Förmaksflimmer och förmaksfladder,0-4,Man,1.1,2024
+I48,Förmaksflimmer och förmaksfladder,0-4,Kvinna,1.5,2024
+I48,Förmaksflimmer och förmaksfladder,5-9,Kvinna,0.3,2024
+I48,Förmaksflimmer och förmaksfladder,10-14,Man,0.6,2024
+I48,Förmaksflimmer och förmaksfladder,10-14,Kvinna,0.7,2024
+I48,Förmaksflimmer och förmaksfladder,15-19,Man,4.7,2024
+I48,Förmaksflimmer och förmaksfladder,15-19,Kvinna,1.0,2024
+I48,Förmaksflimmer och förmaksfladder,20-24,Man,23.0,2024
+I48,Förmaksflimmer och förmaksfladder,20-24,Kvinna,3.8,2024
+I48,Förmaksflimmer och förmaksfladder,25-29,Man,42.4,2024
+I48,Förmaksflimmer och förmaksfladder,25-29,Kvinna,7.0,2024
+I48,Förmaksflimmer och förmaksfladder,30-34,Man,60.6,2024
+I48,Förmaksflimmer och förmaksfladder,30-34,Kvinna,13.0,2024
+I48,Förmaksflimmer och förmaksfladder,35-39,Man,102.2,2024
+I48,Förmaksflimmer och förmaksfladder,35-39,Kvinna,18.4,2024
+I48,Förmaksflimmer och förmaksfladder,40-44,Man,158.1,2024
+I48,Förmaksflimmer och förmaksfladder,40-44,Kvinna,33.4,2024
+I48,Förmaksflimmer och förmaksfladder,45-49,Man,300.6,2024
+I48,Förmaksflimmer och förmaksfladder,45-49,Kvinna,80.7,2024
+I48,Förmaksflimmer och förmaksfladder,50-54,Man,578.4,2024
+I48,Förmaksflimmer och förmaksfladder,50-54,Kvinna,184.0,2024
+I48,Förmaksflimmer och förmaksfladder,55-59,Man,968.3,2024
+I48,Förmaksflimmer och förmaksfladder,55-59,Kvinna,366.0,2024
+I48,Förmaksflimmer och förmaksfladder,60-64,Man,1425.0,2024
+I48,Förmaksflimmer och förmaksfladder,60-64,Kvinna,578.3,2024
+I48,Förmaksflimmer och förmaksfladder,65-69,Man,2079.5,2024
+I48,Förmaksflimmer och förmaksfladder,65-69,Kvinna,1056.6,2024
+I48,Förmaksflimmer och förmaksfladder,70-74,Man,2774.9,2024
+I48,Förmaksflimmer och förmaksfladder,70-74,Kvinna,1673.7,2024
+I48,Förmaksflimmer och förmaksfladder,75-79,Man,3501.2,2024
+I48,Förmaksflimmer och förmaksfladder,75-79,Kvinna,2510.4,2024
+I48,Förmaksflimmer och förmaksfladder,80-84,Man,3831.1,2024
+I48,Förmaksflimmer och förmaksfladder,80-84,Kvinna,3212.3,2024
+I48,Förmaksflimmer och förmaksfladder,85+,Man,3284.8,2024
+I48,Förmaksflimmer och förmaksfladder,85+,Kvinna,3058.1,2024
+I50,Hjärtinsufficiens,0-4,Man,3.6,2024
+I50,Hjärtinsufficiens,0-4,Kvinna,4.6,2024
+I50,Hjärtinsufficiens,5-9,Man,0.3,2024
+I50,Hjärtinsufficiens,5-9,Kvinna,0.7,2024
+I50,Hjärtinsufficiens,10-14,Man,1.5,2024
+I50,Hjärtinsufficiens,10-14,Kvinna,0.7,2024
+I50,Hjärtinsufficiens,15-19,Man,4.7,2024
+I50,Hjärtinsufficiens,15-19,Kvinna,3.3,2024
+I50,Hjärtinsufficiens,20-24,Man,13.6,2024
+I50,Hjärtinsufficiens,20-24,Kvinna,9.7,2024
+I50,Hjärtinsufficiens,25-29,Man,22.6,2024
+I50,Hjärtinsufficiens,25-29,Kvinna,11.6,2024
+I50,Hjärtinsufficiens,30-34,Man,29.9,2024
+I50,Hjärtinsufficiens,30-34,Kvinna,19.4,2024
+I50,Hjärtinsufficiens,35-39,Man,52.0,2024
+I50,Hjärtinsufficiens,35-39,Kvinna,27.6,2024
+I50,Hjärtinsufficiens,40-44,Man,86.3,2024
+I50,Hjärtinsufficiens,40-44,Kvinna,39.0,2024
+I50,Hjärtinsufficiens,45-49,Man,159.6,2024
+I50,Hjärtinsufficiens,45-49,Kvinna,54.2,2024
+I50,Hjärtinsufficiens,50-54,Man,257.8,2024
+I50,Hjärtinsufficiens,50-54,Kvinna,103.2,2024
+I50,Hjärtinsufficiens,55-59,Man,442.2,2024
+I50,Hjärtinsufficiens,55-59,Kvinna,188.1,2024
+I50,Hjärtinsufficiens,60-64,Man,722.5,2024
+I50,Hjärtinsufficiens,60-64,Kvinna,273.6,2024
+I50,Hjärtinsufficiens,65-69,Man,1071.1,2024
+I50,Hjärtinsufficiens,65-69,Kvinna,451.8,2024
+I50,Hjärtinsufficiens,70-74,Man,1590.5,2024
+I50,Hjärtinsufficiens,70-74,Kvinna,742.6,2024
+I50,Hjärtinsufficiens,75-79,Man,2510.6,2024
+I50,Hjärtinsufficiens,75-79,Kvinna,1283.5,2024
+I50,Hjärtinsufficiens,80-84,Man,3873.2,2024
+I50,Hjärtinsufficiens,80-84,Kvinna,2167.4,2024
+I50,Hjärtinsufficiens,85+,Man,6141.2,2024
+I50,Hjärtinsufficiens,85+,Kvinna,4033.4,2024
+I63,Cerebral infarkt,0-4,Man,6.9,2024
+I63,Cerebral infarkt,0-4,Kvinna,6.9,2024
+I63,Cerebral infarkt,5-9,Man,4.8,2024
+I63,Cerebral infarkt,5-9,Kvinna,2.0,2024
+I63,Cerebral infarkt,10-14,Man,3.1,2024
+I63,Cerebral infarkt,10-14,Kvinna,2.9,2024
+I63,Cerebral infarkt,15-19,Man,3.7,2024
+I63,Cerebral infarkt,15-19,Kvinna,4.3,2024
+I63,Cerebral infarkt,20-24,Man,3.2,2024
+I63,Cerebral infarkt,20-24,Kvinna,6.6,2024
+I63,Cerebral infarkt,25-29,Man,6.4,2024
+I63,Cerebral infarkt,25-29,Kvinna,7.6,2024
+I63,Cerebral infarkt,30-34,Man,12.7,2024
+I63,Cerebral infarkt,30-34,Kvinna,10.3,2024
+I63,Cerebral infarkt,35-39,Man,20.7,2024
+I63,Cerebral infarkt,35-39,Kvinna,15.9,2024
+I63,Cerebral infarkt,40-44,Man,36.4,2024
+I63,Cerebral infarkt,40-44,Kvinna,26.9,2024
+I63,Cerebral infarkt,45-49,Man,65.7,2024
+I63,Cerebral infarkt,45-49,Kvinna,43.1,2024
+I63,Cerebral infarkt,50-54,Man,109.8,2024
+I63,Cerebral infarkt,50-54,Kvinna,59.9,2024
+I63,Cerebral infarkt,55-59,Man,196.4,2024
+I63,Cerebral infarkt,55-59,Kvinna,93.3,2024
+I63,Cerebral infarkt,60-64,Man,301.4,2024
+I63,Cerebral infarkt,60-64,Kvinna,152.4,2024
+I63,Cerebral infarkt,65-69,Man,406.4,2024
+I63,Cerebral infarkt,65-69,Kvinna,235.5,2024
+I63,Cerebral infarkt,70-74,Man,581.1,2024
+I63,Cerebral infarkt,70-74,Kvinna,409.4,2024
+I63,Cerebral infarkt,75-79,Man,853.7,2024
+I63,Cerebral infarkt,75-79,Kvinna,607.5,2024
+I63,Cerebral infarkt,80-84,Man,1174.9,2024
+I63,Cerebral infarkt,80-84,Kvinna,939.6,2024
+I63,Cerebral infarkt,85+,Man,1740.1,2024
+I63,Cerebral infarkt,85+,Kvinna,1560.5,2024
+I73,Andra sjukdomar i perifera kärl,0-4,Man,2.2,2024
+I73,Andra sjukdomar i perifera kärl,0-4,Kvinna,6.5,2024
+I73,Andra sjukdomar i perifera kärl,5-9,Man,1.9,2024
+I73,Andra sjukdomar i perifera kärl,5-9,Kvinna,3.1,2024
+I73,Andra sjukdomar i perifera kärl,10-14,Man,1.2,2024
+I73,Andra sjukdomar i perifera kärl,10-14,Kvinna,10.1,2024
+I73,Andra sjukdomar i perifera kärl,15-19,Man,10.0,2024
+I73,Andra sjukdomar i perifera kärl,15-19,Kvinna,16.6,2024
+I73,Andra sjukdomar i perifera kärl,20-24,Man,2.9,2024
+I73,Andra sjukdomar i perifera kärl,20-24,Kvinna,17.0,2024
+I73,Andra sjukdomar i perifera kärl,25-29,Man,3.7,2024
+I73,Andra sjukdomar i perifera kärl,25-29,Kvinna,13.3,2024
+I73,Andra sjukdomar i perifera kärl,30-34,Man,7.9,2024
+I73,Andra sjukdomar i perifera kärl,30-34,Kvinna,17.5,2024
+I73,Andra sjukdomar i perifera kärl,35-39,Man,7.2,2024
+I73,Andra sjukdomar i perifera kärl,35-39,Kvinna,23.7,2024
+I73,Andra sjukdomar i perifera kärl,40-44,Man,11.2,2024
+I73,Andra sjukdomar i perifera kärl,40-44,Kvinna,31.3,2024
+I73,Andra sjukdomar i perifera kärl,45-49,Man,13.9,2024
+I73,Andra sjukdomar i perifera kärl,45-49,Kvinna,27.4,2024
+I73,Andra sjukdomar i perifera kärl,50-54,Man,23.1,2024
+I73,Andra sjukdomar i perifera kärl,50-54,Kvinna,32.4,2024
+I73,Andra sjukdomar i perifera kärl,55-59,Man,39.1,2024
+I73,Andra sjukdomar i perifera kärl,55-59,Kvinna,44.5,2024
+I73,Andra sjukdomar i perifera kärl,60-64,Man,87.6,2024
+I73,Andra sjukdomar i perifera kärl,60-64,Kvinna,55.9,2024
+I73,Andra sjukdomar i perifera kärl,65-69,Man,118.6,2024
+I73,Andra sjukdomar i perifera kärl,65-69,Kvinna,90.2,2024
+I73,Andra sjukdomar i perifera kärl,70-74,Man,194.5,2024
+I73,Andra sjukdomar i perifera kärl,70-74,Kvinna,145.1,2024
+I73,Andra sjukdomar i perifera kärl,75-79,Man,264.2,2024
+I73,Andra sjukdomar i perifera kärl,75-79,Kvinna,211.9,2024
+I73,Andra sjukdomar i perifera kärl,80-84,Man,277.6,2024
+I73,Andra sjukdomar i perifera kärl,80-84,Kvinna,250.3,2024
+I73,Andra sjukdomar i perifera kärl,85+,Man,197.2,2024
+I73,Andra sjukdomar i perifera kärl,85+,Kvinna,160.3,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],0-4,Man,4.0,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],0-4,Kvinna,0.8,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],5-9,Man,4.2,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],5-9,Kvinna,2.0,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],10-14,Man,6.5,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],10-14,Kvinna,3.3,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],15-19,Man,4.1,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],15-19,Kvinna,3.3,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],20-24,Man,3.6,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],20-24,Kvinna,1.7,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],25-29,Man,0.6,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],25-29,Kvinna,1.7,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],30-34,Man,1.3,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],30-34,Kvinna,1.9,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],35-39,Man,1.6,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],35-39,Kvinna,2.8,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],40-44,Man,7.7,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],40-44,Kvinna,5.3,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],45-49,Man,19.4,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],45-49,Kvinna,19.1,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],50-54,Man,40.6,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],50-54,Kvinna,40.0,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],55-59,Man,80.3,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],55-59,Kvinna,115.6,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],60-64,Man,183.4,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],60-64,Kvinna,257.8,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],65-69,Man,319.7,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],65-69,Kvinna,433.0,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],70-74,Man,513.6,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],70-74,Kvinna,683.7,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],75-79,Man,731.8,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],75-79,Kvinna,1023.0,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],80-84,Man,988.9,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],80-84,Kvinna,1258.8,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],85+,Man,1103.9,2024
+J44,Kroniskt obstruktiv lungsjukdom [KOL],85+,Kvinna,1028.2,2024
+J45,Astma,0-4,Man,3909.9,2024
+J45,Astma,0-4,Kvinna,2667.6,2024
+J45,Astma,5-9,Man,3787.0,2024
+J45,Astma,5-9,Kvinna,2489.5,2024
+J45,Astma,10-14,Man,2304.2,2024
+J45,Astma,10-14,Kvinna,1536.7,2024
+J45,Astma,15-19,Man,1174.2,2024
+J45,Astma,15-19,Kvinna,1032.3,2024
+J45,Astma,20-24,Man,181.5,2024
+J45,Astma,20-24,Kvinna,284.8,2024
+J45,Astma,25-29,Man,144.6,2024
+J45,Astma,25-29,Kvinna,267.0,2024
+J45,Astma,30-34,Man,155.0,2024
+J45,Astma,30-34,Kvinna,231.9,2024
+J45,Astma,35-39,Man,157.1,2024
+J45,Astma,35-39,Kvinna,275.3,2024
+J45,Astma,40-44,Man,185.0,2024
+J45,Astma,40-44,Kvinna,291.6,2024
+J45,Astma,45-49,Man,179.6,2024
+J45,Astma,45-49,Kvinna,349.9,2024
+J45,Astma,50-54,Man,225.0,2024
+J45,Astma,50-54,Kvinna,378.4,2024
+J45,Astma,55-59,Man,262.0,2024
+J45,Astma,55-59,Kvinna,395.5,2024
+J45,Astma,60-64,Man,272.6,2024
+J45,Astma,60-64,Kvinna,405.8,2024
+J45,Astma,65-69,Man,275.3,2024
+J45,Astma,65-69,Kvinna,376.5,2024
+J45,Astma,70-74,Man,253.6,2024
+J45,Astma,70-74,Kvinna,359.0,2024
+J45,Astma,75-79,Man,231.3,2024
+J45,Astma,75-79,Kvinna,341.6,2024
+J45,Astma,80-84,Man,226.9,2024
+J45,Astma,80-84,Kvinna,301.3,2024
+J45,Astma,85+,Man,163.3,2024
+J45,Astma,85+,Kvinna,211.0,2024
+F00,Demens vid Alzheimers sjukdom,50-54,Man,0.3,2024
+F00,Demens vid Alzheimers sjukdom,50-54,Kvinna,0.3,2024
+F00,Demens vid Alzheimers sjukdom,55-59,Man,0.3,2024
+F00,Demens vid Alzheimers sjukdom,55-59,Kvinna,1.2,2024
+F00,Demens vid Alzheimers sjukdom,60-64,Man,1.3,2024
+F00,Demens vid Alzheimers sjukdom,60-64,Kvinna,1.0,2024
+F00,Demens vid Alzheimers sjukdom,65-69,Man,1.8,2024
+F00,Demens vid Alzheimers sjukdom,65-69,Kvinna,0.4,2024
+F00,Demens vid Alzheimers sjukdom,70-74,Man,4.0,2024
+F00,Demens vid Alzheimers sjukdom,70-74,Kvinna,2.7,2024
+F00,Demens vid Alzheimers sjukdom,75-79,Man,9.6,2024
+F00,Demens vid Alzheimers sjukdom,75-79,Kvinna,6.8,2024
+F00,Demens vid Alzheimers sjukdom,80-84,Man,8.5,2024
+F00,Demens vid Alzheimers sjukdom,80-84,Kvinna,4.2,2024
+F00,Demens vid Alzheimers sjukdom,85+,Man,13.4,2024
+F00,Demens vid Alzheimers sjukdom,85+,Kvinna,9.4,2024
+F03,Ospecificerad demens,35-39,Kvinna,0.3,2024
+F03,Ospecificerad demens,40-44,Man,0.6,2024
+F03,Ospecificerad demens,45-49,Man,0.9,2024
+F03,Ospecificerad demens,45-49,Kvinna,1.0,2024
+F03,Ospecificerad demens,50-54,Man,2.1,2024
+F03,Ospecificerad demens,50-54,Kvinna,2.4,2024
+F03,Ospecificerad demens,55-59,Man,6.8,2024
+F03,Ospecificerad demens,55-59,Kvinna,4.8,2024
+F03,Ospecificerad demens,60-64,Man,16.0,2024
+F03,Ospecificerad demens,60-64,Kvinna,10.6,2024
+F03,Ospecificerad demens,65-69,Man,38.9,2024
+F03,Ospecificerad demens,65-69,Kvinna,25.7,2024
+F03,Ospecificerad demens,70-74,Man,74.4,2024
+F03,Ospecificerad demens,70-74,Kvinna,63.5,2024
+F03,Ospecificerad demens,75-79,Man,156.0,2024
+F03,Ospecificerad demens,75-79,Kvinna,108.0,2024
+F03,Ospecificerad demens,80-84,Man,215.3,2024
+F03,Ospecificerad demens,80-84,Kvinna,175.1,2024
+F03,Ospecificerad demens,85+,Man,341.8,2024
+F03,Ospecificerad demens,85+,Kvinna,278.3,2024
+G30,Alzheimers sjukdom,5-9,Man,0.3,2024
+G30,Alzheimers sjukdom,5-9,Kvinna,0.3,2024
+G30,Alzheimers sjukdom,30-34,Man,0.3,2024
+G30,Alzheimers sjukdom,30-34,Kvinna,0.0,2024
+G30,Alzheimers sjukdom,40-44,Man,0.3,2024
+G30,Alzheimers sjukdom,40-44,Kvinna,0.6,2024
+G30,Alzheimers sjukdom,45-49,Man,2.2,2024
+G30,Alzheimers sjukdom,45-49,Kvinna,1.3,2024
+G30,Alzheimers sjukdom,50-54,Man,7.1,2024
+G30,Alzheimers sjukdom,50-54,Kvinna,13.3,2024
+G30,Alzheimers sjukdom,55-59,Man,28.8,2024
+G30,Alzheimers sjukdom,55-59,Kvinna,48.2,2024
+G30,Alzheimers sjukdom,60-64,Man,72.9,2024
+G30,Alzheimers sjukdom,60-64,Kvinna,92.5,2024
+G30,Alzheimers sjukdom,65-69,Man,130.7,2024
+G30,Alzheimers sjukdom,65-69,Kvinna,175.7,2024
+G30,Alzheimers sjukdom,70-74,Man,229.3,2024
+G30,Alzheimers sjukdom,70-74,Kvinna,345.1,2024
+G30,Alzheimers sjukdom,75-79,Man,468.8,2024
+G30,Alzheimers sjukdom,75-79,Kvinna,542.9,2024
+G30,Alzheimers sjukdom,80-84,Man,643.0,2024
+G30,Alzheimers sjukdom,80-84,Kvinna,744.0,2024
+G30,Alzheimers sjukdom,85+,Man,716.6,2024
+G30,Alzheimers sjukdom,85+,Kvinna,629.8,2024
+G20,Parkinsons sjukdom,5-9,Kvinna,0.3,2024
+G20,Parkinsons sjukdom,15-19,Man,0.3,2024
+G20,Parkinsons sjukdom,20-24,Kvinna,0.3,2024
+G20,Parkinsons sjukdom,25-29,Man,0.3,2024
+G20,Parkinsons sjukdom,25-29,Kvinna,0.7,2024
+G20,Parkinsons sjukdom,30-34,Man,1.0,2024
+G20,Parkinsons sjukdom,30-34,Kvinna,1.3,2024
+G20,Parkinsons sjukdom,35-39,Man,3.2,2024
+G20,Parkinsons sjukdom,35-39,Kvinna,1.7,2024
+G20,Parkinsons sjukdom,40-44,Man,13.6,2024
+G20,Parkinsons sjukdom,40-44,Kvinna,3.7,2024
+G20,Parkinsons sjukdom,45-49,Man,27.2,2024
+G20,Parkinsons sjukdom,45-49,Kvinna,13.1,2024
+G20,Parkinsons sjukdom,50-54,Man,61.9,2024
+G20,Parkinsons sjukdom,50-54,Kvinna,34.5,2024
+G20,Parkinsons sjukdom,55-59,Man,144.7,2024
+G20,Parkinsons sjukdom,55-59,Kvinna,83.7,2024
+G20,Parkinsons sjukdom,60-64,Man,279.8,2024
+G20,Parkinsons sjukdom,60-64,Kvinna,145.4,2024
+G20,Parkinsons sjukdom,65-69,Man,480.1,2024
+G20,Parkinsons sjukdom,65-69,Kvinna,263.4,2024
+G20,Parkinsons sjukdom,70-74,Man,755.8,2024
+G20,Parkinsons sjukdom,70-74,Kvinna,430.2,2024
+G20,Parkinsons sjukdom,75-79,Man,1060.4,2024
+G20,Parkinsons sjukdom,75-79,Kvinna,663.5,2024
+G20,Parkinsons sjukdom,80-84,Man,1190.8,2024
+G20,Parkinsons sjukdom,80-84,Kvinna,788.2,2024
+G20,Parkinsons sjukdom,85+,Man,820.1,2024
+G20,Parkinsons sjukdom,85+,Kvinna,453.5,2024
+G35,Multipel skleros,10-14,Man,1.2,2024
+G35,Multipel skleros,15-19,Man,6.5,2024
+G35,Multipel skleros,15-19,Kvinna,19.5,2024
+G35,Multipel skleros,20-24,Man,22.7,2024
+G35,Multipel skleros,20-24,Kvinna,56.3,2024
+G35,Multipel skleros,25-29,Man,57.3,2024
+G35,Multipel skleros,25-29,Kvinna,142.3,2024
+G35,Multipel skleros,30-34,Man,98.7,2024
+G35,Multipel skleros,30-34,Kvinna,209.1,2024
+G35,Multipel skleros,35-39,Man,120.5,2024
+G35,Multipel skleros,35-39,Kvinna,293.7,2024
+G35,Multipel skleros,40-44,Man,148.1,2024
+G35,Multipel skleros,40-44,Kvinna,332.1,2024
+G35,Multipel skleros,45-49,Man,154.9,2024
+G35,Multipel skleros,45-49,Kvinna,386.2,2024
+G35,Multipel skleros,50-54,Man,153.9,2024
+G35,Multipel skleros,50-54,Kvinna,374.4,2024
+G35,Multipel skleros,55-59,Man,164.1,2024
+G35,Multipel skleros,55-59,Kvinna,362.1,2024
+G35,Multipel skleros,60-64,Man,138.0,2024
+G35,Multipel skleros,60-64,Kvinna,344.0,2024
+G35,Multipel skleros,65-69,Man,117.8,2024
+G35,Multipel skleros,65-69,Kvinna,272.8,2024
+G35,Multipel skleros,70-74,Man,97.9,2024
+G35,Multipel skleros,70-74,Kvinna,206.2,2024
+G35,Multipel skleros,75-79,Man,59.5,2024
+G35,Multipel skleros,75-79,Kvinna,133.1,2024
+G35,Multipel skleros,80-84,Man,32.3,2024
+G35,Multipel skleros,80-84,Kvinna,75.7,2024
+G35,Multipel skleros,85+,Man,11.6,2024
+G35,Multipel skleros,85+,Kvinna,17.6,2024
+G40,Epilepsi,0-4,Man,175.4,2024
+G40,Epilepsi,0-4,Kvinna,164.1,2024
+G40,Epilepsi,5-9,Man,346.4,2024
+G40,Epilepsi,5-9,Kvinna,313.3,2024
+G40,Epilepsi,10-14,Man,411.5,2024
+G40,Epilepsi,10-14,Kvinna,393.9,2024
+G40,Epilepsi,15-19,Man,439.9,2024
+G40,Epilepsi,15-19,Kvinna,422.4,2024
+G40,Epilepsi,20-24,Man,410.4,2024
+G40,Epilepsi,20-24,Kvinna,416.2,2024
+G40,Epilepsi,25-29,Man,374.3,2024
+G40,Epilepsi,25-29,Kvinna,396.3,2024
+G40,Epilepsi,30-34,Man,327.8,2024
+G40,Epilepsi,30-34,Kvinna,349.9,2024
+G40,Epilepsi,35-39,Man,274.1,2024
+G40,Epilepsi,35-39,Kvinna,303.2,2024
+G40,Epilepsi,40-44,Man,248.9,2024
+G40,Epilepsi,40-44,Kvinna,299.9,2024
+G40,Epilepsi,45-49,Man,260.2,2024
+G40,Epilepsi,45-49,Kvinna,311.6,2024
+G40,Epilepsi,50-54,Man,276.2,2024
+G40,Epilepsi,50-54,Kvinna,286.0,2024
+G40,Epilepsi,55-59,Man,317.6,2024
+G40,Epilepsi,55-59,Kvinna,293.5,2024
+G40,Epilepsi,60-64,Man,359.0,2024
+G40,Epilepsi,60-64,Kvinna,304.0,2024
+G40,Epilepsi,65-69,Man,385.1,2024
+G40,Epilepsi,65-69,Kvinna,337.7,2024
+G40,Epilepsi,70-74,Man,467.9,2024
+G40,Epilepsi,70-74,Kvinna,348.6,2024
+G40,Epilepsi,75-79,Man,522.5,2024
+G40,Epilepsi,75-79,Kvinna,393.0,2024
+G40,Epilepsi,80-84,Man,554.5,2024
+G40,Epilepsi,80-84,Kvinna,405.4,2024
+G40,Epilepsi,85+,Man,549.7,2024
+G40,Epilepsi,85+,Kvinna,338.9,2024
+G43,Migrän,0-4,Man,5.1,2024
+G43,Migrän,0-4,Kvinna,8.0,2024
+G43,Migrän,5-9,Man,139.5,2024
+G43,Migrän,5-9,Kvinna,115.6,2024
+G43,Migrän,10-14,Man,283.0,2024
+G43,Migrän,10-14,Kvinna,331.6,2024
+G43,Migrän,15-19,Man,190.7,2024
+G43,Migrän,15-19,Kvinna,430.7,2024
+G43,Migrän,20-24,Man,73.9,2024
+G43,Migrän,20-24,Kvinna,344.6,2024
+G43,Migrän,25-29,Man,89.1,2024
+G43,Migrän,25-29,Kvinna,501.7,2024
+G43,Migrän,30-34,Man,113.4,2024
+G43,Migrän,30-34,Kvinna,594.8,2024
+G43,Migrän,35-39,Man,127.9,2024
+G43,Migrän,35-39,Kvinna,664.8,2024
+G43,Migrän,40-44,Man,117.6,2024
+G43,Migrän,40-44,Kvinna,699.5,2024
+G43,Migrän,45-49,Man,129.3,2024
+G43,Migrän,45-49,Kvinna,739.0,2024
+G43,Migrän,50-54,Man,124.9,2024
+G43,Migrän,50-54,Kvinna,705.9,2024
+G43,Migrän,55-59,Man,113.8,2024
+G43,Migrän,55-59,Kvinna,510.2,2024
+G43,Migrän,60-64,Man,89.2,2024
+G43,Migrän,60-64,Kvinna,349.3,2024
+G43,Migrän,65-69,Man,67.5,2024
+G43,Migrän,65-69,Kvinna,217.4,2024
+G43,Migrän,70-74,Man,51.0,2024
+G43,Migrän,70-74,Kvinna,154.3,2024
+G43,Migrän,75-79,Man,40.4,2024
+G43,Migrän,75-79,Kvinna,116.8,2024
+G43,Migrän,80-84,Man,29.9,2024
+G43,Migrän,80-84,Kvinna,93.6,2024
+G43,Migrän,85+,Man,17.8,2024
+G43,Migrän,85+,Kvinna,49.6,2024
+C50,Malign tumör i bröstkörtel,0-4,Kvinna,0.0,2024
+C50,Malign tumör i bröstkörtel,15-19,Kvinna,0.7,2024
+C50,Malign tumör i bröstkörtel,20-24,Kvinna,2.8,2024
+C50,Malign tumör i bröstkörtel,25-29,Kvinna,15.0,2024
+C50,Malign tumör i bröstkörtel,30-34,Man,0.3,2024
+C50,Malign tumör i bröstkörtel,30-34,Kvinna,56.8,2024
+C50,Malign tumör i bröstkörtel,35-39,Kvinna,116.1,2024
+C50,Malign tumör i bröstkörtel,40-44,Man,0.9,2024
+C50,Malign tumör i bröstkörtel,40-44,Kvinna,261.5,2024
+C50,Malign tumör i bröstkörtel,45-49,Man,0.9,2024
+C50,Malign tumör i bröstkörtel,45-49,Kvinna,402.5,2024
+C50,Malign tumör i bröstkörtel,50-54,Man,2.1,2024
+C50,Malign tumör i bröstkörtel,50-54,Kvinna,494.6,2024
+C50,Malign tumör i bröstkörtel,55-59,Man,3.8,2024
+C50,Malign tumör i bröstkörtel,55-59,Kvinna,508.1,2024
+C50,Malign tumör i bröstkörtel,60-64,Man,5.2,2024
+C50,Malign tumör i bröstkörtel,60-64,Kvinna,612.7,2024
+C50,Malign tumör i bröstkörtel,65-69,Man,7.7,2024
+C50,Malign tumör i bröstkörtel,65-69,Kvinna,784.1,2024
+C50,Malign tumör i bröstkörtel,70-74,Man,7.7,2024
+C50,Malign tumör i bröstkörtel,70-74,Kvinna,892.6,2024
+C50,Malign tumör i bröstkörtel,75-79,Man,11.6,2024
+C50,Malign tumör i bröstkörtel,75-79,Kvinna,711.4,2024
+C50,Malign tumör i bröstkörtel,80-84,Man,11.6,2024
+C50,Malign tumör i bröstkörtel,80-84,Kvinna,889.2,2024
+C50,Malign tumör i bröstkörtel,85+,Man,15.2,2024
+C50,Malign tumör i bröstkörtel,85+,Kvinna,1007.8,2024
+C61,Malign tumör i prostata,10-14,Man,0.3,2024
+C61,Malign tumör i prostata,15-19,Man,0.3,2024
+C61,Malign tumör i prostata,30-34,Man,0.3,2024
+C61,Malign tumör i prostata,35-39,Man,0.8,2024
+C61,Malign tumör i prostata,40-44,Man,7.1,2024
+C61,Malign tumör i prostata,45-49,Man,32.4,2024
+C61,Malign tumör i prostata,50-54,Man,228.8,2024
+C61,Malign tumör i prostata,55-59,Man,609.9,2024
+C61,Malign tumör i prostata,60-64,Man,1296.2,2024
+C61,Malign tumör i prostata,65-69,Man,2395.2,2024
+C61,Malign tumör i prostata,70-74,Man,3306.7,2024
+C61,Malign tumör i prostata,75-79,Man,4204.7,2024
+C61,Malign tumör i prostata,80-84,Man,4232.5,2024
+C61,Malign tumör i prostata,85+,Man,4631.4,2024
+C18,Malign tumör i tjocktarmen,5-9,Man,0.3,2024
+C18,Malign tumör i tjocktarmen,10-14,Man,0.3,2024
+C18,Malign tumör i tjocktarmen,15-19,Man,0.6,2024
+C18,Malign tumör i tjocktarmen,15-19,Kvinna,1.3,2024
+C18,Malign tumör i tjocktarmen,20-24,Man,1.0,2024
+C18,Malign tumör i tjocktarmen,20-24,Kvinna,1.4,2024
+C18,Malign tumör i tjocktarmen,25-29,Man,2.1,2024
+C18,Malign tumör i tjocktarmen,25-29,Kvinna,1.3,2024
+C18,Malign tumör i tjocktarmen,30-34,Man,5.6,2024
+C18,Malign tumör i tjocktarmen,30-34,Kvinna,4.5,2024
+C18,Malign tumör i tjocktarmen,35-39,Man,8.8,2024
+C18,Malign tumör i tjocktarmen,35-39,Kvinna,8.6,2024
+C18,Malign tumör i tjocktarmen,40-44,Man,12.4,2024
+C18,Malign tumör i tjocktarmen,40-44,Kvinna,16.4,2024
+C18,Malign tumör i tjocktarmen,45-49,Man,26.5,2024
+C18,Malign tumör i tjocktarmen,45-49,Kvinna,32.9,2024
+C18,Malign tumör i tjocktarmen,50-54,Man,46.5,2024
+C18,Malign tumör i tjocktarmen,50-54,Kvinna,56.9,2024
+C18,Malign tumör i tjocktarmen,55-59,Man,79.1,2024
+C18,Malign tumör i tjocktarmen,55-59,Kvinna,68.6,2024
+C18,Malign tumör i tjocktarmen,60-64,Man,110.5,2024
+C18,Malign tumör i tjocktarmen,60-64,Kvinna,107.1,2024
+C18,Malign tumör i tjocktarmen,65-69,Man,182.8,2024
+C18,Malign tumör i tjocktarmen,65-69,Kvinna,152.2,2024
+C18,Malign tumör i tjocktarmen,70-74,Man,262.5,2024
+C18,Malign tumör i tjocktarmen,70-74,Kvinna,241.6,2024
+C18,Malign tumör i tjocktarmen,75-79,Man,371.1,2024
+C18,Malign tumör i tjocktarmen,75-79,Kvinna,279.2,2024
+C18,Malign tumör i tjocktarmen,80-84,Man,456.9,2024
+C18,Malign tumör i tjocktarmen,80-84,Kvinna,408.6,2024
+C18,Malign tumör i tjocktarmen,85+,Man,464.0,2024
+C18,Malign tumör i tjocktarmen,85+,Kvinna,422.6,2024
+C34,Malign tumör i bronk och lunga,0-4,Kvinna,0.4,2024
+C34,Malign tumör i bronk och lunga,10-14,Man,0.9,2024
+C34,Malign tumör i bronk och lunga,15-19,Man,0.3,2024
+C34,Malign tumör i bronk och lunga,20-24,Man,1.0,2024
+C34,Malign tumör i bronk och lunga,20-24,Kvinna,0.3,2024
+C34,Malign tumör i bronk och lunga,25-29,Man,0.6,2024
+C34,Malign tumör i bronk och lunga,25-29,Kvinna,0.3,2024
+C34,Malign tumör i bronk och lunga,30-34,Man,5.1,2024
+C34,Malign tumör i bronk och lunga,30-34,Kvinna,2.7,2024
+C34,Malign tumör i bronk och lunga,35-39,Man,4.0,2024
+C34,Malign tumör i bronk och lunga,35-39,Kvinna,5.0,2024
+C34,Malign tumör i bronk och lunga,40-44,Man,7.1,2024
+C34,Malign tumör i bronk och lunga,40-44,Kvinna,9.0,2024
+C34,Malign tumör i bronk och lunga,45-49,Man,12.3,2024
+C34,Malign tumör i bronk och lunga,45-49,Kvinna,25.2,2024
+C34,Malign tumör i bronk och lunga,50-54,Man,30.2,2024
+C34,Malign tumör i bronk och lunga,50-54,Kvinna,37.2,2024
+C34,Malign tumör i bronk och lunga,55-59,Man,61.2,2024
+C34,Malign tumör i bronk och lunga,55-59,Kvinna,74.7,2024
+C34,Malign tumör i bronk och lunga,60-64,Man,108.9,2024
+C34,Malign tumör i bronk och lunga,60-64,Kvinna,179.8,2024
+C34,Malign tumör i bronk och lunga,65-69,Man,208.5,2024
+C34,Malign tumör i bronk och lunga,65-69,Kvinna,306.5,2024
+C34,Malign tumör i bronk och lunga,70-74,Man,340.1,2024
+C34,Malign tumör i bronk och lunga,70-74,Kvinna,503.6,2024
+C34,Malign tumör i bronk och lunga,75-79,Man,506.3,2024
+C34,Malign tumör i bronk och lunga,75-79,Kvinna,679.1,2024
+C34,Malign tumör i bronk och lunga,80-84,Man,594.2,2024
+C34,Malign tumör i bronk och lunga,80-84,Kvinna,695.1,2024
+C34,Malign tumör i bronk och lunga,85+,Man,471.2,2024
+C34,Malign tumör i bronk och lunga,85+,Kvinna,332.8,2024
+C43,Malignt melanom i huden,0-4,Kvinna,0.4,2024
+C43,Malignt melanom i huden,5-9,Man,0.3,2024
+C43,Malignt melanom i huden,5-9,Kvinna,0.3,2024
+C43,Malignt melanom i huden,15-19,Man,0.6,2024
+C43,Malignt melanom i huden,15-19,Kvinna,1.7,2024
+C43,Malignt melanom i huden,20-24,Man,2.6,2024
+C43,Malignt melanom i huden,20-24,Kvinna,4.5,2024
+C43,Malignt melanom i huden,25-29,Man,6.1,2024
+C43,Malignt melanom i huden,25-29,Kvinna,10.6,2024
+C43,Malignt melanom i huden,30-34,Man,10.4,2024
+C43,Malignt melanom i huden,30-34,Kvinna,19.4,2024
+C43,Malignt melanom i huden,35-39,Man,20.4,2024
+C43,Malignt melanom i huden,35-39,Kvinna,29.8,2024
+C43,Malignt melanom i huden,40-44,Man,24.5,2024
+C43,Malignt melanom i huden,40-44,Kvinna,42.1,2024
+C43,Malignt melanom i huden,45-49,Man,45.7,2024
+C43,Malignt melanom i huden,45-49,Kvinna,58.0,2024
+C43,Malignt melanom i huden,50-54,Man,66.9,2024
+C43,Malignt melanom i huden,50-54,Kvinna,82.0,2024
+C43,Malignt melanom i huden,55-59,Man,99.7,2024
+C43,Malignt melanom i huden,55-59,Kvinna,99.9,2024
+C43,Malignt melanom i huden,60-64,Man,122.6,2024
+C43,Malignt melanom i huden,60-64,Kvinna,124.3,2024
+C43,Malignt melanom i huden,65-69,Man,165.6,2024
+C43,Malignt melanom i huden,65-69,Kvinna,136.2,2024
+C43,Malignt melanom i huden,70-74,Man,243.8,2024
+C43,Malignt melanom i huden,70-74,Kvinna,166.6,2024
+C43,Malignt melanom i huden,75-79,Man,312.8,2024
+C43,Malignt melanom i huden,75-79,Kvinna,208.5,2024
+C43,Malignt melanom i huden,80-84,Man,406.9,2024
+C43,Malignt melanom i huden,80-84,Kvinna,243.5,2024
+C43,Malignt melanom i huden,85+,Man,406.0,2024
+C43,Malignt melanom i huden,85+,Kvinna,222.1,2024
+M17,Knäartros,5-9,Man,0.3,2024
+M17,Knäartros,5-9,Kvinna,0.3,2024
+M17,Knäartros,10-14,Man,0.3,2024
+M17,Knäartros,10-14,Kvinna,0.0,2024
+M17,Knäartros,15-19,Man,1.2,2024
+M17,Knäartros,15-19,Kvinna,1.3,2024
+M17,Knäartros,20-24,Man,3.6,2024
+M17,Knäartros,20-24,Kvinna,5.2,2024
+M17,Knäartros,25-29,Man,11.3,2024
+M17,Knäartros,25-29,Kvinna,8.6,2024
+M17,Knäartros,30-34,Man,22.8,2024
+M17,Knäartros,30-34,Kvinna,23.1,2024
+M17,Knäartros,35-39,Man,33.7,2024
+M17,Knäartros,35-39,Kvinna,32.0,2024
+M17,Knäartros,40-44,Man,84.5,2024
+M17,Knäartros,40-44,Kvinna,87.6,2024
+M17,Knäartros,45-49,Man,182.7,2024
+M17,Knäartros,45-49,Kvinna,241.8,2024
+M17,Knäartros,50-54,Man,375.4,2024
+M17,Knäartros,50-54,Kvinna,540.9,2024
+M17,Knäartros,55-59,Man,728.9,2024
+M17,Knäartros,55-59,Kvinna,984.3,2024
+M17,Knäartros,60-64,Man,1113.5,2024
+M17,Knäartros,60-64,Kvinna,1445.2,2024
+M17,Knäartros,65-69,Man,1344.2,2024
+M17,Knäartros,65-69,Kvinna,1791.4,2024
+M17,Knäartros,70-74,Man,1695.6,2024
+M17,Knäartros,70-74,Kvinna,2110.7,2024
+M17,Knäartros,75-79,Man,1686.5,2024
+M17,Knäartros,75-79,Kvinna,2239.5,2024
+M17,Knäartros,80-84,Man,1542.2,2024
+M17,Knäartros,80-84,Kvinna,1832.5,2024
+M17,Knäartros,85+,Man,895.0,2024
+M17,Knäartros,85+,Kvinna,968.1,2024
+M16,Höftledsartros,0-4,Kvinna,0.4,2024
+M16,Höftledsartros,10-14,Kvinna,1.0,2024
+M16,Höftledsartros,15-19,Man,4.1,2024
+M16,Höftledsartros,15-19,Kvinna,4.0,2024
+M16,Höftledsartros,20-24,Man,6.2,2024
+M16,Höftledsartros,20-24,Kvinna,7.6,2024
+M16,Höftledsartros,25-29,Man,8.5,2024
+M16,Höftledsartros,25-29,Kvinna,11.6,2024
+M16,Höftledsartros,30-34,Man,21.3,2024
+M16,Höftledsartros,30-34,Kvinna,19.6,2024
+M16,Höftledsartros,35-39,Man,26.5,2024
+M16,Höftledsartros,35-39,Kvinna,31.5,2024
+M16,Höftledsartros,40-44,Man,56.5,2024
+M16,Höftledsartros,40-44,Kvinna,62.5,2024
+M16,Höftledsartros,45-49,Man,132.4,2024
+M16,Höftledsartros,45-49,Kvinna,141.9,2024
+M16,Höftledsartros,50-54,Man,258.1,2024
+M16,Höftledsartros,50-54,Kvinna,306.9,2024
+M16,Höftledsartros,55-59,Man,480.5,2024
+M16,Höftledsartros,55-59,Kvinna,534.0,2024
+M16,Höftledsartros,60-64,Man,608.1,2024
+M16,Höftledsartros,60-64,Kvinna,752.8,2024
+M16,Höftledsartros,65-69,Man,791.4,2024
+M16,Höftledsartros,65-69,Kvinna,980.9,2024
+M16,Höftledsartros,70-74,Man,951.5,2024
+M16,Höftledsartros,70-74,Kvinna,1371.3,2024
+M16,Höftledsartros,75-79,Man,1034.6,2024
+M16,Höftledsartros,75-79,Kvinna,1555.5,2024
+M16,Höftledsartros,80-84,Man,993.8,2024
+M16,Höftledsartros,80-84,Kvinna,1468.6,2024
+M16,Höftledsartros,85+,Man,717.5,2024
+M16,Höftledsartros,85+,Kvinna,836.4,2024
+M81,Osteoporos utan patologisk fraktur,0-4,Man,0.4,2024
+M81,Osteoporos utan patologisk fraktur,5-9,Man,0.6,2024
+M81,Osteoporos utan patologisk fraktur,10-14,Man,2.8,2024
+M81,Osteoporos utan patologisk fraktur,10-14,Kvinna,3.3,2024
+M81,Osteoporos utan patologisk fraktur,15-19,Man,4.1,2024
+M81,Osteoporos utan patologisk fraktur,15-19,Kvinna,2.3,2024
+M81,Osteoporos utan patologisk fraktur,20-24,Man,2.6,2024
+M81,Osteoporos utan patologisk fraktur,20-24,Kvinna,2.4,2024
+M81,Osteoporos utan patologisk fraktur,25-29,Man,4.6,2024
+M81,Osteoporos utan patologisk fraktur,25-29,Kvinna,4.7,2024
+M81,Osteoporos utan patologisk fraktur,30-34,Man,4.6,2024
+M81,Osteoporos utan patologisk fraktur,30-34,Kvinna,4.0,2024
+M81,Osteoporos utan patologisk fraktur,35-39,Man,5.8,2024
+M81,Osteoporos utan patologisk fraktur,35-39,Kvinna,5.6,2024
+M81,Osteoporos utan patologisk fraktur,40-44,Man,7.1,2024
+M81,Osteoporos utan patologisk fraktur,40-44,Kvinna,9.0,2024
+M81,Osteoporos utan patologisk fraktur,45-49,Man,10.2,2024
+M81,Osteoporos utan patologisk fraktur,45-49,Kvinna,14.4,2024
+M81,Osteoporos utan patologisk fraktur,50-54,Man,13.6,2024
+M81,Osteoporos utan patologisk fraktur,50-54,Kvinna,31.8,2024
+M81,Osteoporos utan patologisk fraktur,55-59,Man,20.0,2024
+M81,Osteoporos utan patologisk fraktur,55-59,Kvinna,73.1,2024
+M81,Osteoporos utan patologisk fraktur,60-64,Man,24.5,2024
+M81,Osteoporos utan patologisk fraktur,60-64,Kvinna,107.1,2024
+M81,Osteoporos utan patologisk fraktur,65-69,Man,28.6,2024
+M81,Osteoporos utan patologisk fraktur,65-69,Kvinna,179.4,2024
+M81,Osteoporos utan patologisk fraktur,70-74,Man,38.4,2024
+M81,Osteoporos utan patologisk fraktur,70-74,Kvinna,224.7,2024
+M81,Osteoporos utan patologisk fraktur,75-79,Man,49.1,2024
+M81,Osteoporos utan patologisk fraktur,75-79,Kvinna,259.4,2024
+M81,Osteoporos utan patologisk fraktur,80-84,Man,49.4,2024
+M81,Osteoporos utan patologisk fraktur,80-84,Kvinna,274.5,2024
+M81,Osteoporos utan patologisk fraktur,85+,Man,52.6,2024
+M81,Osteoporos utan patologisk fraktur,85+,Kvinna,134.4,2024
+M05,Seropositiv reumatoid artrit,0-4,Kvinna,0.0,2024
+M05,Seropositiv reumatoid artrit,10-14,Man,1.2,2024
+M05,Seropositiv reumatoid artrit,10-14,Kvinna,0.3,2024
+M05,Seropositiv reumatoid artrit,15-19,Man,1.9,2024
+M05,Seropositiv reumatoid artrit,15-19,Kvinna,8.9,2024
+M05,Seropositiv reumatoid artrit,20-24,Man,5.5,2024
+M05,Seropositiv reumatoid artrit,20-24,Kvinna,35.1,2024
+M05,Seropositiv reumatoid artrit,25-29,Man,10.1,2024
+M05,Seropositiv reumatoid artrit,25-29,Kvinna,69.5,2024
+M05,Seropositiv reumatoid artrit,30-34,Man,16.0,2024
+M05,Seropositiv reumatoid artrit,30-34,Kvinna,106.4,2024
+M05,Seropositiv reumatoid artrit,35-39,Man,22.8,2024
+M05,Seropositiv reumatoid artrit,35-39,Kvinna,164.5,2024
+M05,Seropositiv reumatoid artrit,40-44,Man,44.0,2024
+M05,Seropositiv reumatoid artrit,40-44,Kvinna,226.6,2024
+M05,Seropositiv reumatoid artrit,45-49,Man,63.3,2024
+M05,Seropositiv reumatoid artrit,45-49,Kvinna,288.0,2024
+M05,Seropositiv reumatoid artrit,50-54,Man,91.8,2024
+M05,Seropositiv reumatoid artrit,50-54,Kvinna,381.4,2024
+M05,Seropositiv reumatoid artrit,55-59,Man,136.7,2024
+M05,Seropositiv reumatoid artrit,55-59,Kvinna,509.3,2024
+M05,Seropositiv reumatoid artrit,60-64,Man,205.0,2024
+M05,Seropositiv reumatoid artrit,60-64,Kvinna,699.6,2024
+M05,Seropositiv reumatoid artrit,65-69,Man,293.3,2024
+M05,Seropositiv reumatoid artrit,65-69,Kvinna,807.3,2024
+M05,Seropositiv reumatoid artrit,70-74,Man,421.4,2024
+M05,Seropositiv reumatoid artrit,70-74,Kvinna,968.4,2024
+M05,Seropositiv reumatoid artrit,75-79,Man,485.1,2024
+M05,Seropositiv reumatoid artrit,75-79,Kvinna,1188.8,2024
+M05,Seropositiv reumatoid artrit,80-84,Man,517.3,2024
+M05,Seropositiv reumatoid artrit,80-84,Kvinna,1117.4,2024
+M05,Seropositiv reumatoid artrit,85+,Man,394.4,2024
+M05,Seropositiv reumatoid artrit,85+,Kvinna,694.3,2024
+M06,Annan reumatoid artrit,0-4,Man,0.4,2024
+M06,Annan reumatoid artrit,0-4,Kvinna,0.4,2024
+M06,Annan reumatoid artrit,5-9,Kvinna,0.3,2024
+M06,Annan reumatoid artrit,10-14,Man,0.6,2024
+M06,Annan reumatoid artrit,10-14,Kvinna,1.3,2024
+M06,Annan reumatoid artrit,15-19,Man,1.6,2024
+M06,Annan reumatoid artrit,15-19,Kvinna,9.9,2024
+M06,Annan reumatoid artrit,20-24,Man,6.5,2024
+M06,Annan reumatoid artrit,20-24,Kvinna,17.0,2024
+M06,Annan reumatoid artrit,25-29,Man,7.6,2024
+M06,Annan reumatoid artrit,25-29,Kvinna,39.2,2024
+M06,Annan reumatoid artrit,30-34,Man,17.8,2024
+M06,Annan reumatoid artrit,30-34,Kvinna,68.2,2024
+M06,Annan reumatoid artrit,35-39,Man,19.9,2024
+M06,Annan reumatoid artrit,35-39,Kvinna,87.7,2024
+M06,Annan reumatoid artrit,40-44,Man,28.1,2024
+M06,Annan reumatoid artrit,40-44,Kvinna,110.2,2024
+M06,Annan reumatoid artrit,45-49,Man,45.7,2024
+M06,Annan reumatoid artrit,45-49,Kvinna,154.4,2024
+M06,Annan reumatoid artrit,50-54,Man,62.5,2024
+M06,Annan reumatoid artrit,50-54,Kvinna,201.3,2024
+M06,Annan reumatoid artrit,55-59,Man,84.4,2024
+M06,Annan reumatoid artrit,55-59,Kvinna,255.3,2024
+M06,Annan reumatoid artrit,60-64,Man,126.8,2024
+M06,Annan reumatoid artrit,60-64,Kvinna,335.8,2024
+M06,Annan reumatoid artrit,65-69,Man,171.4,2024
+M06,Annan reumatoid artrit,65-69,Kvinna,361.6,2024
+M06,Annan reumatoid artrit,70-74,Man,239.0,2024
+M06,Annan reumatoid artrit,70-74,Kvinna,411.3,2024
+M06,Annan reumatoid artrit,75-79,Man,312.4,2024
+M06,Annan reumatoid artrit,75-79,Kvinna,484.7,2024
+M06,Annan reumatoid artrit,80-84,Man,341.0,2024
+M06,Annan reumatoid artrit,80-84,Kvinna,498.0,2024
+M06,Annan reumatoid artrit,85+,Man,278.4,2024
+M06,Annan reumatoid artrit,85+,Kvinna,331.7,2024
+H25,Katarakt (grå starr) vid högre ålder,0-4,Man,0.4,2024
+H25,Katarakt (grå starr) vid högre ålder,10-14,Man,0.6,2024
+H25,Katarakt (grå starr) vid högre ålder,10-14,Kvinna,1.0,2024
+H25,Katarakt (grå starr) vid högre ålder,15-19,Man,1.2,2024
+H25,Katarakt (grå starr) vid högre ålder,15-19,Kvinna,3.6,2024
+H25,Katarakt (grå starr) vid högre ålder,20-24,Man,6.2,2024
+H25,Katarakt (grå starr) vid högre ålder,20-24,Kvinna,5.9,2024
+H25,Katarakt (grå starr) vid högre ålder,25-29,Man,7.0,2024
+H25,Katarakt (grå starr) vid högre ålder,25-29,Kvinna,8.6,2024
+H25,Katarakt (grå starr) vid högre ålder,30-34,Man,8.9,2024
+H25,Katarakt (grå starr) vid högre ålder,30-34,Kvinna,11.4,2024
+H25,Katarakt (grå starr) vid högre ålder,35-39,Man,22.3,2024
+H25,Katarakt (grå starr) vid högre ålder,35-39,Kvinna,28.4,2024
+H25,Katarakt (grå starr) vid högre ålder,40-44,Man,51.1,2024
+H25,Katarakt (grå starr) vid högre ålder,40-44,Kvinna,53.9,2024
+H25,Katarakt (grå starr) vid högre ålder,45-49,Man,118.8,2024
+H25,Katarakt (grå starr) vid högre ålder,45-49,Kvinna,157.2,2024
+H25,Katarakt (grå starr) vid högre ålder,50-54,Man,240.4,2024
+H25,Katarakt (grå starr) vid högre ålder,50-54,Kvinna,341.7,2024
+H25,Katarakt (grå starr) vid högre ålder,55-59,Man,546.6,2024
+H25,Katarakt (grå starr) vid högre ålder,55-59,Kvinna,709.8,2024
+H25,Katarakt (grå starr) vid högre ålder,60-64,Man,1180.2,2024
+H25,Katarakt (grå starr) vid högre ålder,60-64,Kvinna,1588.9,2024
+H25,Katarakt (grå starr) vid högre ålder,65-69,Man,2372.8,2024
+H25,Katarakt (grå starr) vid högre ålder,65-69,Kvinna,3236.1,2024
+H25,Katarakt (grå starr) vid högre ålder,70-74,Man,4105.4,2024
+H25,Katarakt (grå starr) vid högre ålder,70-74,Kvinna,5434.6,2024
+H25,Katarakt (grå starr) vid högre ålder,75-79,Man,5907.4,2024
+H25,Katarakt (grå starr) vid högre ålder,75-79,Kvinna,7295.7,2024
+H25,Katarakt (grå starr) vid högre ålder,80-84,Man,6672.6,2024
+H25,Katarakt (grå starr) vid högre ålder,80-84,Kvinna,6847.3,2024
+H25,Katarakt (grå starr) vid högre ålder,85+,Man,5327.4,2024
+H25,Katarakt (grå starr) vid högre ålder,85+,Kvinna,3869.2,2024
+N40,Prostataförstoring,20-24,Man,0.6,2024
+N40,Prostataförstoring,25-29,Man,2.7,2024
+N40,Prostataförstoring,30-34,Man,1.5,2024
+N40,Prostataförstoring,35-39,Man,10.9,2024
+N40,Prostataförstoring,40-44,Man,24.8,2024
+N40,Prostataförstoring,45-49,Man,87.3,2024
+N40,Prostataförstoring,50-54,Man,277.7,2024
+N40,Prostataförstoring,55-59,Man,713.7,2024
+N40,Prostataförstoring,60-64,Man,1334.5,2024
+N40,Prostataförstoring,65-69,Man,2082.8,2024
+N40,Prostataförstoring,70-74,Man,2339.8,2024
+N40,Prostataförstoring,75-79,Man,2699.1,2024
+N40,Prostataförstoring,80-84,Man,2507.3,2024
+N40,Prostataförstoring,85+,Man,1711.6,2024
+N18,Kronisk njursvikt,0-4,Man,16.6,2024
+N18,Kronisk njursvikt,0-4,Kvinna,12.9,2024
+N18,Kronisk njursvikt,5-9,Man,24.0,2024
+N18,Kronisk njursvikt,5-9,Kvinna,15.9,2024
+N18,Kronisk njursvikt,10-14,Man,28.3,2024
+N18,Kronisk njursvikt,10-14,Kvinna,25.1,2024
+N18,Kronisk njursvikt,15-19,Man,51.4,2024
+N18,Kronisk njursvikt,15-19,Kvinna,40.7,2024
+N18,Kronisk njursvikt,20-24,Man,54.1,2024
+N18,Kronisk njursvikt,20-24,Kvinna,48.7,2024
+N18,Kronisk njursvikt,25-29,Man,64.7,2024
+N18,Kronisk njursvikt,25-29,Kvinna,47.2,2024
+N18,Kronisk njursvikt,30-34,Man,87.5,2024
+N18,Kronisk njursvikt,30-34,Kvinna,64.5,2024
+N18,Kronisk njursvikt,35-39,Man,106.4,2024
+N18,Kronisk njursvikt,35-39,Kvinna,73.8,2024
+N18,Kronisk njursvikt,40-44,Man,149.6,2024
+N18,Kronisk njursvikt,40-44,Kvinna,97.8,2024
+N18,Kronisk njursvikt,45-49,Man,189.5,2024
+N18,Kronisk njursvikt,45-49,Kvinna,117.7,2024
+N18,Kronisk njursvikt,50-54,Man,251.3,2024
+N18,Kronisk njursvikt,50-54,Kvinna,154.7,2024
+N18,Kronisk njursvikt,55-59,Man,338.4,2024
+N18,Kronisk njursvikt,55-59,Kvinna,208.6,2024
+N18,Kronisk njursvikt,60-64,Man,489.7,2024
+N18,Kronisk njursvikt,60-64,Kvinna,263.7,2024
+N18,Kronisk njursvikt,65-69,Man,715.4,2024
+N18,Kronisk njursvikt,65-69,Kvinna,379.4,2024
+N18,Kronisk njursvikt,70-74,Man,1080.5,2024
+N18,Kronisk njursvikt,70-74,Kvinna,565.2,2024
+N18,Kronisk njursvikt,75-79,Man,1495.2,2024
+N18,Kronisk njursvikt,75-79,Kvinna,739.2,2024
+N18,Kronisk njursvikt,80-84,Man,2043.0,2024
+N18,Kronisk njursvikt,80-84,Kvinna,995.4,2024
+N18,Kronisk njursvikt,85+,Man,2005.1,2024
+N18,Kronisk njursvikt,85+,Kvinna,797.3,2024
+F20,Schizofreni,0-4,Man,0.0,2024
+F20,Schizofreni,10-14,Man,0.3,2024
+F20,Schizofreni,10-14,Kvinna,0.3,2024
+F20,Schizofreni,15-19,Man,11.2,2024
+F20,Schizofreni,15-19,Kvinna,5.0,2024
+F20,Schizofreni,20-24,Man,58.0,2024
+F20,Schizofreni,20-24,Kvinna,20.2,2024
+F20,Schizofreni,25-29,Man,154.0,2024
+F20,Schizofreni,25-29,Kvinna,42.9,2024
+F20,Schizofreni,30-34,Man,194.4,2024
+F20,Schizofreni,30-34,Kvinna,65.0,2024
+F20,Schizofreni,35-39,Man,225.3,2024
+F20,Schizofreni,35-39,Kvinna,74.1,2024
+F20,Schizofreni,40-44,Man,254.5,2024
+F20,Schizofreni,40-44,Kvinna,98.4,2024
+F20,Schizofreni,45-49,Man,238.9,2024
+F20,Schizofreni,45-49,Kvinna,111.3,2024
+F20,Schizofreni,50-54,Man,264.4,2024
+F20,Schizofreni,50-54,Kvinna,152.6,2024
+F20,Schizofreni,55-59,Man,300.2,2024
+F20,Schizofreni,55-59,Kvinna,196.3,2024
+F20,Schizofreni,60-64,Man,376.6,2024
+F20,Schizofreni,60-64,Kvinna,214.2,2024
+F20,Schizofreni,65-69,Man,321.2,2024
+F20,Schizofreni,65-69,Kvinna,202.9,2024
+F20,Schizofreni,70-74,Man,222.8,2024
+F20,Schizofreni,70-74,Kvinna,166.2,2024
+F20,Schizofreni,75-79,Man,127.3,2024
+F20,Schizofreni,75-79,Kvinna,123.3,2024
+F20,Schizofreni,80-84,Man,55.5,2024
+F20,Schizofreni,80-84,Kvinna,91.0,2024
+F20,Schizofreni,85+,Man,25.9,2024
+F20,Schizofreni,85+,Kvinna,39.1,2024
+F31,Bipolär sjukdom,0-4,Man,0.4,2024
+F31,Bipolär sjukdom,0-4,Kvinna,0.0,2024
+F31,Bipolär sjukdom,5-9,Man,0.3,2024
+F31,Bipolär sjukdom,10-14,Man,3.1,2024
+F31,Bipolär sjukdom,10-14,Kvinna,8.8,2024
+F31,Bipolär sjukdom,15-19,Man,42.1,2024
+F31,Bipolär sjukdom,15-19,Kvinna,139.4,2024
+F31,Bipolär sjukdom,20-24,Man,140.0,2024
+F31,Bipolär sjukdom,20-24,Kvinna,406.4,2024
+F31,Bipolär sjukdom,25-29,Man,222.1,2024
+F31,Bipolär sjukdom,25-29,Kvinna,550.9,2024
+F31,Bipolär sjukdom,30-34,Man,293.6,2024
+F31,Bipolär sjukdom,30-34,Kvinna,612.6,2024
+F31,Bipolär sjukdom,35-39,Man,325.4,2024
+F31,Bipolär sjukdom,35-39,Kvinna,644.5,2024
+F31,Bipolär sjukdom,40-44,Man,314.2,2024
+F31,Bipolär sjukdom,40-44,Kvinna,623.4,2024
+F31,Bipolär sjukdom,45-49,Man,329.0,2024
+F31,Bipolär sjukdom,45-49,Kvinna,599.3,2024
+F31,Bipolär sjukdom,50-54,Man,316.8,2024
+F31,Bipolär sjukdom,50-54,Kvinna,553.0,2024
+F31,Bipolär sjukdom,55-59,Man,315.2,2024
+F31,Bipolär sjukdom,55-59,Kvinna,538.8,2024
+F31,Bipolär sjukdom,60-64,Man,330.2,2024
+F31,Bipolär sjukdom,60-64,Kvinna,467.3,2024
+F31,Bipolär sjukdom,65-69,Man,285.2,2024
+F31,Bipolär sjukdom,65-69,Kvinna,424.3,2024
+F31,Bipolär sjukdom,70-74,Man,278.6,2024
+F31,Bipolär sjukdom,70-74,Kvinna,383.6,2024
+F31,Bipolär sjukdom,75-79,Man,245.0,2024
+F31,Bipolär sjukdom,75-79,Kvinna,313.5,2024
+F31,Bipolär sjukdom,80-84,Man,188.5,2024
+F31,Bipolär sjukdom,80-84,Kvinna,258.2,2024
+F31,Bipolär sjukdom,85+,Man,107.1,2024
+F31,Bipolär sjukdom,85+,Kvinna,151.5,2024
+F32,Depressiv episod,0-4,Man,0.0,2024
+F32,Depressiv episod,0-4,Kvinna,0.0,2024
+F32,Depressiv episod,5-9,Man,4.5,2024
+F32,Depressiv episod,5-9,Kvinna,4.4,2024
+F32,Depressiv episod,10-14,Man,182.6,2024
+F32,Depressiv episod,10-14,Kvinna,504.5,2024
+F32,Depressiv episod,15-19,Man,583.8,2024
+F32,Depressiv episod,15-19,Kvinna,1745.4,2024
+F32,Depressiv episod,20-24,Man,377.0,2024
+F32,Depressiv episod,20-24,Kvinna,612.6,2024
+F32,Depressiv episod,25-29,Man,433.1,2024
+F32,Depressiv episod,25-29,Kvinna,502.3,2024
+F32,Depressiv episod,30-34,Man,372.5,2024
+F32,Depressiv episod,30-34,Kvinna,435.1,2024
+F32,Depressiv episod,35-39,Man,312.9,2024
+F32,Depressiv episod,35-39,Kvinna,389.5,2024
+F32,Depressiv episod,40-44,Man,273.1,2024
+F32,Depressiv episod,40-44,Kvinna,336.1,2024
+F32,Depressiv episod,45-49,Man,236.4,2024
+F32,Depressiv episod,45-49,Kvinna,308.4,2024
+F32,Depressiv episod,50-54,Man,238.0,2024
+F32,Depressiv episod,50-54,Kvinna,283.6,2024
+F32,Depressiv episod,55-59,Man,251.4,2024
+F32,Depressiv episod,55-59,Kvinna,259.2,2024
+F32,Depressiv episod,60-64,Man,209.9,2024
+F32,Depressiv episod,60-64,Kvinna,218.4,2024
+F32,Depressiv episod,65-69,Man,149.8,2024
+F32,Depressiv episod,65-69,Kvinna,147.8,2024
+F32,Depressiv episod,70-74,Man,137.5,2024
+F32,Depressiv episod,70-74,Kvinna,135.0,2024
+F32,Depressiv episod,75-79,Man,151.0,2024
+F32,Depressiv episod,75-79,Kvinna,162.4,2024
+F32,Depressiv episod,80-84,Man,151.3,2024
+F32,Depressiv episod,80-84,Kvinna,179.8,2024
+F32,Depressiv episod,85+,Man,151.7,2024
+F32,Depressiv episod,85+,Kvinna,162.5,2024
+F41,Andra ångestsyndrom,0-4,Man,0.4,2024
+F41,Andra ångestsyndrom,0-4,Kvinna,0.4,2024
+F41,Andra ångestsyndrom,5-9,Man,34.9,2024
+F41,Andra ångestsyndrom,5-9,Kvinna,33.6,2024
+F41,Andra ångestsyndrom,10-14,Man,336.0,2024
+F41,Andra ångestsyndrom,10-14,Kvinna,881.1,2024
+F41,Andra ångestsyndrom,15-19,Man,692.6,2024
+F41,Andra ångestsyndrom,15-19,Kvinna,2617.8,2024
+F41,Andra ångestsyndrom,20-24,Man,709.6,2024
+F41,Andra ångestsyndrom,20-24,Kvinna,1798.6,2024
+F41,Andra ångestsyndrom,25-29,Man,692.1,2024
+F41,Andra ångestsyndrom,25-29,Kvinna,1331.5,2024
+F41,Andra ångestsyndrom,30-34,Man,652.6,2024
+F41,Andra ångestsyndrom,30-34,Kvinna,1151.1,2024
+F41,Andra ångestsyndrom,35-39,Man,589.4,2024
+F41,Andra ångestsyndrom,35-39,Kvinna,966.8,2024
+F41,Andra ångestsyndrom,40-44,Man,511.6,2024
+F41,Andra ångestsyndrom,40-44,Kvinna,835.1,2024
+F41,Andra ångestsyndrom,45-49,Man,461.4,2024
+F41,Andra ångestsyndrom,45-49,Kvinna,717.0,2024
+F41,Andra ångestsyndrom,50-54,Man,391.7,2024
+F41,Andra ångestsyndrom,50-54,Kvinna,601.8,2024
+F41,Andra ångestsyndrom,55-59,Man,345.8,2024
+F41,Andra ångestsyndrom,55-59,Kvinna,543.0,2024
+F41,Andra ångestsyndrom,60-64,Man,331.8,2024
+F41,Andra ångestsyndrom,60-64,Kvinna,462.0,2024
+F41,Andra ångestsyndrom,65-69,Man,251.8,2024
+F41,Andra ångestsyndrom,65-69,Kvinna,361.6,2024
+F41,Andra ångestsyndrom,70-74,Man,206.2,2024
+F41,Andra ångestsyndrom,70-74,Kvinna,322.4,2024
+F41,Andra ångestsyndrom,75-79,Man,202.2,2024
+F41,Andra ångestsyndrom,75-79,Kvinna,346.9,2024
+F41,Andra ångestsyndrom,80-84,Man,175.1,2024
+F41,Andra ångestsyndrom,80-84,Kvinna,348.6,2024
+F41,Andra ångestsyndrom,85+,Man,168.7,2024
+F41,Andra ångestsyndrom,85+,Kvinna,321.8,2024
+F84,Genomgripande utvecklingsstörningar,0-4,Man,274.0,2024
+F84,Genomgripande utvecklingsstörningar,0-4,Kvinna,104.3,2024
+F84,Genomgripande utvecklingsstörningar,5-9,Man,1133.3,2024
+F84,Genomgripande utvecklingsstörningar,5-9,Kvinna,372.6,2024
+F84,Genomgripande utvecklingsstörningar,10-14,Man,1350.8,2024
+F84,Genomgripande utvecklingsstörningar,10-14,Kvinna,743.1,2024
+F84,Genomgripande utvecklingsstörningar,15-19,Man,1424.7,2024
+F84,Genomgripande utvecklingsstörningar,15-19,Kvinna,1601.0,2024
+F84,Genomgripande utvecklingsstörningar,20-24,Man,870.3,2024
+F84,Genomgripande utvecklingsstörningar,20-24,Kvinna,1059.4,2024
+F84,Genomgripande utvecklingsstörningar,25-29,Man,702.2,2024
+F84,Genomgripande utvecklingsstörningar,25-29,Kvinna,661.6,2024
+F84,Genomgripande utvecklingsstörningar,30-34,Man,591.7,2024
+F84,Genomgripande utvecklingsstörningar,30-34,Kvinna,543.6,2024
+F84,Genomgripande utvecklingsstörningar,35-39,Man,391.7,2024
+F84,Genomgripande utvecklingsstörningar,35-39,Kvinna,375.0,2024
+F84,Genomgripande utvecklingsstörningar,40-44,Man,266.9,2024
+F84,Genomgripande utvecklingsstörningar,40-44,Kvinna,264.0,2024
+F84,Genomgripande utvecklingsstörningar,45-49,Man,202.2,2024
+F84,Genomgripande utvecklingsstörningar,45-49,Kvinna,213.7,2024
+F84,Genomgripande utvecklingsstörningar,50-54,Man,140.3,2024
+F84,Genomgripande utvecklingsstörningar,50-54,Kvinna,147.4,2024
+F84,Genomgripande utvecklingsstörningar,55-59,Man,113.8,2024
+F84,Genomgripande utvecklingsstörningar,55-59,Kvinna,88.5,2024
+F84,Genomgripande utvecklingsstörningar,60-64,Man,82.7,2024
+F84,Genomgripande utvecklingsstörningar,60-64,Kvinna,56.2,2024
+F84,Genomgripande utvecklingsstörningar,65-69,Man,30.5,2024
+F84,Genomgripande utvecklingsstörningar,65-69,Kvinna,24.3,2024
+F84,Genomgripande utvecklingsstörningar,70-74,Man,12.5,2024
+F84,Genomgripande utvecklingsstörningar,70-74,Kvinna,5.0,2024
+F84,Genomgripande utvecklingsstörningar,75-79,Man,6.7,2024
+F84,Genomgripande utvecklingsstörningar,75-79,Kvinna,4.9,2024
+F84,Genomgripande utvecklingsstörningar,80-84,Man,3.1,2024
+F84,Genomgripande utvecklingsstörningar,80-84,Kvinna,1.1,2024
+F84,Genomgripande utvecklingsstörningar,85+,Man,0.9,2024
+F84,Genomgripande utvecklingsstörningar,85+,Kvinna,1.1,2024
+F90,Hyperaktivitetsstörningar,0-4,Man,13.4,2024
+F90,Hyperaktivitetsstörningar,0-4,Kvinna,1.9,2024
+F90,Hyperaktivitetsstörningar,5-9,Man,1794.5,2024
+F90,Hyperaktivitetsstörningar,5-9,Kvinna,659.8,2024
+F90,Hyperaktivitetsstörningar,10-14,Man,6275.9,2024
+F90,Hyperaktivitetsstörningar,10-14,Kvinna,3395.5,2024
+F90,Hyperaktivitetsstörningar,15-19,Man,5985.1,2024
+F90,Hyperaktivitetsstörningar,15-19,Kvinna,6347.9,2024
+F90,Hyperaktivitetsstörningar,20-24,Man,2465.5,2024
+F90,Hyperaktivitetsstörningar,20-24,Kvinna,3746.7,2024
+F90,Hyperaktivitetsstörningar,25-29,Man,2067.2,2024
+F90,Hyperaktivitetsstörningar,25-29,Kvinna,2910.0,2024
+F90,Hyperaktivitetsstörningar,30-34,Man,1944.9,2024
+F90,Hyperaktivitetsstörningar,30-34,Kvinna,2414.5,2024
+F90,Hyperaktivitetsstörningar,35-39,Man,1568.9,2024
+F90,Hyperaktivitetsstörningar,35-39,Kvinna,2001.6,2024
+F90,Hyperaktivitetsstörningar,40-44,Man,1268.6,2024
+F90,Hyperaktivitetsstörningar,40-44,Kvinna,1543.5,2024
+F90,Hyperaktivitetsstörningar,45-49,Man,1001.5,2024
+F90,Hyperaktivitetsstörningar,45-49,Kvinna,1241.3,2024
+F90,Hyperaktivitetsstörningar,50-54,Man,741.9,2024
+F90,Hyperaktivitetsstörningar,50-54,Kvinna,899.0,2024
+F90,Hyperaktivitetsstörningar,55-59,Man,500.8,2024
+F90,Hyperaktivitetsstörningar,55-59,Kvinna,602.9,2024
+F90,Hyperaktivitetsstörningar,60-64,Man,319.7,2024
+F90,Hyperaktivitetsstörningar,60-64,Kvinna,324.5,2024
+F90,Hyperaktivitetsstörningar,65-69,Man,150.1,2024
+F90,Hyperaktivitetsstörningar,65-69,Kvinna,150.0,2024
+F90,Hyperaktivitetsstörningar,70-74,Man,53.4,2024
+F90,Hyperaktivitetsstörningar,70-74,Kvinna,56.2,2024
+F90,Hyperaktivitetsstörningar,75-79,Man,20.4,2024
+F90,Hyperaktivitetsstörningar,75-79,Kvinna,17.5,2024
+F90,Hyperaktivitetsstörningar,80-84,Man,7.3,2024
+F90,Hyperaktivitetsstörningar,80-84,Kvinna,6.3,2024
+F90,Hyperaktivitetsstörningar,85+,Man,0.9,2024
+F90,Hyperaktivitetsstörningar,85+,Kvinna,0.6,2024
+E10,Diabetes mellitus typ 1,0-4,Man,92.0,2024
+E10,Diabetes mellitus typ 1,0-4,Kvinna,68.1,2024
+E10,Diabetes mellitus typ 1,5-9,Man,298.4,2024
+E10,Diabetes mellitus typ 1,5-9,Kvinna,251.9,2024
+E10,Diabetes mellitus typ 1,10-14,Man,516.5,2024
+E10,Diabetes mellitus typ 1,10-14,Kvinna,488.5,2024
+E10,Diabetes mellitus typ 1,15-19,Man,702.2,2024
+E10,Diabetes mellitus typ 1,15-19,Kvinna,625.4,2024
+E10,Diabetes mellitus typ 1,20-24,Man,643.8,2024
+E10,Diabetes mellitus typ 1,20-24,Kvinna,520.1,2024
+E10,Diabetes mellitus typ 1,25-29,Man,608.2,2024
+E10,Diabetes mellitus typ 1,25-29,Kvinna,503.0,2024
+E10,Diabetes mellitus typ 1,30-34,Man,669.9,2024
+E10,Diabetes mellitus typ 1,30-34,Kvinna,530.9,2024
+E10,Diabetes mellitus typ 1,35-39,Man,590.7,2024
+E10,Diabetes mellitus typ 1,35-39,Kvinna,469.9,2024
+E10,Diabetes mellitus typ 1,40-44,Man,612.4,2024
+E10,Diabetes mellitus typ 1,40-44,Kvinna,470.2,2024
+E10,Diabetes mellitus typ 1,45-49,Man,643.2,2024
+E10,Diabetes mellitus typ 1,45-49,Kvinna,466.6,2024
+E10,Diabetes mellitus typ 1,50-54,Man,693.0,2024
+E10,Diabetes mellitus typ 1,50-54,Kvinna,520.6,2024
+E10,Diabetes mellitus typ 1,55-59,Man,712.5,2024
+E10,Diabetes mellitus typ 1,55-59,Kvinna,565.3,2024
+E10,Diabetes mellitus typ 1,60-64,Man,735.6,2024
+E10,Diabetes mellitus typ 1,60-64,Kvinna,577.3,2024
+E10,Diabetes mellitus typ 1,65-69,Man,726.1,2024
+E10,Diabetes mellitus typ 1,65-69,Kvinna,595.0,2024
+E10,Diabetes mellitus typ 1,70-74,Man,702.0,2024
+E10,Diabetes mellitus typ 1,70-74,Kvinna,564.0,2024
+E10,Diabetes mellitus typ 1,75-79,Man,611.1,2024
+E10,Diabetes mellitus typ 1,75-79,Kvinna,507.1,2024
+E10,Diabetes mellitus typ 1,80-84,Man,520.4,2024
+E10,Diabetes mellitus typ 1,80-84,Kvinna,417.0,2024
+E10,Diabetes mellitus typ 1,85+,Man,332.9,2024
+E10,Diabetes mellitus typ 1,85+,Kvinna,244.1,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),0-4,Man,187.3,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),0-4,Kvinna,169.8,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),5-9,Man,73.9,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),5-9,Kvinna,52.2,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),10-14,Man,63.8,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),10-14,Kvinna,49.6,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),15-19,Man,50.5,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),15-19,Kvinna,62.6,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),20-24,Man,40.5,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),20-24,Kvinna,49.0,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),25-29,Man,57.0,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),25-29,Kvinna,57.2,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),30-34,Man,73.3,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),30-34,Kvinna,69.8,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),35-39,Man,84.4,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),35-39,Kvinna,81.6,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),40-44,Man,86.3,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),40-44,Kvinna,113.3,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),45-49,Man,103.1,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),45-49,Kvinna,125.7,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),50-54,Man,112.5,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),50-54,Kvinna,155.3,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),55-59,Man,140.6,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),55-59,Kvinna,167.7,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),60-64,Man,155.6,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),60-64,Kvinna,191.7,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),65-69,Man,188.3,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),65-69,Kvinna,205.4,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),70-74,Man,209.1,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),70-74,Kvinna,217.0,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),75-79,Man,207.2,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),75-79,Kvinna,216.5,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),80-84,Man,180.6,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),80-84,Kvinna,176.7,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),85+,Man,134.7,2024
+K21,Gastroesofageal refluxsjukdom (återflöde av maginnehåll till matstrupen),85+,Kvinna,105.2,2024
+K50,Crohns sjukdom [regional enterit],0-4,Man,2.9,2024
+K50,Crohns sjukdom [regional enterit],0-4,Kvinna,3.4,2024
+K50,Crohns sjukdom [regional enterit],5-9,Man,14.4,2024
+K50,Crohns sjukdom [regional enterit],5-9,Kvinna,11.2,2024
+K50,Crohns sjukdom [regional enterit],10-14,Man,59.7,2024
+K50,Crohns sjukdom [regional enterit],10-14,Kvinna,41.8,2024
+K50,Crohns sjukdom [regional enterit],15-19,Man,159.2,2024
+K50,Crohns sjukdom [regional enterit],15-19,Kvinna,139.7,2024
+K50,Crohns sjukdom [regional enterit],20-24,Man,233.7,2024
+K50,Crohns sjukdom [regional enterit],20-24,Kvinna,210.7,2024
+K50,Crohns sjukdom [regional enterit],25-29,Man,264.8,2024
+K50,Crohns sjukdom [regional enterit],25-29,Kvinna,255.7,2024
+K50,Crohns sjukdom [regional enterit],30-34,Man,288.2,2024
+K50,Crohns sjukdom [regional enterit],30-34,Kvinna,279.9,2024
+K50,Crohns sjukdom [regional enterit],35-39,Man,274.9,2024
+K50,Crohns sjukdom [regional enterit],35-39,Kvinna,254.4,2024
+K50,Crohns sjukdom [regional enterit],40-44,Man,254.5,2024
+K50,Crohns sjukdom [regional enterit],40-44,Kvinna,276.7,2024
+K50,Crohns sjukdom [regional enterit],45-49,Man,251.2,2024
+K50,Crohns sjukdom [regional enterit],45-49,Kvinna,274.6,2024
+K50,Crohns sjukdom [regional enterit],50-54,Man,264.1,2024
+K50,Crohns sjukdom [regional enterit],50-54,Kvinna,273.3,2024
+K50,Crohns sjukdom [regional enterit],55-59,Man,252.3,2024
+K50,Crohns sjukdom [regional enterit],55-59,Kvinna,288.7,2024
+K50,Crohns sjukdom [regional enterit],60-64,Man,270.7,2024
+K50,Crohns sjukdom [regional enterit],60-64,Kvinna,310.7,2024
+K50,Crohns sjukdom [regional enterit],65-69,Man,267.2,2024
+K50,Crohns sjukdom [regional enterit],65-69,Kvinna,298.2,2024
+K50,Crohns sjukdom [regional enterit],70-74,Man,281.9,2024
+K50,Crohns sjukdom [regional enterit],70-74,Kvinna,304.3,2024
+K50,Crohns sjukdom [regional enterit],75-79,Man,255.4,2024
+K50,Crohns sjukdom [regional enterit],75-79,Kvinna,272.4,2024
+K50,Crohns sjukdom [regional enterit],80-84,Man,201.9,2024
+K50,Crohns sjukdom [regional enterit],80-84,Kvinna,215.6,2024
+K50,Crohns sjukdom [regional enterit],85+,Man,112.4,2024
+K50,Crohns sjukdom [regional enterit],85+,Kvinna,72.7,2024
+K51,Ulcerös kolit,0-4,Man,4.3,2024
+K51,Ulcerös kolit,0-4,Kvinna,3.4,2024
+K51,Ulcerös kolit,5-9,Man,12.2,2024
+K51,Ulcerös kolit,5-9,Kvinna,13.9,2024
+K51,Ulcerös kolit,10-14,Man,48.4,2024
+K51,Ulcerös kolit,10-14,Kvinna,39.2,2024
+K51,Ulcerös kolit,15-19,Man,148.6,2024
+K51,Ulcerös kolit,15-19,Kvinna,133.4,2024
+K51,Ulcerös kolit,20-24,Man,251.2,2024
+K51,Ulcerös kolit,20-24,Kvinna,233.6,2024
+K51,Ulcerös kolit,25-29,Man,336.1,2024
+K51,Ulcerös kolit,25-29,Kvinna,303.9,2024
+K51,Ulcerös kolit,30-34,Man,391.0,2024
+K51,Ulcerös kolit,30-34,Kvinna,360.5,2024
+K51,Ulcerös kolit,35-39,Man,380.3,2024
+K51,Ulcerös kolit,35-39,Kvinna,358.6,2024
+K51,Ulcerös kolit,40-44,Man,380.4,2024
+K51,Ulcerös kolit,40-44,Kvinna,357.5,2024
+K51,Ulcerös kolit,45-49,Man,375.9,2024
+K51,Ulcerös kolit,45-49,Kvinna,326.6,2024
+K51,Ulcerös kolit,50-54,Man,349.6,2024
+K51,Ulcerös kolit,50-54,Kvinna,313.3,2024
+K51,Ulcerös kolit,55-59,Man,318.5,2024
+K51,Ulcerös kolit,55-59,Kvinna,309.7,2024
+K51,Ulcerös kolit,60-64,Man,342.9,2024
+K51,Ulcerös kolit,60-64,Kvinna,321.9,2024
+K51,Ulcerös kolit,65-69,Man,390.2,2024
+K51,Ulcerös kolit,65-69,Kvinna,346.0,2024
+K51,Ulcerös kolit,70-74,Man,374.5,2024
+K51,Ulcerös kolit,70-74,Kvinna,356.3,2024
+K51,Ulcerös kolit,75-79,Man,347.8,2024
+K51,Ulcerös kolit,75-79,Kvinna,297.5,2024
+K51,Ulcerös kolit,80-84,Man,303.8,2024
+K51,Ulcerös kolit,80-84,Kvinna,237.1,2024
+K51,Ulcerös kolit,85+,Man,176.7,2024
+K51,Ulcerös kolit,85+,Kvinna,130.6,2024
+K80,Gallstenssjukdom,0-4,Man,2.9,2024
+K80,Gallstenssjukdom,0-4,Kvinna,3.0,2024
+K80,Gallstenssjukdom,5-9,Man,3.2,2024
+K80,Gallstenssjukdom,5-9,Kvinna,2.0,2024
+K80,Gallstenssjukdom,10-14,Man,6.2,2024
+K80,Gallstenssjukdom,10-14,Kvinna,9.1,2024
+K80,Gallstenssjukdom,15-19,Man,15.6,2024
+K80,Gallstenssjukdom,15-19,Kvinna,42.7,2024
+K80,Gallstenssjukdom,20-24,Man,33.4,2024
+K80,Gallstenssjukdom,20-24,Kvinna,139.8,2024
+K80,Gallstenssjukdom,25-29,Man,77.8,2024
+K80,Gallstenssjukdom,25-29,Kvinna,300.5,2024
+K80,Gallstenssjukdom,30-34,Man,125.9,2024
+K80,Gallstenssjukdom,30-34,Kvinna,379.1,2024
+K80,Gallstenssjukdom,35-39,Man,142.0,2024
+K80,Gallstenssjukdom,35-39,Kvinna,425.6,2024
+K80,Gallstenssjukdom,40-44,Man,186.2,2024
+K80,Gallstenssjukdom,40-44,Kvinna,379.5,2024
+K80,Gallstenssjukdom,45-49,Man,208.0,2024
+K80,Gallstenssjukdom,45-49,Kvinna,384.3,2024
+K80,Gallstenssjukdom,50-54,Man,228.5,2024
+K80,Gallstenssjukdom,50-54,Kvinna,444.7,2024
+K80,Gallstenssjukdom,55-59,Man,254.9,2024
+K80,Gallstenssjukdom,55-59,Kvinna,440.7,2024
+K80,Gallstenssjukdom,60-64,Man,266.4,2024
+K80,Gallstenssjukdom,60-64,Kvinna,469.3,2024
+K80,Gallstenssjukdom,65-69,Man,323.8,2024
+K80,Gallstenssjukdom,65-69,Kvinna,462.3,2024
+K80,Gallstenssjukdom,70-74,Man,380.9,2024
+K80,Gallstenssjukdom,70-74,Kvinna,429.0,2024
+K80,Gallstenssjukdom,75-79,Man,429.3,2024
+K80,Gallstenssjukdom,75-79,Kvinna,433.7,2024
+K80,Gallstenssjukdom,80-84,Man,480.1,2024
+K80,Gallstenssjukdom,80-84,Kvinna,474.8,2024
+K80,Gallstenssjukdom,85+,Man,604.1,2024
+K80,Gallstenssjukdom,85+,Kvinna,462.3,2024
+L20,Atopiskt eksem (böjveckseksem),0-4,Man,1376.3,2024
+L20,Atopiskt eksem (böjveckseksem),0-4,Kvinna,1094.0,2024
+L20,Atopiskt eksem (böjveckseksem),5-9,Man,446.5,2024
+L20,Atopiskt eksem (böjveckseksem),5-9,Kvinna,476.3,2024
+L20,Atopiskt eksem (böjveckseksem),10-14,Man,262.7,2024
+L20,Atopiskt eksem (böjveckseksem),10-14,Kvinna,284.9,2024
+L20,Atopiskt eksem (böjveckseksem),15-19,Man,178.8,2024
+L20,Atopiskt eksem (böjveckseksem),15-19,Kvinna,263.5,2024
+L20,Atopiskt eksem (böjveckseksem),20-24,Man,119.6,2024
+L20,Atopiskt eksem (böjveckseksem),20-24,Kvinna,283.4,2024
+L20,Atopiskt eksem (böjveckseksem),25-29,Man,112.9,2024
+L20,Atopiskt eksem (böjveckseksem),25-29,Kvinna,248.3,2024
+L20,Atopiskt eksem (böjveckseksem),30-34,Man,110.1,2024
+L20,Atopiskt eksem (böjveckseksem),30-34,Kvinna,222.9,2024
+L20,Atopiskt eksem (böjveckseksem),35-39,Man,99.8,2024
+L20,Atopiskt eksem (böjveckseksem),35-39,Kvinna,172.0,2024
+L20,Atopiskt eksem (böjveckseksem),40-44,Man,83.9,2024
+L20,Atopiskt eksem (böjveckseksem),40-44,Kvinna,123.8,2024
+L20,Atopiskt eksem (böjveckseksem),45-49,Man,74.1,2024
+L20,Atopiskt eksem (böjveckseksem),45-49,Kvinna,119.6,2024
+L20,Atopiskt eksem (böjveckseksem),50-54,Man,75.8,2024
+L20,Atopiskt eksem (böjveckseksem),50-54,Kvinna,96.3,2024
+L20,Atopiskt eksem (böjveckseksem),55-59,Man,75.3,2024
+L20,Atopiskt eksem (böjveckseksem),55-59,Kvinna,99.3,2024
+L20,Atopiskt eksem (böjveckseksem),60-64,Man,58.5,2024
+L20,Atopiskt eksem (böjveckseksem),60-64,Kvinna,86.9,2024
+L20,Atopiskt eksem (böjveckseksem),65-69,Man,64.6,2024
+L20,Atopiskt eksem (böjveckseksem),65-69,Kvinna,87.0,2024
+L20,Atopiskt eksem (böjveckseksem),70-74,Man,55.8,2024
+L20,Atopiskt eksem (böjveckseksem),70-74,Kvinna,69.3,2024
+L20,Atopiskt eksem (böjveckseksem),75-79,Man,51.2,2024
+L20,Atopiskt eksem (böjveckseksem),75-79,Kvinna,62.0,2024
+L20,Atopiskt eksem (böjveckseksem),80-84,Man,29.9,2024
+L20,Atopiskt eksem (böjveckseksem),80-84,Kvinna,56.8,2024
+L20,Atopiskt eksem (böjveckseksem),85+,Man,33.0,2024
+L20,Atopiskt eksem (böjveckseksem),85+,Kvinna,32.0,2024
+L40,Psoriasis,0-4,Man,9.7,2024
+L40,Psoriasis,0-4,Kvinna,12.2,2024
+L40,Psoriasis,5-9,Man,35.5,2024
+L40,Psoriasis,5-9,Kvinna,47.5,2024
+L40,Psoriasis,10-14,Man,78.2,2024
+L40,Psoriasis,10-14,Kvinna,95.6,2024
+L40,Psoriasis,15-19,Man,101.9,2024
+L40,Psoriasis,15-19,Kvinna,119.2,2024
+L40,Psoriasis,20-24,Man,148.1,2024
+L40,Psoriasis,20-24,Kvinna,191.6,2024
+L40,Psoriasis,25-29,Man,220.5,2024
+L40,Psoriasis,25-29,Kvinna,232.1,2024
+L40,Psoriasis,30-34,Man,321.7,2024
+L40,Psoriasis,30-34,Kvinna,313.6,2024
+L40,Psoriasis,35-39,Man,392.0,2024
+L40,Psoriasis,35-39,Kvinna,345.2,2024
+L40,Psoriasis,40-44,Man,462.0,2024
+L40,Psoriasis,40-44,Kvinna,376.1,2024
+L40,Psoriasis,45-49,Man,554.6,2024
+L40,Psoriasis,45-49,Kvinna,453.2,2024
+L40,Psoriasis,50-54,Man,613.4,2024
+L40,Psoriasis,50-54,Kvinna,603.0,2024
+L40,Psoriasis,55-59,Man,652.2,2024
+L40,Psoriasis,55-59,Kvinna,706.8,2024
+L40,Psoriasis,60-64,Man,753.5,2024
+L40,Psoriasis,60-64,Kvinna,758.1,2024
+L40,Psoriasis,65-69,Man,755.8,2024
+L40,Psoriasis,65-69,Kvinna,755.8,2024
+L40,Psoriasis,70-74,Man,689.1,2024
+L40,Psoriasis,70-74,Kvinna,711.4,2024
+L40,Psoriasis,75-79,Man,650.2,2024
+L40,Psoriasis,75-79,Kvinna,669.9,2024
+L40,Psoriasis,80-84,Man,511.2,2024
+L40,Psoriasis,80-84,Kvinna,515.3,2024
+L40,Psoriasis,85+,Man,267.7,2024
+L40,Psoriasis,85+,Kvinna,262.8,2024
+H66,Varig och ospecificerad mellanöreinflammation,0-4,Man,1587.5,2024
+H66,Varig och ospecificerad mellanöreinflammation,0-4,Kvinna,1250.0,2024
+H66,Varig och ospecificerad mellanöreinflammation,5-9,Man,508.6,2024
+H66,Varig och ospecificerad mellanöreinflammation,5-9,Kvinna,411.6,2024
+H66,Varig och ospecificerad mellanöreinflammation,10-14,Man,127.8,2024
+H66,Varig och ospecificerad mellanöreinflammation,10-14,Kvinna,130.5,2024
+H66,Varig och ospecificerad mellanöreinflammation,15-19,Man,70.4,2024
+H66,Varig och ospecificerad mellanöreinflammation,15-19,Kvinna,77.1,2024
+H66,Varig och ospecificerad mellanöreinflammation,20-24,Man,41.8,2024
+H66,Varig och ospecificerad mellanöreinflammation,20-24,Kvinna,53.2,2024
+H66,Varig och ospecificerad mellanöreinflammation,25-29,Man,38.7,2024
+H66,Varig och ospecificerad mellanöreinflammation,25-29,Kvinna,62.5,2024
+H66,Varig och ospecificerad mellanöreinflammation,30-34,Man,41.4,2024
+H66,Varig och ospecificerad mellanöreinflammation,30-34,Kvinna,74.3,2024
+H66,Varig och ospecificerad mellanöreinflammation,35-39,Man,53.1,2024
+H66,Varig och ospecificerad mellanöreinflammation,35-39,Kvinna,83.2,2024
+H66,Varig och ospecificerad mellanöreinflammation,40-44,Man,54.4,2024
+H66,Varig och ospecificerad mellanöreinflammation,40-44,Kvinna,65.6,2024
+H66,Varig och ospecificerad mellanöreinflammation,45-49,Man,52.5,2024
+H66,Varig och ospecificerad mellanöreinflammation,45-49,Kvinna,59.6,2024
+H66,Varig och ospecificerad mellanöreinflammation,50-54,Man,44.7,2024
+H66,Varig och ospecificerad mellanöreinflammation,50-54,Kvinna,63.6,2024
+H66,Varig och ospecificerad mellanöreinflammation,55-59,Man,42.6,2024
+H66,Varig och ospecificerad mellanöreinflammation,55-59,Kvinna,64.7,2024
+H66,Varig och ospecificerad mellanöreinflammation,60-64,Man,49.7,2024
+H66,Varig och ospecificerad mellanöreinflammation,60-64,Kvinna,65.8,2024
+H66,Varig och ospecificerad mellanöreinflammation,65-69,Man,55.4,2024
+H66,Varig och ospecificerad mellanöreinflammation,65-69,Kvinna,63.4,2024
+H66,Varig och ospecificerad mellanöreinflammation,70-74,Man,71.2,2024
+H66,Varig och ospecificerad mellanöreinflammation,70-74,Kvinna,51.2,2024
+H66,Varig och ospecificerad mellanöreinflammation,75-79,Man,66.6,2024
+H66,Varig och ospecificerad mellanöreinflammation,75-79,Kvinna,61.6,2024
+H66,Varig och ospecificerad mellanöreinflammation,80-84,Man,82.4,2024
+H66,Varig och ospecificerad mellanöreinflammation,80-84,Kvinna,73.6,2024
+H66,Varig och ospecificerad mellanöreinflammation,85+,Man,94.6,2024
+H66,Varig och ospecificerad mellanöreinflammation,85+,Kvinna,75.5,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),0-4,Man,1626.8,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),0-4,Kvinna,1118.7,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),5-9,Man,1942.9,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),5-9,Kvinna,1580.6,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),10-14,Man,419.5,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),10-14,Kvinna,449.4,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),15-19,Man,210.6,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),15-19,Kvinna,329.1,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),20-24,Man,170.2,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),20-24,Kvinna,359.9,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),25-29,Man,116.2,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),25-29,Kvinna,208.5,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),30-34,Man,98.7,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),30-34,Kvinna,167.1,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),35-39,Man,78.8,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),35-39,Kvinna,119.4,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),40-44,Man,47.0,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),40-44,Kvinna,69.9,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),45-49,Man,28.4,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),45-49,Kvinna,52.3,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),50-54,Man,19.5,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),50-54,Kvinna,33.9,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),55-59,Man,18.2,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),55-59,Kvinna,37.0,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),60-64,Man,13.7,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),60-64,Kvinna,31.4,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),65-69,Man,11.0,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),65-69,Kvinna,24.6,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),70-74,Man,10.1,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),70-74,Kvinna,22.3,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),75-79,Man,12.1,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),75-79,Kvinna,17.9,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),80-84,Man,9.8,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),80-84,Kvinna,15.8,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),85+,Man,6.2,2024
+J35,Kroniska sjukdomar i tonsiller (halsmandlar) och adenoider (körtlar bakom näsan),85+,Kvinna,11.6,2024
+N20,Sten i njure och uretär (urinledare),0-4,Man,7.6,2024
+N20,Sten i njure och uretär (urinledare),0-4,Kvinna,5.3,2024
+N20,Sten i njure och uretär (urinledare),5-9,Man,9.3,2024
+N20,Sten i njure och uretär (urinledare),5-9,Kvinna,9.5,2024
+N20,Sten i njure och uretär (urinledare),10-14,Man,16.0,2024
+N20,Sten i njure och uretär (urinledare),10-14,Kvinna,15.3,2024
+N20,Sten i njure och uretär (urinledare),15-19,Man,57.9,2024
+N20,Sten i njure och uretär (urinledare),15-19,Kvinna,80.8,2024
+N20,Sten i njure och uretär (urinledare),20-24,Man,146.8,2024
+N20,Sten i njure och uretär (urinledare),20-24,Kvinna,147.4,2024
+N20,Sten i njure och uretär (urinledare),25-29,Man,252.9,2024
+N20,Sten i njure och uretär (urinledare),25-29,Kvinna,202.8,2024
+N20,Sten i njure och uretär (urinledare),30-34,Man,317.4,2024
+N20,Sten i njure och uretär (urinledare),30-34,Kvinna,214.9,2024
+N20,Sten i njure och uretär (urinledare),35-39,Man,385.6,2024
+N20,Sten i njure och uretär (urinledare),35-39,Kvinna,224.7,2024
+N20,Sten i njure och uretär (urinledare),40-44,Man,430.4,2024
+N20,Sten i njure och uretär (urinledare),40-44,Kvinna,223.2,2024
+N20,Sten i njure och uretär (urinledare),45-49,Man,473.4,2024
+N20,Sten i njure och uretär (urinledare),45-49,Kvinna,223.6,2024
+N20,Sten i njure och uretär (urinledare),50-54,Man,463.9,2024
+N20,Sten i njure och uretär (urinledare),50-54,Kvinna,240.6,2024
+N20,Sten i njure och uretär (urinledare),55-59,Man,525.2,2024
+N20,Sten i njure och uretär (urinledare),55-59,Kvinna,267.3,2024
+N20,Sten i njure och uretär (urinledare),60-64,Man,556.7,2024
+N20,Sten i njure och uretär (urinledare),60-64,Kvinna,261.1,2024
+N20,Sten i njure och uretär (urinledare),65-69,Man,607.9,2024
+N20,Sten i njure och uretär (urinledare),65-69,Kvinna,279.7,2024
+N20,Sten i njure och uretär (urinledare),70-74,Man,575.0,2024
+N20,Sten i njure och uretär (urinledare),70-74,Kvinna,278.2,2024
+N20,Sten i njure och uretär (urinledare),75-79,Man,619.0,2024
+N20,Sten i njure och uretär (urinledare),75-79,Kvinna,273.1,2024
+N20,Sten i njure och uretär (urinledare),80-84,Man,557.6,2024
+N20,Sten i njure och uretär (urinledare),80-84,Kvinna,255.0,2024
+N20,Sten i njure och uretär (urinledare),85+,Man,451.5,2024
+N20,Sten i njure och uretär (urinledare),85+,Kvinna,179.6,2024

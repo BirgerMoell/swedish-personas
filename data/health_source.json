@@ -1,0 +1,16 @@
+{
+  "retrieved": "2026-11-09",
+  "year": 2024,
+  "socialstyrelsen": {
+    "table": "Diagnoser i sluten och/eller specialiserad öppen vård, årsuppgifter",
+    "url": "https://sdb.socialstyrelsen.se/if_dia_sluten_oppen/",
+    "api": "https://sdb.socialstyrelsen.se/api/v1/sv/diagnoserislutenoppenvard",
+    "measure": "Antal patienter per 100 000 invånare, riket, by 5-year age band and sex",
+    "codes_not_found": []
+  },
+  "folkhalsomyndigheten": {
+    "table": "Nationella folkhälsoenkäten (Hälsa på lika villkor), självrapporterat, andel i procent, ålder 16+",
+    "url": "https://fohm-app.folkhalsomyndigheten.se/Folkhalsodata/pxweb/sv/A_Folkhalsodata/A_Folkhalsodata__B_HLV/",
+    "api": "https://fohm-app.folkhalsomyndigheten.se/Folkhalsodata/api/v1/sv/A_Folkhalsodata/B_HLV"
+  }
+}

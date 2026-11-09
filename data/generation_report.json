@@ -2,6 +2,7 @@
   "rows": 100000,
   "seed": 20251005,
   "source_year": 2025,
+  "schema": "Nemotron-Personas (nvidia/Nemotron-Personas-France columns; kommun/lan replace commune/departement)",
   "county_counts": {
     "Norrbotten": 2369,
     "Stockholm": 23438,
@@ -26,8 +27,9 @@
     "Gotland": 587
   },
   "sex_counts": {
-    "man": 50344,
-    "kvinna": 49656
+    "Man": 50344,
+    "Kvinna": 49656
   },
-  "note": "SCB-weighted: joint county/age/sex/marital status; municipality county totals. Other attributes are illustrative heuristics, not calibrated to SCB."
+  "conditions_rows": 143551,
+  "note": "SCB-weighted: joint county/age/sex/marital status; municipality by county totals. Health conditions: independent draws from Socialstyrelsen (specialist-care patients per 100k) and Folkhälsomyndigheten (self-reported share) age/sex rates. Household type, education, occupation and all text fields are rule-based heuristics, not calibrated to SCB and not LLM generated."
 }
