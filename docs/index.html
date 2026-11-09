@@ -5,200 +5,257 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Swedish Personas</title>
 <meta name="description" content="100 000 fictional Swedish personas in the Nemotron-Personas format, grounded in open statistics from SCB, Socialstyrelsen and Folkhälsomyndigheten.">
+<meta name="theme-color" content="#070a14">
 <meta property="og:title" content="Swedish Personas">
-<meta property="og:description" content="100 000 fiktiva svenskar. Öppna syntetiska personas i Nemotron-formatet.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23f2c230'/%3E%3C/svg%3E">
+<meta property="og:description" content="Sverige, en person i taget. 100 000 fiktiva personas i Nemotron-formatet.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233df5d0'/%3E%3Cstop offset='.5' stop-color='%238a6bff'/%3E%3Cstop offset='1' stop-color='%23ff5fb0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='%23070a14'/%3E%3Ccircle cx='16' cy='16' r='7' fill='url(%23g)'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#fbfaf7; --surface:#ffffff; --ink:#111110; --muted:#6c6b66; --faint:#a3a19a; --line:#e8e6df;
-  --accent:#1c4fd6; --sun:#f2c230; --code:#f3f1ea;
+  --bg:#070a14; --surface:#0e1322; --raised:#141a2e; --ink:#eef1fb; --muted:#8d95b3; --faint:#555d7a; --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.16);
+  --teal:#3df5d0; --blue:#4aa8ff; --violet:#8a6bff; --pink:#ff5fb0; --amber:#ffb36c; --yellow:#ffe36a; --coral:#ff6f61;
+  --grad:linear-gradient(100deg,#3df5d0,#4aa8ff 28%,#8a6bff 52%,#ff5fb0 76%,#ffb36c);
   --serif:"Instrument Serif","Iowan Old Style","Times New Roman",serif;
   --sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   --ease:cubic-bezier(.2,.7,.2,1);
+  color-scheme:dark;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0c0c0d; --surface:#141415; --ink:#f3f2ee; --muted:#9a9993; --faint:#5f5e59; --line:#232324; --accent:#7b9cff; --code:#131314;
-}}
-:root[data-theme="dark"]{--bg:#0c0c0d; --surface:#141415; --ink:#f3f2ee; --muted:#9a9993; --faint:#5f5e59; --line:#232324; --accent:#7b9cff; --code:#131314}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
-::selection{background:var(--sun);color:#111}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-.mono{font-family:var(--mono)}
-.eyebrow{font:500 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.015em}
-h2{font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1.04}
-h2 em,h1 em{font-style:italic}
+::selection{background:var(--pink);color:#fff}
 p{margin:0}
-section{padding:112px 0}
-.lede{color:var(--muted);font-size:1.125rem;line-height:1.6;max-width:34rem}
+.aurora{position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+  radial-gradient(55% 45% at 12% 8%,rgba(138,107,255,.22),transparent 70%),
+  radial-gradient(45% 40% at 92% 22%,rgba(61,245,208,.14),transparent 70%),
+  radial-gradient(60% 50% at 70% 100%,rgba(255,95,176,.14),transparent 70%),
+  radial-gradient(40% 40% at 0% 70%,rgba(74,168,255,.12),transparent 70%)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.eyebrow{font:500 11.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:2px;border-radius:2px;background:var(--grad)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.015em}
+h2{font-size:clamp(2.4rem,5vw,4rem);line-height:1.02}
+h2 em,h1 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
+.lede{color:var(--muted);font-size:1.1rem;line-height:1.62;max-width:34rem}
+section{padding:120px 0}
 
-/* header */
-header{position:sticky;top:0;z-index:20;backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid transparent;transition:border-color .3s}
-header.scrolled{border-bottom-color:var(--line)}
-.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
-.mark{display:flex;align-items:center;gap:10px;font-weight:500;letter-spacing:-.01em}
-.mark i{width:10px;height:10px;border-radius:50%;background:var(--sun);display:block}
+header{position:fixed;top:0;left:0;right:0;z-index:30;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+header.scrolled{background:rgba(7,10,20,.72);backdrop-filter:blur(16px) saturate(1.5);-webkit-backdrop-filter:blur(16px) saturate(1.5);border-bottom-color:var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:66px}
+.mark{display:flex;align-items:center;gap:11px;font-weight:500;letter-spacing:-.01em}
+.mark i{width:16px;height:16px;border-radius:50%;background:conic-gradient(from 200deg,#3df5d0,#4aa8ff,#8a6bff,#ff5fb0,#ffb36c,#3df5d0);display:block;box-shadow:0 0 18px rgba(138,107,255,.7)}
 nav{display:flex;align-items:center;gap:28px;font-size:14px;color:var(--muted)}
 nav a:hover{color:var(--ink)}
-.lang{display:flex;gap:2px;padding:3px;border:1px solid var(--line);border-radius:99px;font-size:12px}
-.lang button{padding:3px 10px;border-radius:99px;color:var(--muted);transition:.2s}
-.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.seg{display:flex;gap:2px;padding:3px;border:1px solid var(--line2);border-radius:99px;font-size:12.5px;background:rgba(255,255,255,.03)}
+.seg button{padding:5px 13px;border-radius:99px;color:var(--muted);transition:.25s;white-space:nowrap}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:#0a0d1a;font-weight:500}
 
 /* hero */
-.hero{padding:120px 0 72px}
-.hero h1{font-size:clamp(3.6rem,10.5vw,9.2rem);line-height:.92;letter-spacing:-.035em;margin:28px 0 36px}
-.hero .row{display:flex;gap:48px;justify-content:space-between;align-items:flex-end;flex-wrap:wrap}
-.cta{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 20px;border-radius:99px;font-size:14.5px;font-weight:500;border:1px solid var(--ink);transition:transform .25s var(--ease),background .2s,color .2s}
-.btn.solid{background:var(--ink);color:var(--bg)}
-.btn:hover{transform:translateY(-2px)}
-.btn.ghost:hover{background:var(--ink);color:var(--bg)}
-
-/* explorer */
-.explorer{background:var(--surface);border:1px solid var(--line);border-radius:28px;overflow:hidden}
-.ex-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 28px;border-bottom:1px solid var(--line);flex-wrap:wrap}
-.ex-title{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
-.ex-title b{font:400 clamp(1.7rem,3vw,2.3rem)/1 var(--serif);letter-spacing:-.01em}
-.ex-title span{color:var(--muted);font-size:14px}
-.ctrl{display:flex;gap:6px;align-items:center}
-.ico{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;transition:.2s;color:var(--muted)}
-.ico:hover{border-color:var(--ink);color:var(--ink)}
-.count{font:400 12px var(--mono);color:var(--faint);min-width:54px;text-align:center}
-.ex-body{display:grid;grid-template-columns:220px 1fr;min-height:400px}
-.tabs{display:flex;flex-direction:column;padding:20px 12px;border-right:1px solid var(--line);gap:2px}
-.tab{text-align:left;padding:9px 14px;border-radius:10px;color:var(--muted);font-size:14.5px;transition:.2s}
-.tab:hover{color:var(--ink)}
-.tab[aria-selected="true"]{background:var(--bg);color:var(--ink)}
-.tab small{display:block;font:400 11px var(--mono);color:var(--faint);margin-top:1px}
-.panel{padding:40px clamp(24px,4vw,56px);display:flex;flex-direction:column;justify-content:space-between;gap:32px}
-.story{font:400 clamp(1.5rem,2.6vw,2.15rem)/1.32 var(--serif);letter-spacing:-.008em;max-width:34ch;transition:opacity .35s var(--ease),transform .35s var(--ease)}
-.story.swap{opacity:0;transform:translateY(6px)}
-.raw{display:none;font:400 12.5px/1.75 var(--mono);color:var(--muted);overflow:auto;max-height:340px;white-space:pre-wrap;word-break:break-word}
-.raw b{color:var(--ink);font-weight:500}
-.explorer.israw .story{display:none}.explorer.israw .raw{display:block}
-.facts{display:flex;flex-wrap:wrap;gap:8px}
-.fact{border:1px solid var(--line);border-radius:99px;padding:5px 12px;font-size:12.5px;color:var(--muted)}
-.view{display:flex;gap:2px;padding:3px;border:1px solid var(--line);border-radius:99px;font-size:12px}
-.view button{padding:3px 11px;border-radius:99px;color:var(--muted)}
-.view button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.hero{min-height:100svh;padding:86px 0 40px;position:relative;display:flex;align-items:stretch}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,5fr);gap:24px;align-items:center;width:100%}
+.hero h1{font-size:clamp(3.4rem,7.4vw,7rem);line-height:.92;letter-spacing:-.035em;margin:26px 0 28px}
+.modes{margin:34px 0 14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.modes small{font-size:12px;color:var(--faint);letter-spacing:.1em;text-transform:uppercase;margin-right:4px}
+.legend{display:flex;align-items:center;gap:14px;min-height:34px;font:400 11.5px var(--mono);color:var(--muted);flex-wrap:wrap}
+.ramp{height:8px;width:220px;border-radius:8px;background:linear-gradient(90deg,#3df5d0,#4aa8ff 20%,#8a6bff 40%,#ff5fb0 60%,#ff9a5a 80%,#ffe36a)}
+.sw{display:flex;align-items:center;gap:7px}.sw i{width:9px;height:9px;border-radius:50%;display:block;box-shadow:0 0 10px currentColor}
+.mapbox{position:relative;height:min(82svh,820px);min-height:520px}
+#map{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair;touch-action:manipulation}
+.hover{position:absolute;pointer-events:none;background:rgba(14,19,34,.92);border:1px solid var(--line2);backdrop-filter:blur(8px);border-radius:12px;padding:9px 12px;font-size:12.5px;opacity:0;transition:opacity .12s;white-space:nowrap;transform:translate(14px,-50%);z-index:3}
+.hover b{font-weight:500}.hover span{color:var(--muted)}
+.card{margin-top:30px;border:1px solid var(--line);border-radius:22px;padding:22px 24px;background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.015));backdrop-filter:blur(10px);position:relative;overflow:hidden;max-width:520px}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--dot,var(--violet));box-shadow:0 0 24px var(--dot,var(--violet))}
+.card .nm{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.card .nm b{font:400 1.9rem/1.1 var(--serif)}
+.card .nm span{font-size:13px;color:var(--muted)}
+.card p{color:#c6cbe0;font-size:14.5px;line-height:1.55;margin-top:10px}
+.card p.h{color:var(--muted)}
+.card p.h::before{content:attr(data-l);font:500 10.5px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-right:8px}
+.card .row{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:12px}
+.pick{height:36px;padding:0 16px;border-radius:99px;border:1px solid var(--line2);font-size:13px;transition:.25s;display:inline-flex;align-items:center;gap:8px}
+.pick:hover{background:var(--ink);color:#0a0d1a}
+.fade{transition:opacity .3s}.fade.out{opacity:0}
+.scroll{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font:400 11px var(--mono);letter-spacing:.16em;color:var(--faint);text-transform:uppercase}
 
 /* stats */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:72px}
-.stat{padding:32px 0 0}
-.stat b{display:block;font:400 clamp(2.6rem,5vw,4.2rem)/1 var(--serif);letter-spacing:-.03em}
-.stat span{font-size:13.5px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{padding:44px 28px 40px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font:400 clamp(3rem,6vw,5rem)/1 var(--serif);letter-spacing:-.03em;background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{font-size:13.5px;color:var(--muted);display:block;margin-top:8px}
 
-/* schema */
-.split{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:start}
-.cols{display:grid;gap:36px}
-.group h3{font:500 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+/* explorer */
+.explorer{border:1px solid var(--line);border-radius:30px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));overflow:hidden;position:relative}
+.explorer::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--tint,var(--grad));box-shadow:0 0 40px var(--tint,#8a6bff)}
+.ex-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:26px 32px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.ex-title{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.ex-title b{font:400 clamp(1.8rem,3vw,2.5rem)/1 var(--serif)}
+.ex-title span{color:var(--muted);font-size:14px}
+.ctrl{display:flex;gap:8px;align-items:center}
+.ico{width:38px;height:38px;border:1px solid var(--line2);border-radius:50%;display:grid;place-items:center;transition:.2s;color:var(--muted)}
+.ico:hover{background:var(--ink);color:#0a0d1a;border-color:var(--ink)}
+.count{font:400 12px var(--mono);color:var(--faint);min-width:54px;text-align:center}
+.ex-body{display:grid;grid-template-columns:230px 1fr;min-height:420px}
+.tabs{display:flex;flex-direction:column;padding:20px 14px;border-right:1px solid var(--line);gap:3px}
+.tab{text-align:left;padding:10px 14px;border-radius:12px;color:var(--muted);font-size:14.5px;transition:.2s;border:1px solid transparent}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{background:rgba(255,255,255,.06);color:var(--ink);border-color:var(--line)}
+.tab small{display:block;font:400 11px var(--mono);color:var(--faint);margin-top:1px}
+.panel{padding:44px clamp(24px,4vw,60px);display:flex;flex-direction:column;justify-content:space-between;gap:32px}
+.story{font:400 clamp(1.6rem,2.7vw,2.3rem)/1.3 var(--serif);letter-spacing:-.008em;max-width:34ch;transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.story.swap{opacity:0;transform:translateY(6px)}
+.raw{display:none;font:400 12.5px/1.75 var(--mono);color:var(--muted);overflow:auto;max-height:340px;white-space:pre-wrap;word-break:break-word}
+.raw b{color:var(--teal);font-weight:500}
+.explorer.israw .story{display:none}.explorer.israw .raw{display:block}
+.facts{display:flex;flex-wrap:wrap;gap:8px}
+.fact{border:1px solid var(--line2);border-radius:99px;padding:5px 13px;font-size:12.5px;color:#c6cbe0}
+.fact:nth-child(4n+1){border-color:rgba(61,245,208,.45);color:#9cf7e6}
+.fact:nth-child(4n+2){border-color:rgba(138,107,255,.55);color:#c1b2ff}
+.fact:nth-child(4n+3){border-color:rgba(255,95,176,.5);color:#ffa8d3}
+.fact:nth-child(4n+4){border-color:rgba(255,179,108,.5);color:#ffd0a5}
+
+/* format */
+.split{display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:start}
+.cols{display:grid;gap:38px}
+.group h3{font:500 11.5px var(--sans);letter-spacing:.14em;text-transform:uppercase;margin-bottom:15px;display:flex;align-items:center;gap:10px;color:var(--c)}
+.group h3::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--c);box-shadow:0 0 14px var(--c)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{font:400 12.5px var(--mono);padding:6px 11px;border:1px solid var(--line);border-radius:8px;background:var(--surface);transition:.2s}
-.chip:hover{border-color:var(--ink)}
-.chip.new{border-color:var(--sun);box-shadow:inset 0 0 0 1px var(--sun)}
+.chip{font:400 12.5px var(--mono);padding:7px 12px;border:1px solid color-mix(in srgb,var(--c) 35%,transparent);border-radius:9px;background:color-mix(in srgb,var(--c) 8%,transparent);color:color-mix(in srgb,var(--c) 70%,#fff);transition:.25s}
+.chip:hover{background:color-mix(in srgb,var(--c) 22%,transparent);transform:translateY(-2px)}
+.chip.new{background:linear-gradient(90deg,rgba(255,95,176,.3),rgba(255,179,108,.3));border-color:var(--pink);color:#fff;box-shadow:0 0 22px rgba(255,95,176,.35)}
 .note{font-size:13.5px;color:var(--muted);margin-top:28px;display:flex;gap:10px;align-items:center}
-.note i{width:9px;height:9px;border-radius:3px;border:1px solid var(--sun);box-shadow:inset 0 0 0 1px var(--sun);display:block;flex:none}
+.note i{width:10px;height:10px;border-radius:3px;background:linear-gradient(90deg,var(--pink),var(--amber));display:block;flex:none}
 
 /* charts */
-.chart-card{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:32px}
-.legend{display:flex;gap:20px;font-size:13px;color:var(--muted);margin-bottom:16px}
-.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:-1px}
+.chart-card{border:1px solid var(--line);border-radius:30px;padding:36px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.01))}
+.lg2{display:flex;gap:22px;font-size:13px;color:var(--muted);margin-bottom:18px;align-items:center;flex-wrap:wrap}
+.lg2 i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:-1px;box-shadow:0 0 12px currentColor}
+.ramp.sm{width:160px;height:6px}
 svg{display:block;width:100%;height:auto;overflow:visible}
 svg text{font:400 11px var(--mono);fill:var(--faint)}
-.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
-.pill{padding:6px 14px;border:1px solid var(--line);border-radius:99px;font-size:13px;color:var(--muted);transition:.2s}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.pill{padding:7px 15px;border:1px solid var(--line2);border-radius:99px;font-size:13px;color:var(--muted);transition:.25s}
 .pill:hover{color:var(--ink);border-color:var(--ink)}
-.pill[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12px;padding:8px 10px;border-radius:8px;opacity:0;transition:opacity .15s;white-space:nowrap;transform:translate(-50%,-110%)}
+.pill[aria-pressed="true"]{background:var(--grad);color:#0a0d1a;border-color:transparent;font-weight:500}
+.tip{position:absolute;pointer-events:none;background:rgba(20,26,46,.95);border:1px solid var(--line2);color:var(--ink);font-size:12px;padding:9px 12px;border-radius:10px;opacity:0;transition:opacity .15s;white-space:nowrap;transform:translate(-50%,-115%)}
 .rel{position:relative}
-.caption{font-size:13.5px;color:var(--muted);margin-top:20px;max-width:60ch}
+.caption{font-size:13.5px;color:var(--muted);margin-top:22px;max-width:62ch}
 
 /* method */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);margin-top:56px}
-.step{padding:28px 28px 0 0}
-.step .n{font:400 12px var(--mono);color:var(--faint)}
-.step h3{font:400 1.7rem/1.1 var(--serif);margin:14px 0 10px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:60px}
+.step{padding:28px 26px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.045),transparent);position:relative;overflow:hidden}
+.step::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--c);box-shadow:0 0 30px var(--c)}
+.step .n{font:400 12px var(--mono);color:var(--c)}
+.step h3{font:400 1.9rem/1.1 var(--serif);margin:16px 0 10px}
 .step p{font-size:14.5px;color:var(--muted)}
-.limits{margin-top:56px;padding:28px 32px;border:1px solid var(--line);border-radius:20px;background:var(--surface);font-size:14.5px;color:var(--muted)}
-.limits b{color:var(--ink);font-weight:500}
+.limits{margin-top:20px;padding:26px 30px;border:1px solid var(--line);border-radius:22px;font-size:14.5px;color:var(--muted);background:rgba(255,255,255,.02)}
+.limits b{color:var(--amber);font-weight:500}
 
 /* code */
-.code{position:relative;background:var(--code);border:1px solid var(--line);border-radius:18px;padding:22px 24px;font:400 13px/1.75 var(--mono);overflow:auto;white-space:pre}
-.code .c{color:var(--faint)}
-.copy{position:absolute;top:12px;right:12px;font:500 11.5px var(--sans);color:var(--muted);border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:4px 11px}
-.copy:hover{color:var(--ink);border-color:var(--ink)}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}
-.links{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
-.link{display:flex;flex-direction:column;justify-content:space-between;gap:36px;padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--surface);transition:transform .3s var(--ease),border-color .2s;min-height:150px}
-.link:hover{transform:translateY(-3px);border-color:var(--ink)}
-.link b{font-weight:500}.link span{font-size:13.5px;color:var(--muted)}
-.link i{font-style:normal;align-self:flex-end;font-size:20px}
+.code{position:relative;background:#0a0e1c;border:1px solid var(--line);border-radius:20px;padding:24px 26px;font:400 13px/1.8 var(--mono);overflow:auto;white-space:pre;color:#cdd3ec}
+.code .c{color:var(--faint)}.code .k{color:var(--pink)}.code .s{color:var(--teal)}.code .f{color:var(--amber)}
+.copy{position:absolute;top:14px;right:14px;font:500 11.5px var(--sans);color:var(--muted);border:1px solid var(--line2);border-radius:99px;padding:4px 12px}
+.copy:hover{color:#0a0d1a;background:var(--ink)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:52px}
+.links{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.link{display:flex;flex-direction:column;justify-content:space-between;gap:42px;padding:26px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.025);transition:transform .35s var(--ease),border-color .25s,box-shadow .3s;min-height:160px}
+.link:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 18px 50px -20px var(--c)}
+.link b{font-weight:500;font-size:17px}.link span{font-size:13.5px;color:var(--muted)}
+.link i{font-style:normal;align-self:flex-end;font-size:22px;color:var(--c)}
 
-footer{border-top:1px solid var(--line);padding:48px 0 64px;font-size:13.5px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:52px 0 70px;font-size:13.5px;color:var(--muted)}
 footer .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px}
 footer p+p{margin-top:8px}
-footer a{border-bottom:1px solid var(--line)}footer a:hover{color:var(--ink);border-color:var(--ink)}
+footer a{border-bottom:1px solid var(--line2)}footer a:hover{color:var(--ink)}
 
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
 
-@media (max-width:860px){
-  section{padding:80px 0}
+@media (max-width:900px){
+  section{padding:84px 0}
   nav a.hide{display:none}
+  .hero{min-height:0;padding-top:96px}
+  .hero .wrap{grid-template-columns:1fr}
+  .mapbox{height:min(110vw,640px);min-height:420px;order:2}
+  .scroll{display:none}
   .ex-body{grid-template-columns:1fr}
   .tabs{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line);padding:10px}
   .tab{white-space:nowrap}.tab small{display:none}
-  .split,.grid2,footer .wrap{grid-template-columns:1fr}
-  .split{gap:40px}
-  .stats{grid-template-columns:repeat(2,1fr)}
-  .steps{grid-template-columns:1fr 1fr;row-gap:32px}
+  .split,.grid2,footer .wrap{grid-template-columns:1fr}.split{gap:44px}
+  .stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .steps{grid-template-columns:1fr 1fr}
   .links{grid-template-columns:1fr}
-  .hero{padding-top:72px}
   .chart-card{padding:20px}
 }
-@media (max-width:520px){.wrap{padding:0 16px}.steps{grid-template-columns:1fr}nav{gap:16px}.ex-head{padding:16px 18px}}
+@media (max-width:520px){.wrap{padding:0 18px}.steps{grid-template-columns:1fr}nav{gap:14px}.ex-head{padding:18px}.hero h1{font-size:3.5rem}}
 </style>
 </head>
 <body>
+<div class="aurora"></div>
 <header id="top"><div class="wrap bar">
   <a class="mark" href="#top"><i></i>Swedish Personas</a>
   <nav>
-    <a class="hide" href="#explore" data-i18n="nav_explore">Utforska</a>
+    <a class="hide" href="#stories" data-i18n="nav_explore">Berättelser</a>
     <a class="hide" href="#format" data-i18n="nav_format">Format</a>
     <a class="hide" href="#grounding" data-i18n="nav_data">Data</a>
     <a href="#start" data-i18n="nav_start">Kom igång</a>
-    <div class="lang" role="group" aria-label="Language"><button data-lang="sv" aria-pressed="true">SV</button><button data-lang="en" aria-pressed="false">EN</button></div>
+    <div class="seg" id="lang" role="group" aria-label="Language"><button data-lang="sv" aria-pressed="true">SV</button><button data-lang="en" aria-pressed="false">EN</button></div>
   </nav>
 </div></header>
 
 <main>
-<div class="wrap hero">
-  <div class="eyebrow reveal" data-i18n="eyebrow">Öppna syntetiska data · Sverige · Nemotron-format</div>
-  <h1 class="reveal"><span data-i18n="h1a">100 000</span><br><em data-i18n="h1b">fiktiva</em> <span data-i18n="h1c">svenskar.</span></h1>
-  <div class="row reveal">
-    <p class="lede" data-i18n="lede">Personas med yrke, hälsa, fritid och bakgrund, grundade i öppen statistik från SCB, Socialstyrelsen och Folkhälsomyndigheten. Inga riktiga personer.</p>
-    <div class="cta">
-      <a class="btn solid" href="#explore"><span data-i18n="cta1">Utforska</span> ↓</a>
-      <a class="btn ghost" href="https://huggingface.co/datasets/birgermoell/swedish-personas" target="_blank" rel="noopener"><span>Hugging Face</span> ↗</a>
+<div class="hero"><div class="wrap">
+  <div>
+    <div class="eyebrow" data-i18n="eyebrow">Öppna syntetiska data · Nemotron-format</div>
+    <h1><span data-i18n-html="h1">Sverige, <em>en person</em> i taget.</span></h1>
+    <p class="lede" data-i18n="lede">100 000 fiktiva personas med yrke, hälsa, fritid och bakgrund, grundade i öppen statistik. Varje punkt på kartan är en av dem.</p>
+    <div class="modes"><small data-i18n="color_by">Färga efter</small>
+      <div class="seg" id="modes" role="group">
+        <button data-mode="age" aria-pressed="true" data-i18n="m_age">Ålder</button>
+        <button data-mode="sex" aria-pressed="false" data-i18n="m_sex">Kön</button>
+        <button data-mode="lan" aria-pressed="false" data-i18n="m_lan">Län</button>
+        <button data-mode="cond" aria-pressed="false" data-i18n="m_cond">Hälsa</button>
+      </div>
     </div>
+    <div class="legend" id="legend"></div>
+    <div class="card" id="card">
+      <div class="fade" id="card-in">
+        <div class="nm"><b id="c-name">—</b><span id="c-meta"></span></div>
+        <p id="c-txt"></p>
+        <p class="h" id="c-health"></p>
+      </div>
+      <div class="row"><span class="legend" style="min-height:0" id="c-hint" data-i18n="hint">Håll över eller klicka på en punkt</span><button class="pick" id="shuffle"><span data-i18n="shuffle">Slumpa</span> ↻</button></div>
+    </div>
+  </div>
+  <div class="mapbox"><canvas id="map" aria-label="Map of Sweden, one dot per persona"></canvas><div class="hover" id="hover"></div></div>
+</div><div class="scroll">scroll ↓</div></div>
+
+<div class="wrap reveal">
+  <div class="stats">
+    <div class="stat" style="--g:linear-gradient(100deg,#3df5d0,#4aa8ff)"><b>100 000</b><span data-i18n="s1">personas</span></div>
+    <div class="stat" style="--g:linear-gradient(100deg,#4aa8ff,#8a6bff)"><b id="s-cols">23</b><span data-i18n="s2">kolumner</span></div>
+    <div class="stat" style="--g:linear-gradient(100deg,#8a6bff,#ff5fb0)"><b>21</b><span data-i18n="s3">län</span></div>
+    <div class="stat" style="--g:linear-gradient(100deg,#ff5fb0,#ffb36c)"><b>290</b><span data-i18n="s4">kommuner</span></div>
   </div>
 </div>
 
-<div class="wrap" id="explore">
+<section id="stories"><div class="wrap">
+  <div class="reveal" style="max-width:40rem;margin-bottom:52px">
+    <div class="eyebrow" data-i18n="e_eyebrow">Berättelser</div>
+    <h2 style="margin:18px 0 0" data-i18n-html="e_h">Åtta sätt att <em>se en människa.</em></h2>
+  </div>
   <div class="explorer reveal" id="explorer">
     <div class="ex-head">
       <div class="ex-title"><b id="ex-name">—</b><span id="ex-meta"></span></div>
       <div class="ctrl">
-        <div class="view" role="group"><button data-view="story" aria-pressed="true" data-i18n="v_story">Berättelse</button><button data-view="raw" aria-pressed="false" data-i18n="v_raw">Rådata</button></div>
+        <div class="seg" id="views" role="group"><button data-view="story" aria-pressed="true" data-i18n="v_story">Berättelse</button><button data-view="raw" aria-pressed="false" data-i18n="v_raw">Rådata</button></div>
         <button class="ico" id="prev" aria-label="Previous">←</button>
         <span class="count" id="count"></span>
         <button class="ico" id="next" aria-label="Next">→</button>
@@ -213,28 +270,21 @@ footer a{border-bottom:1px solid var(--line)}footer a:hover{color:var(--ink);bor
       </div>
     </div>
   </div>
+</div></section>
 
-  <div class="stats reveal">
-    <div class="stat"><b>100 000</b><span data-i18n="s1">personas</span></div>
-    <div class="stat"><b id="s-cols">23</b><span data-i18n="s2">kolumner</span></div>
-    <div class="stat"><b>21</b><span data-i18n="s3">län</span></div>
-    <div class="stat"><b>290</b><span data-i18n="s4">kommuner</span></div>
-  </div>
-</div>
-
-<section id="format"><div class="wrap split">
+<section id="format" style="padding-top:0"><div class="wrap split">
   <div class="reveal">
     <div class="eyebrow" data-i18n="f_eyebrow">Format</div>
     <h2 style="margin:18px 0 22px" data-i18n-html="f_h">Samma form som <em>Nemotron.</em></h2>
-    <p class="lede" data-i18n="f_p">Kolumnerna följer NVIDIA:s Nemotron-Personas, så datasetet fungerar där de används: som frö för chatt, verktygsanrop och syntetisk träningsdata. Kommun och län ersätter franska commune och département.</p>
-    <p class="note"><i></i><span data-i18n="f_note">Markerade kolumner finns inte i den publika franska utgåvan.</span></p>
+    <p class="lede" data-i18n="f_p"></p>
+    <p class="note"><i></i><span data-i18n="f_note"></span></p>
   </div>
   <div class="cols reveal">
-    <div class="group"><h3 data-i18n="g1">Personas</h3><div class="chips">
+    <div class="group" style="--c:var(--violet)"><h3 data-i18n="g1">Personas</h3><div class="chips">
       <span class="chip">uuid</span><span class="chip">persona</span><span class="chip">professional_persona</span><span class="chip new">healthcare_persona</span><span class="chip">sports_persona</span><span class="chip">arts_persona</span><span class="chip">travel_persona</span><span class="chip">culinary_persona</span></div></div>
-    <div class="group"><h3 data-i18n="g2">Profil</h3><div class="chips">
+    <div class="group" style="--c:var(--teal)"><h3 data-i18n="g2">Profil</h3><div class="chips">
       <span class="chip">cultural_background</span><span class="chip">skills_and_expertise</span><span class="chip">skills_and_expertise_list</span><span class="chip">hobbies_and_interests</span><span class="chip">hobbies_and_interests_list</span><span class="chip">career_goals_and_ambitions</span></div></div>
-    <div class="group"><h3 data-i18n="g3">Demografi</h3><div class="chips">
+    <div class="group" style="--c:var(--amber)"><h3 data-i18n="g3">Demografi</h3><div class="chips">
       <span class="chip">sex</span><span class="chip">age</span><span class="chip">marital_status</span><span class="chip">household_type</span><span class="chip">education_level</span><span class="chip">occupation</span><span class="chip">kommun</span><span class="chip">lan</span><span class="chip">country</span></div></div>
   </div>
 </div></section>
@@ -242,11 +292,11 @@ footer a{border-bottom:1px solid var(--line)}footer a:hover{color:var(--ink);bor
 <section id="grounding" style="padding-top:0"><div class="wrap">
   <div class="reveal" style="max-width:40rem">
     <div class="eyebrow" data-i18n="p_eyebrow">Demografi</div>
-    <h2 style="margin:18px 0 22px" data-i18n-html="p_h">Sveriges <em>befolkning,</em> i miniatyr.</h2>
-    <p class="lede" data-i18n="p_p">Län, ålder, kön och civilstånd samplas ur SCB:s gemensamma fördelning för 2025. Pyramiden nedan är datasetets egen, inte SCB:s.</p>
+    <h2 style="margin:18px 0 22px" data-i18n-html="p_h">Sveriges befolkning, <em>i miniatyr.</em></h2>
+    <p class="lede" data-i18n="p_p"></p>
   </div>
-  <div class="chart-card reveal" style="margin-top:48px">
-    <div class="legend"><span><i style="background:var(--ink)"></i><span data-i18n="men">Män</span></span><span><i style="background:var(--accent)"></i><span data-i18n="women">Kvinnor</span></span></div>
+  <div class="chart-card reveal" style="margin-top:52px">
+    <div class="lg2"><span data-i18n="men">Män</span><span class="ramp sm"></span><span data-i18n="women">Kvinnor</span><span style="margin-left:auto;font:400 11.5px var(--mono)">0 → 100 <span data-i18n="yrs">år</span></span></div>
     <div id="pyramid"></div>
   </div>
 </div></section>
@@ -255,13 +305,13 @@ footer a{border-bottom:1px solid var(--line)}footer a:hover{color:var(--ink);bor
   <div class="reveal" style="max-width:40rem">
     <div class="eyebrow" data-i18n="h_eyebrow">Hälsa</div>
     <h2 style="margin:18px 0 22px" data-i18n-html="h_h">Hälsa som <em>följer åldern.</em></h2>
-    <p class="lede" data-i18n="h_p">Sjukdomar dras ur verkliga åldersoch könsfördelade tal från Socialstyrelsen och Folkhälsomyndigheten. Välj ett tillstånd.</p>
+    <p class="lede" data-i18n="h_p"></p>
   </div>
-  <div class="chart-card reveal" style="margin-top:48px">
+  <div class="chart-card reveal" style="margin-top:52px">
     <div class="pills" id="pills"></div>
-    <div class="legend"><span><i style="background:var(--ink)"></i><span data-i18n="men">Män</span></span><span><i style="background:var(--accent)"></i><span data-i18n="women">Kvinnor</span></span></div>
+    <div class="lg2"><span><i style="color:var(--blue);background:var(--blue)"></i><span data-i18n="men">Män</span></span><span><i style="color:var(--pink);background:var(--pink)"></i><span data-i18n="women">Kvinnor</span></span></div>
     <div class="rel" id="health-wrap"><div id="health"></div><div class="tip" id="tip"></div></div>
-    <p class="caption" data-i18n="h_cap">Andel personer i datasetet med tillståndet, per tioårsgrupp. Registerdata mäter vård i sjukhus och specialistvård; enkätdata är självrapporterade. Tillstånden dras oberoende av varandra.</p>
+    <p class="caption" data-i18n="h_cap"></p>
   </div>
 </div></section>
 
@@ -271,12 +321,12 @@ footer a{border-bottom:1px solid var(--line)}footer a:hover{color:var(--ink);bor
     <h2 style="margin:18px 0 0" data-i18n-html="m_h">Öppen metod. <em>Synliga gränser.</em></h2>
   </div>
   <div class="steps reveal">
-    <div class="step"><div class="n">01</div><h3 data-i18n="m1h">Hämta</h3><p data-i18n="m1p">SCB:s befolkningstabell 2025, samt hälsotal från Socialstyrelsen och Folkhälsomyndigheten via öppna API:er.</p></div>
-    <div class="step"><div class="n">02</div><h3 data-i18n="m2h">Sampla</h3><p data-i18n="m2p">Län, ålder, kön och civilstånd viktas efter SCB. Kommun väljs inom länet. Fast slumpfrö ger samma resultat varje gång.</p></div>
-    <div class="step"><div class="n">03</div><h3 data-i18n="m3h">Berätta</h3><p data-i18n="m3p">Regler och textmallar skriver yrke, fritid, bakgrund och hälsa på svenska. Ingen språkmodell används.</p></div>
-    <div class="step"><div class="n">04</div><h3 data-i18n="m4h">Kontrollera</h3><p data-i18n="m4p">Ett valideringsskript jämför urvalet med källorna: län, ålder, kön, civilstånd och 33 sjukdomar.</p></div>
+    <div class="step" style="--c:var(--teal)"><div class="n">01</div><h3 data-i18n="m1h">Hämta</h3><p data-i18n="m1p"></p></div>
+    <div class="step" style="--c:var(--blue)"><div class="n">02</div><h3 data-i18n="m2h">Sampla</h3><p data-i18n="m2p"></p></div>
+    <div class="step" style="--c:var(--violet)"><div class="n">03</div><h3 data-i18n="m3h">Berätta</h3><p data-i18n="m3p"></p></div>
+    <div class="step" style="--c:var(--pink)"><div class="n">04</div><h3 data-i18n="m4h">Kontrollera</h3><p data-i18n="m4p"></p></div>
   </div>
-  <div class="limits reveal" data-i18n-html="limits"><b>Begränsningar.</b> Utbildning, hushåll, yrke och all text är heuristik, inte kalibrerad mot statistik. Texten är mer formelartad än språkmodellsgenererad text. Datasetet passar prototyper, tester och språkexperiment, inte slutsatser om befolkningen eller beslut om människor.</div>
+  <div class="limits reveal" data-i18n-html="limits"></div>
 </div></section>
 
 <section id="start" style="padding-top:0"><div class="wrap">
@@ -286,10 +336,10 @@ footer a{border-bottom:1px solid var(--line)}footer a:hover{color:var(--ink);bor
   </div>
   <div class="grid2 reveal">
     <div class="code" id="c1"><button class="copy" data-copy="c1" data-i18n="copy">Kopiera</button><span class="c"># Hugging Face</span>
-from datasets import load_dataset
+<span class="k">from</span> datasets <span class="k">import</span> load_dataset
 
-ds = load_dataset("birgermoell/swedish-personas", split="train")
-print(ds[0]["persona"])</div>
+ds = <span class="f">load_dataset</span>(<span class="s">"birgermoell/swedish-personas"</span>, split=<span class="s">"train"</span>)
+<span class="f">print</span>(ds[<span class="s">0</span>][<span class="s">"persona"</span>])</div>
     <div class="code" id="c2"><button class="copy" data-copy="c2" data-i18n="copy">Kopiera</button><span class="c"># Återskapa från källorna</span>
 pip install -r requirements.txt
 python3 src/fetch_scb.py
@@ -298,86 +348,178 @@ python3 src/generate.py --size 100000
 python3 src/validate.py</div>
   </div>
   <div class="links reveal">
-    <a class="link" href="https://github.com/BirgerMoell/swedish-personas" target="_blank" rel="noopener"><div><b>GitHub</b><br><span data-i18n="l1">Kod, metod och källtabeller.</span></div><i>↗</i></a>
-    <a class="link" href="https://huggingface.co/datasets/birgermoell/swedish-personas" target="_blank" rel="noopener"><div><b>Hugging Face</b><br><span data-i18n="l2">Parquet och datasetkort.</span></div><i>↗</i></a>
-    <a class="link" href="https://docs.nvidia.com/nemo/datadesigner/dev-notes/designing-nemotron-personas" target="_blank" rel="noopener"><div><b>Nemotron-Personas</b><br><span data-i18n="l3">Formatet och pipelinen bakom.</span></div><i>↗</i></a>
+    <a class="link" style="--c:var(--teal)" href="https://github.com/BirgerMoell/swedish-personas" target="_blank" rel="noopener"><div><b>GitHub</b><br><span data-i18n="l1"></span></div><i>↗</i></a>
+    <a class="link" style="--c:var(--amber)" href="https://huggingface.co/datasets/birgermoell/swedish-personas" target="_blank" rel="noopener"><div><b>Hugging Face</b><br><span data-i18n="l2"></span></div><i>↗</i></a>
+    <a class="link" style="--c:var(--violet)" href="https://docs.nvidia.com/nemo/datadesigner/dev-notes/designing-nemotron-personas" target="_blank" rel="noopener"><div><b>Nemotron-Personas</b><br><span data-i18n="l3"></span></div><i>↗</i></a>
   </div>
 </div></section>
 </main>
 
 <footer><div class="wrap">
-  <div><p data-i18n="foot1">Fiktiva data. Alla personer är påhittade; likheter med verkliga personer är en slump.</p><p data-i18n="foot2">Dataset: CC BY 4.0. Kod: MIT.</p></div>
-  <div><p><span data-i18n="foot3">Källor</span>: <a href="https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BE__BE0101__BE0101A/BefolkningCKM/" target="_blank" rel="noopener">SCB</a>, <a href="https://sdb.socialstyrelsen.se/if_dia_sluten_oppen/" target="_blank" rel="noopener">Socialstyrelsen</a>, <a href="https://fohm-app.folkhalsomyndigheten.se/Folkhalsodata/pxweb/sv/A_Folkhalsodata/A_Folkhalsodata__B_HLV/" target="_blank" rel="noopener">Folkhälsomyndigheten</a></p><p data-i18n="foot4">Format efter NVIDIA Nemotron-Personas. Inte affilierat med NVIDIA.</p></div>
+  <div><p data-i18n="foot1"></p><p data-i18n="foot2"></p></div>
+  <div><p><span data-i18n="foot3">Källor</span>: <a href="https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BE__BE0101__BE0101A/BefolkningCKM/" target="_blank" rel="noopener">SCB</a>, <a href="https://sdb.socialstyrelsen.se/if_dia_sluten_oppen/" target="_blank" rel="noopener">Socialstyrelsen</a>, <a href="https://fohm-app.folkhalsomyndigheten.se/Folkhalsodata/pxweb/sv/A_Folkhalsodata/A_Folkhalsodata__B_HLV/" target="_blank" rel="noopener">Folkhälsomyndigheten</a></p><p data-i18n="foot4"></p><p data-i18n="foot5"></p></div>
 </div></footer>
 
 <script>
 const T={
-sv:{nav_explore:"Utforska",nav_format:"Format",nav_data:"Data",nav_start:"Kom igång",
-eyebrow:"Öppna syntetiska data · Sverige · Nemotron-format",h1a:"100 000",h1b:"fiktiva",h1c:"svenskar.",
-lede:"Personas med yrke, hälsa, fritid och bakgrund, grundade i öppen statistik från SCB, Socialstyrelsen och Folkhälsomyndigheten. Inga riktiga personer.",cta1:"Utforska",
-v_story:"Berättelse",v_raw:"Rådata",s1:"personas",s2:"kolumner",s3:"län",s4:"kommuner",
-f_eyebrow:"Format",f_h:"Samma form som <em>Nemotron.</em>",f_p:"Kolumnerna följer NVIDIA:s Nemotron-Personas, så datasetet fungerar där de används: som frö för chatt, verktygsanrop och syntetisk träningsdata. Kommun och län ersätter franska commune och département.",f_note:"Markerade kolumner finns inte i den publika franska utgåvan.",
+sv:{nav_explore:"Berättelser",nav_format:"Format",nav_data:"Data",nav_start:"Kom igång",
+eyebrow:"Öppna syntetiska data · Nemotron-format",h1:"Sverige, <em>en person</em> i taget.",
+lede:"100 000 fiktiva personas med yrke, hälsa, fritid och bakgrund, grundade i öppen statistik. Varje punkt på kartan är en av dem.",
+color_by:"Färga efter",m_age:"Ålder",m_sex:"Kön",m_lan:"Län",m_cond:"Hälsa",hint:"Håll över eller klicka på en punkt",shuffle:"Slumpa",
+leg_lan:"Färg följer län, från söder till norr",lg_age:"år",healthy:"inga kända",c1:"ett",c2:"två",c3:"tre+",conds:"tillstånd",man:"Man",kvinna:"Kvinna",
+s1:"personas",s2:"kolumner",s3:"län",s4:"kommuner",
+e_eyebrow:"Berättelser",e_h:"Åtta sätt att <em>se en människa.</em>",v_story:"Berättelse",v_raw:"Rådata",
+f_eyebrow:"Format",f_h:"Samma form som <em>Nemotron.</em>",f_p:"Kolumnerna följer NVIDIA:s Nemotron-Personas, så datasetet fungerar där de används: som frö för chatt, verktygsanrop och syntetisk träningsdata. Kommun och län ersätter franska commune och département.",f_note:"Markerad kolumn finns inte i den publika franska utgåvan.",
 g1:"Personas",g2:"Profil",g3:"Demografi",
-p_eyebrow:"Demografi",p_h:"Sveriges <em>befolkning,</em> i miniatyr.",p_p:"Län, ålder, kön och civilstånd samplas ur SCB:s gemensamma fördelning för 2025. Pyramiden nedan är datasetets egen, inte SCB:s.",men:"Män",women:"Kvinnor",
+p_eyebrow:"Demografi",p_h:"Sveriges befolkning, <em>i miniatyr.</em>",p_p:"Län, ålder, kön och civilstånd samplas ur SCB:s gemensamma fördelning för 2025. Pyramiden är datasetets egen, färgad efter ålder.",men:"Män",women:"Kvinnor",yrs:"år",
 h_eyebrow:"Hälsa",h_h:"Hälsa som <em>följer åldern.</em>",h_p:"Sjukdomar dras ur verkliga ålders- och könsfördelade tal från Socialstyrelsen och Folkhälsomyndigheten. Välj ett tillstånd.",h_cap:"Andel personer i datasetet med tillståndet, per tioårsgrupp. Registerdata mäter vård i sjukhus och specialistvård; enkätdata är självrapporterade. Tillstånden dras oberoende av varandra.",
 m_eyebrow:"Metod",m_h:"Öppen metod. <em>Synliga gränser.</em>",
 m1h:"Hämta",m1p:"SCB:s befolkningstabell 2025, samt hälsotal från Socialstyrelsen och Folkhälsomyndigheten via öppna API:er.",
 m2h:"Sampla",m2p:"Län, ålder, kön och civilstånd viktas efter SCB. Kommun väljs inom länet. Fast slumpfrö ger samma resultat varje gång.",
 m3h:"Berätta",m3p:"Regler och textmallar skriver yrke, fritid, bakgrund och hälsa på svenska. Ingen språkmodell används.",
 m4h:"Kontrollera",m4p:"Ett valideringsskript jämför urvalet med källorna: län, ålder, kön, civilstånd och 33 sjukdomar.",
-limits:"<b>Begränsningar.</b> Utbildning, hushåll, yrke och all text är heuristik, inte kalibrerad mot statistik. Texten är mer formelartad än språkmodellsgenererad text. Datasetet passar prototyper, tester och språkexperiment, inte slutsatser om befolkningen eller beslut om människor.",
+limits:"<b>Begränsningar.</b> Utbildning, hushåll, yrke och all text är heuristik, inte kalibrerad mot statistik. Texten är mer formelartad än språkmodellsgenererad text. Kartpunkterna ligger på slumpmässiga platser inom sin kommun. Datasetet passar prototyper, tester och språkexperiment, inte slutsatser om befolkningen eller beslut om människor.",
 c_eyebrow:"Kom igång",c_h:"Ladda. <em>Läs. Bygg.</em>",copy:"Kopiera",copied:"Kopierat",l1:"Kod, metod och källtabeller.",l2:"Parquet och datasetkort.",l3:"Formatet och pipelinen bakom.",
-foot1:"Fiktiva data. Alla personer är påhittade; likheter med verkliga personer är en slump.",foot2:"Dataset: CC BY 4.0. Kod: MIT.",foot3:"Källor",foot4:"Format efter NVIDIA Nemotron-Personas. Inte affilierat med NVIDIA.",
+foot1:"Fiktiva data. Alla personer är påhittade; likheter med verkliga personer är en slump.",foot2:"Dataset: CC BY 4.0. Kod: MIT.",foot3:"Källor",foot4:"Kommungränser för kartpunkter: okfse/sweden-geojson (Valmyndigheten).",foot5:"Format efter NVIDIA Nemotron-Personas. Inte affilierat med NVIDIA.",
 tabs:{persona:"Persona",professional_persona:"Yrke",healthcare_persona:"Hälsa",sports_persona:"Sport",arts_persona:"Kultur",travel_persona:"Resor",culinary_persona:"Mat",cultural_background:"Bakgrund"},
-years:"år",man:"Man",kvinna:"Kvinna",share:"Andel",ages:"år"},
-en:{nav_explore:"Explore",nav_format:"Format",nav_data:"Data",nav_start:"Get started",
-eyebrow:"Open synthetic data · Sweden · Nemotron format",h1a:"100,000",h1b:"fictional",h1c:"Swedes.",
-lede:"Personas with work, health, leisure and background, grounded in open statistics from SCB, Socialstyrelsen and Folkhälsomyndigheten. No real people.",cta1:"Explore",
-v_story:"Story",v_raw:"Raw",s1:"personas",s2:"columns",s3:"counties",s4:"municipalities",
-f_eyebrow:"Format",f_h:"The same shape as <em>Nemotron.</em>",f_p:"The columns follow NVIDIA's Nemotron-Personas, so the dataset slots in where those are used: seeding chat, tool-use and synthetic training data. Kommun and län replace the French commune and département.",f_note:"Highlighted columns are not in the public French release.",
+years:"år",share:"Andel",ages:"år",hl:"Hälsa"},
+en:{nav_explore:"Stories",nav_format:"Format",nav_data:"Data",nav_start:"Get started",
+eyebrow:"Open synthetic data · Nemotron format",h1:"Sweden, <em>one person</em> at a time.",
+lede:"100,000 fictional personas with work, health, leisure and background, grounded in open statistics. Every dot on the map is one of them.",
+color_by:"Color by",m_age:"Age",m_sex:"Sex",m_lan:"County",m_cond:"Health",hint:"Hover or click a dot",shuffle:"Shuffle",
+leg_lan:"Color follows county, from south to north",lg_age:"yrs",healthy:"none known",c1:"one",c2:"two",c3:"three+",conds:"conditions",man:"Male",kvinna:"Female",
+s1:"personas",s2:"columns",s3:"counties",s4:"municipalities",
+e_eyebrow:"Stories",e_h:"Eight ways to <em>see a person.</em>",v_story:"Story",v_raw:"Raw",
+f_eyebrow:"Format",f_h:"The same shape as <em>Nemotron.</em>",f_p:"The columns follow NVIDIA's Nemotron-Personas, so the dataset slots in where those are used: seeding chat, tool-use and synthetic training data. Kommun and län replace the French commune and département.",f_note:"Highlighted column is not in the public French release.",
 g1:"Personas",g2:"Profile",g3:"Demographics",
-p_eyebrow:"Demographics",p_h:"Sweden's <em>population,</em> in miniature.",p_p:"County, age, sex and marital status are sampled from SCB's 2025 joint distribution. The pyramid below is the dataset's own, not SCB's.",men:"Men",women:"Women",
+p_eyebrow:"Demographics",p_h:"Sweden's population, <em>in miniature.</em>",p_p:"County, age, sex and marital status are sampled from SCB's 2025 joint distribution. The pyramid is the dataset's own, colored by age.",men:"Men",women:"Women",yrs:"years",
 h_eyebrow:"Health",h_h:"Health that <em>follows age.</em>",h_p:"Conditions are drawn from real age- and sex-specific rates from Socialstyrelsen and Folkhälsomyndigheten. Pick a condition.",h_cap:"Share of personas in the dataset with the condition, by ten-year age group. Register data counts hospital and specialist care; survey data is self-reported. Conditions are drawn independently of each other.",
 m_eyebrow:"Method",m_h:"Open method. <em>Visible limits.</em>",
 m1h:"Fetch",m1p:"SCB's 2025 population table, plus health rates from Socialstyrelsen and Folkhälsomyndigheten through their open APIs.",
 m2h:"Sample",m2p:"County, age, sex and marital status are weighted by SCB. Municipality is drawn within the county. A fixed seed gives the same result every time.",
 m3h:"Write",m3p:"Rules and text templates write work, leisure, background and health in Swedish. No language model is used.",
 m4h:"Check",m4p:"A validation script compares the sample with the sources: county, age, sex, marital status and 33 conditions.",
-limits:"<b>Limits.</b> Education, household, occupation and all text are heuristics, not calibrated to statistics. The text is more formulaic than language-model text. Use it for prototypes, tests and language experiments, not for conclusions about the population or decisions about people.",
+limits:"<b>Limits.</b> Education, household, occupation and all text are heuristics, not calibrated to statistics. The text is more formulaic than language-model text. Map dots sit at random places inside their municipality. Use it for prototypes, tests and language experiments, not for conclusions about the population or decisions about people.",
 c_eyebrow:"Get started",c_h:"Load. <em>Read. Build.</em>",copy:"Copy",copied:"Copied",l1:"Code, method and source tables.",l2:"Parquet and dataset card.",l3:"The format and pipeline behind it.",
-foot1:"Fictional data. Every person is invented; any resemblance to a real person is coincidence.",foot2:"Dataset: CC BY 4.0. Code: MIT.",foot3:"Sources",foot4:"Format after NVIDIA Nemotron-Personas. Not affiliated with NVIDIA.",
+foot1:"Fictional data. Every person is invented; any resemblance to a real person is coincidence.",foot2:"Dataset: CC BY 4.0. Code: MIT.",foot3:"Sources",foot4:"Municipality outlines for the map: okfse/sweden-geojson (Valmyndigheten).",foot5:"Format after NVIDIA Nemotron-Personas. Not affiliated with NVIDIA.",
 tabs:{persona:"Persona",professional_persona:"Work",healthcare_persona:"Health",sports_persona:"Sport",arts_persona:"Culture",travel_persona:"Travel",culinary_persona:"Food",cultural_background:"Background"},
-years:"years",man:"Male",kvinna:"Female",share:"Share",ages:"years"}
+years:"years",share:"Share",ages:"years",hl:"Health"}
 };
 const COND_EN={"högt blodtryck":"High blood pressure","astma":"Asthma","allergi":"Allergy","depression":"Depression","svår oro och ångest":"Severe anxiety","fetma":"Obesity","ADHD":"ADHD","förmaksflimmer":"Atrial fibrillation","demenssjukdom":"Dementia","knäartros":"Knee osteoarthritis","kranskärlssjukdom":"Coronary disease","stroke":"Stroke"};
 const TAB_KEYS=["persona","professional_persona","healthcare_persona","sports_persona","arts_persona","travel_persona","culinary_persona","cultural_background"];
-let lang="sv",sample=[],stats=null,idx=0,tab="persona",cond="högt blodtryck";
+const AGE_STOPS=[[0,[61,245,208]],[20,[74,168,255]],[40,[138,107,255]],[60,[255,95,176]],[80,[255,154,90]],[100,[255,227,106]]];
+const COND_COL=["#46e3b0","#ffd166","#ff8a5b","#ff4d6d"];
+const SEX_COL=["#4aa8ff","#ff6fa8"];
+let lang="sv",sample=[],stats=null,P=null,idx=0,tab="persona",cond="högt blodtryck",mode="age",sel=-1,hoverI=-1,interacted=false;
 const $=id=>document.getElementById(id);
+const hex=c=>"#"+c.map(v=>Math.round(v).toString(16).padStart(2,"0")).join("");
+function ageRGB(a){a=Math.max(0,Math.min(100,a));for(let i=1;i<AGE_STOPS.length;i++){if(a<=AGE_STOPS[i][0]){const [a0,c0]=AGE_STOPS[i-1],[a1,c1]=AGE_STOPS[i],t=(a-a0)/(a1-a0);return c0.map((v,k)=>v+(c1[k]-v)*t)}}return AGE_STOPS.at(-1)[1]}
+const ageHex=a=>hex(ageRGB(a));
 
 function setLang(l){
   lang=l;document.documentElement.lang=l;
   document.querySelectorAll("[data-i18n]").forEach(e=>{const v=T[l][e.dataset.i18n];if(v!=null)e.textContent=v});
   document.querySelectorAll("[data-i18n-html]").forEach(e=>{const v=T[l][e.dataset.i18nHtml];if(v!=null)e.innerHTML=v});
-  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===l));
+  document.querySelectorAll("#lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===l));
   try{localStorage.setItem("lang",l)}catch(e){}
-  renderTabs();renderPersona(false);if(stats){renderPyramid();renderPills();renderHealth()}
+  renderTabs();renderPersona(false);renderLegend();if(P)renderCard(false);if(stats){renderPyramid();renderPills();renderHealth()}
 }
-function nameOf(r){return r.professional_persona.split(" ").slice(0,2).join(" ")}
-function renderTabs(){
-  $("tabs").innerHTML=TAB_KEYS.map(k=>`<button class="tab" role="tab" aria-selected="${k===tab}" data-tab="${k}">${T[lang].tabs[k]}<small>${k}</small></button>`).join("");
+
+/* ---------- hero map ---------- */
+const cv=$("map"),ctx=cv.getContext("2d");
+let W=0,H=0,DPR=1,ox=0,oy=0,sw=0,sh=0,grid=null,sprites={},colorOf=null,landLayer=null,t0=0,delay=null,rafOn=false,rank=null;
+function sprite(color,size){const k=color+size;if(sprites[k])return sprites[k];const c=document.createElement("canvas"),s=size*DPR;c.width=c.height=s;const g=c.getContext("2d");
+  const r=g.createRadialGradient(s/2,s/2,0,s/2,s/2,s/2);r.addColorStop(0,color+"ff");r.addColorStop(.38,color+"ee");r.addColorStop(.6,color+"40");r.addColorStop(1,color+"00");g.fillStyle=r;g.fillRect(0,0,s,s);return sprites[k]=c}
+function lanColor(i){const r=rank[i];return `hsl(${Math.round(r/(P.lans.length-1)*300+0)},88%,62%)`}
+function hslHex(h,s,l){s/=100;l/=100;const k=n=>(n+h/30)%12,a=s*Math.min(l,1-l),f=n=>l-a*Math.max(-1,Math.min(k(n)-3,Math.min(9-k(n),1)));return hex([255*f(0),255*f(8),255*f(4)])}
+function colorFor(i){
+  if(mode==="age")return ageHex(P.age[i]);
+  if(mode==="sex")return SEX_COL[P.sex[i]];
+  if(mode==="cond")return COND_COL[P.cond[i]];
+  return hslHex(Math.round(rank[P.lan[i]]/(P.lans.length-1)*300),88,62);
 }
-function renderPersona(animate=true){
-  if(!sample.length)return;
-  const r=sample[idx],s=$("story");
+function layout(){
+  const r=cv.parentElement.getBoundingClientRect();DPR=Math.min(2,devicePixelRatio||1);W=r.width;H=r.height;
+  cv.width=W*DPR;cv.height=H*DPR;sprites={};
+  if(!P)return;
+  const pad=18;sh=H-pad*2;sw=sh*P.aspect;if(sw>W-pad*2){sw=W-pad*2;sh=sw/P.aspect}
+  ox=(W-sw)/2;oy=(H-sh)/2;
+  P.px=new Float32Array(P.x.length);P.py=new Float32Array(P.x.length);
+  for(let i=0;i<P.x.length;i++){P.px[i]=ox+P.x[i]/65535*sw;P.py[i]=oy+P.y[i]/65535*sh}
+  grid=new Map();const cs=22;
+  for(let i=0;i<P.px.length;i++){const k=Math.floor(P.px[i]/cs)+","+Math.floor(P.py[i]/cs);(grid.get(k)||grid.set(k,[]).get(k)).push(i)}
+  P.cs=cs;
+  landLayer=document.createElement("canvas");landLayer.width=W*DPR;landLayer.height=H*DPR;const g=landLayer.getContext("2d");g.scale(DPR,DPR);g.fillStyle="rgba(150,165,220,.30)";
+  for(let i=0;i<P.land.length;i+=2){g.beginPath();g.arc(ox+P.land[i]/65535*sw,oy+P.land[i+1]/65535*sh,1.05,0,6.283);g.fill()}
+}
+function frame(now){
+  rafOn=false;if(!P)return;
+  const t=(now-t0)/1000,live=!matchMedia("(prefers-reduced-motion:reduce)").matches;
+  ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,cv.width,cv.height);
+  const intro=live?Math.min(1,t/2.4):1;
+  ctx.globalAlpha=Math.min(1,intro*2);ctx.drawImage(landLayer,0,0);
+  const size=9,n=P.px.length;
+  for(let i=0;i<n;i++){
+    const reveal=live?Math.max(0,Math.min(1,(t-delay[i]*1.5)/.5)):1;if(reveal<=0)continue;
+    const tw=live?.78+.22*Math.sin(t*1.4+delay[i]*37+i):1;
+    ctx.globalAlpha=reveal*tw*.9;
+    const s=sprite(P.col[i],size);
+    ctx.drawImage(s,(P.px[i]-size/2)*DPR,(P.py[i]-size/2)*DPR,size*DPR,size*DPR);
+  }
+  ctx.globalCompositeOperation="source-over";ctx.globalAlpha=1;
+  const ring=i=>{if(i<0)return;const pulse=live?1+.18*Math.sin(t*3):1;ctx.strokeStyle="#fff";ctx.lineWidth=1.4*DPR;ctx.beginPath();ctx.arc(P.px[i]*DPR,P.py[i]*DPR,(9*pulse)*DPR,0,6.283);ctx.stroke();ctx.globalAlpha=.25;ctx.beginPath();ctx.arc(P.px[i]*DPR,P.py[i]*DPR,(16*pulse)*DPR,0,6.283);ctx.stroke();ctx.globalAlpha=1};
+  ring(sel);if(hoverI>=0&&hoverI!==sel){ctx.strokeStyle="rgba(255,255,255,.7)";ctx.lineWidth=1*DPR;ctx.beginPath();ctx.arc(P.px[hoverI]*DPR,P.py[hoverI]*DPR,7*DPR,0,6.283);ctx.stroke()}
+  if(live||t<3)schedule();
+}
+function schedule(){if(!rafOn){rafOn=true;requestAnimationFrame(frame)}}
+function recolor(){if(!P)return;P.col=Array.from({length:P.x.length},(_,i)=>colorFor(i));sprites={};schedule()}
+function nearest(mx,my){const cs=P.cs,cx=Math.floor(mx/cs),cy=Math.floor(my/cs);let best=-1,bd=18*18;
+  for(let a=-1;a<=1;a++)for(let b=-1;b<=1;b++){const l=grid.get((cx+a)+","+(cy+b));if(!l)continue;for(const i of l){const d=(P.px[i]-mx)**2+(P.py[i]-my)**2;if(d<bd){bd=d;best=i}}}return best}
+cv.addEventListener("pointermove",e=>{
+  const r=cv.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top;hoverI=P?nearest(mx,my):-1;
+  const h=$("hover");
+  if(hoverI>=0){h.innerHTML=`<b>${P.name[hoverI]}</b> <span>· ${P.age[hoverI]} ${T[lang].years} · ${P.kommuner[P.kom[hoverI]]}</span>`;h.style.left=P.px[hoverI]+"px";h.style.top=P.py[hoverI]+"px";h.style.opacity="1";cv.style.cursor="pointer"}else{h.style.opacity="0";cv.style.cursor="crosshair"}
+  schedule();
+});
+cv.addEventListener("pointerleave",()=>{hoverI=-1;$("hover").style.opacity="0";schedule()});
+cv.addEventListener("click",e=>{const r=cv.getBoundingClientRect(),i=nearest(e.clientX-r.left,e.clientY-r.top);if(i>=0){interacted=true;select(i)}});
+function select(i){sel=i;renderCard(true);schedule()}
+function renderCard(animate){
+  if(sel<0||!P)return;const i=sel,box=$("card-in");
   const apply=()=>{
-    $("ex-name").textContent=nameOf(r);
-    $("ex-meta").textContent=`${r.age} ${T[lang].years} · ${r.kommun}, ${r.lan}`;
-    s.textContent=r[tab];
-    $("count").textContent=`${idx+1} / ${sample.length}`;
+    $("c-name").textContent=P.name[i];
+    $("c-meta").textContent=`${P.age[i]} ${T[lang].years} · ${P.kommuner[P.kom[i]]}, ${P.lans[P.lan[i]]}${P.occupations[P.occ[i]]!=="not_in_workforce"?" · "+P.occupations[P.occ[i]]:""}`;
+    $("c-txt").textContent=P.txt[i];
+    const h=$("c-health");h.textContent=P.health[i];h.dataset.l=T[lang].hl;
+    $("card").style.setProperty("--dot",colorFor(i));
+    box.classList.remove("out");
+  };
+  if(animate){box.classList.add("out");setTimeout(apply,160)}else apply();
+}
+function renderLegend(){
+  const L=$("legend");if(!L)return;
+  if(mode==="age")L.innerHTML=`<span>0</span><span class="ramp"></span><span>100+ ${T[lang].lg_age}</span>`;
+  else if(mode==="sex")L.innerHTML=`<span class="sw" style="color:${SEX_COL[0]}"><i style="background:${SEX_COL[0]}"></i><span style="color:var(--muted)">${T[lang].man}</span></span><span class="sw" style="color:${SEX_COL[1]}"><i style="background:${SEX_COL[1]}"></i><span style="color:var(--muted)">${T[lang].kvinna}</span></span>`;
+  else if(mode==="cond")L.innerHTML=[0,1,2,3].map(k=>`<span class="sw" style="color:${COND_COL[k]}"><i style="background:${COND_COL[k]}"></i><span style="color:var(--muted)">${k===0?T[lang].healthy:T[lang]["c"+k]+" "+T[lang].conds}</span></span>`).join("");
+  else L.innerHTML=`<span class="ramp" style="background:linear-gradient(90deg,hsl(0 88% 62%),hsl(60 88% 62%),hsl(120 88% 62%),hsl(180 88% 62%),hsl(240 88% 62%),hsl(300 88% 62%))"></span><span>${T[lang].leg_lan}</span>`;
+}
+document.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>{mode=b.dataset.mode;document.querySelectorAll("[data-mode]").forEach(x=>x.setAttribute("aria-pressed",x===b));renderLegend();recolor();if(sel>=0)$("card").style.setProperty("--dot",colorFor(sel))});
+$("shuffle").onclick=()=>{interacted=true;select(Math.floor(Math.random()*P.x.length))};
+addEventListener("resize",()=>{layout();recolor()});
+
+/* ---------- story explorer ---------- */
+function nameOf(r){return r.professional_persona.split(" ").slice(0,2).join(" ")}
+function renderTabs(){$("tabs").innerHTML=TAB_KEYS.map(k=>`<button class="tab" role="tab" aria-selected="${k===tab}" data-tab="${k}">${T[lang].tabs[k]}<small>${k}</small></button>`).join("")}
+function renderPersona(animate=true){
+  if(!sample.length)return;const r=sample[idx],s=$("story");
+  const apply=()=>{
+    $("ex-name").textContent=nameOf(r);$("ex-meta").textContent=`${r.age} ${T[lang].years} · ${r.kommun}, ${r.lan}`;
+    s.textContent=r[tab];$("count").textContent=`${idx+1} / ${sample.length}`;
     const facts=[r.occupation==="not_in_workforce"?null:r.occupation,r.marital_status,r.household_type,r.education_level].filter(Boolean);
     $("facts").innerHTML=facts.map(f=>`<span class="fact">${f}</span>`).join("");
-    const o={};Object.keys(r).forEach(k=>o[k]=r[k]);
-    $("raw").innerHTML=Object.entries(o).map(([k,v])=>`<b>${k}</b>: ${typeof v==="string"?JSON.stringify(v):v}`).join("\n");
+    $("raw").innerHTML=Object.entries(r).map(([k,v])=>`<b>${k}</b>: ${typeof v==="string"?JSON.stringify(v):v}`).join("\n");
+    $("explorer").style.setProperty("--tint",`linear-gradient(90deg,${ageHex(Math.max(0,r.age-25))},${ageHex(r.age)},${ageHex(Math.min(100,r.age+25))})`);
+    $("explorer").style.setProperty("--tintc",ageHex(r.age));
     s.classList.remove("swap");
   };
   if(animate){s.classList.add("swap");setTimeout(apply,170)}else apply();
@@ -386,64 +528,62 @@ function go(d){idx=(idx+d+sample.length)%sample.length;renderPersona()}
 $("prev").onclick=()=>go(-1);$("next").onclick=()=>go(1);
 document.addEventListener("keydown",e=>{if(e.target.closest("input,textarea"))return;if(e.key==="ArrowRight")go(1);if(e.key==="ArrowLeft")go(-1)});
 $("tabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(!b)return;tab=b.dataset.tab;renderTabs();renderPersona()});
-document.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>{
-  document.querySelectorAll("[data-view]").forEach(x=>x.setAttribute("aria-pressed",x===b));
-  $("explorer").classList.toggle("israw",b.dataset.view==="raw");
-});
-document.querySelectorAll(".lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
-document.querySelectorAll("[data-copy]").forEach(b=>b.onclick=()=>{
-  const el=$(b.dataset.copy);const t=[...el.childNodes].filter(n=>n!==b).map(n=>n.textContent).join("").trim();
-  navigator.clipboard&&navigator.clipboard.writeText(t).then(()=>{b.textContent=T[lang].copied;setTimeout(()=>b.textContent=T[lang].copy,1400)});
-});
+document.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>{document.querySelectorAll("[data-view]").forEach(x=>x.setAttribute("aria-pressed",x===b));$("explorer").classList.toggle("israw",b.dataset.view==="raw")});
+document.querySelectorAll("#lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
+document.querySelectorAll("[data-copy]").forEach(b=>b.onclick=()=>{const el=$(b.dataset.copy);const t=el.textContent.replace(b.textContent,"").trim();navigator.clipboard&&navigator.clipboard.writeText(t).then(()=>{b.textContent=T[lang].copied;setTimeout(()=>b.textContent=T[lang].copy,1400)})});
 
-/* charts */
+/* ---------- charts ---------- */
 function renderPyramid(){
-  const P=stats.pyramid,W=720,rowH=22,H=P.length*rowH,gap=64,mid=W/2,max=Math.max(...P.flatMap(p=>[p.Man,p.Kvinna]));
-  const half=mid-gap/2-4;let out="";
-  P.forEach((p,i)=>{
-    const y=(P.length-1-i)*rowH,mw=p.Man/max*half,ww=p.Kvinna/max*half;
-    out+=`<rect x="${mid-gap/2-mw}" y="${y+3}" width="${mw}" height="${rowH-6}" rx="2" fill="var(--ink)" opacity=".88"><title>${p.band}: ${p.Man.toLocaleString(lang)}</title></rect>`;
-    out+=`<rect x="${mid+gap/2}" y="${y+3}" width="${ww}" height="${rowH-6}" rx="2" fill="var(--accent)" opacity=".9"><title>${p.band}: ${p.Kvinna.toLocaleString(lang)}</title></rect>`;
-    if(i%2===0||i===P.length-1)out+=`<text x="${mid}" y="${y+rowH/2+4}" text-anchor="middle">${p.band}</text>`;
+  const R=stats.pyramid,Wd=760,rowH=22,Hh=R.length*rowH,gap=70,mid=Wd/2,max=Math.max(...R.flatMap(p=>[p.Man,p.Kvinna])),half=mid-gap/2-4;let out="";
+  R.forEach((p,i)=>{
+    const y=(R.length-1-i)*rowH,mw=p.Man/max*half,ww=p.Kvinna/max*half,age=Math.min(100,i*5+2),c=ageHex(age);
+    out+=`<rect x="${mid-gap/2-mw}" y="${y+3}" width="${mw}" height="${rowH-6}" rx="3" fill="${c}" opacity=".92"><title>${p.band} · ${p.Man.toLocaleString(lang)}</title></rect>`;
+    out+=`<rect x="${mid+gap/2}" y="${y+3}" width="${ww}" height="${rowH-6}" rx="3" fill="${c}" opacity=".92"><title>${p.band} · ${p.Kvinna.toLocaleString(lang)}</title></rect>`;
+    if(i%2===0||i===R.length-1)out+=`<text x="${mid}" y="${y+rowH/2+4}" text-anchor="middle">${p.band}</text>`;
   });
-  $("pyramid").innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Population pyramid">${out}</svg>`;
+  $("pyramid").innerHTML=`<svg viewBox="0 0 ${Wd} ${Hh}" role="img" aria-label="Population pyramid"><defs><filter id="gl" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="3"/></filter></defs><g filter="url(#gl)" opacity=".4">${out.replace(/<title>.*?<\/title>/g,"")}</g>${out}</svg>`;
 }
-function renderPills(){
-  $("pills").innerHTML=Object.keys(stats.health).map(c=>`<button class="pill" aria-pressed="${c===cond}" data-c="${c}">${lang==="en"?COND_EN[c]:c[0].toUpperCase()+c.slice(1)}</button>`).join("");
-}
-const mL=34,mT=10,mB=26,mR=10,CW=720,CH=300;
+function renderPills(){$("pills").innerHTML=Object.keys(stats.health).map(c=>`<button class="pill" aria-pressed="${c===cond}" data-c="${c}">${lang==="en"?COND_EN[c]:c[0].toUpperCase()+c.slice(1)}</button>`).join("")}
+const mL=36,mT=12,mB=28,mR=12,CW=760,CH=320;
 function renderHealth(){
-  const d=stats.health[cond],all=[...d.Man,...d.Kvinna].filter(v=>v!=null),max=Math.max(1,...all),top=Math.max(2,Math.ceil(max*1.12/ (max>20?10:max>8?5:2))*(max>20?10:max>8?5:2));
-  const x=i=>mL+i*(CW-mL-mR)/(stats.decades.length-1),y=v=>mT+(1-v/top)*(CH-mT-mB);
-  let g="";
-  for(let k=0;k<=4;k++){const v=top*k/4;g+=`<line x1="${mL}" x2="${CW-mR}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${mL-8}" y="${y(v)+4}" text-anchor="end">${Number.isInteger(v)?v:v.toFixed(1)}%</text>`}
-  stats.decades.forEach((l,i)=>{if(i%1===0)g+=`<text x="${x(i)}" y="${CH-6}" text-anchor="middle">${l.split("–")[0]}</text>`});
-  const line=(arr,color)=>{const pts=arr.map((v,i)=>v==null?null:[x(i),y(v)]).filter(Boolean);return `<path d="${pts.map((p,i)=>(i?"L":"M")+p[0].toFixed(1)+" "+p[1].toFixed(1)).join(" ")}" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`+pts.map(p=>`<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="3" fill="${color}"/>`).join("")};
-  $("health").innerHTML=`<svg id="hsvg" viewBox="0 0 ${CW} ${CH}" role="img" aria-label="${cond}">${g}${line(d.Man,"var(--ink)")}${line(d.Kvinna,"var(--accent)")}<line id="cross" y1="${mT}" y2="${CH-mB}" stroke="var(--faint)" stroke-dasharray="3 4" opacity="0"/></svg>`;
+  const d=stats.health[cond],all=[...d.Man,...d.Kvinna].filter(v=>v!=null),max=Math.max(1,...all),st=max>20?10:max>8?5:2,top=Math.max(2,Math.ceil(max*1.12/st)*st);
+  const x=i=>mL+i*(CW-mL-mR)/(stats.decades.length-1),y=v=>mT+(1-v/top)*(CH-mT-mB);let g="";
+  for(let k=0;k<=4;k++){const v=top*k/4;g+=`<line x1="${mL}" x2="${CW-mR}" y1="${y(v)}" y2="${y(v)}" stroke="rgba(255,255,255,.07)"/><text x="${mL-8}" y="${y(v)+4}" text-anchor="end">${Number.isInteger(v)?v:v.toFixed(1)}%</text>`}
+  stats.decades.forEach((l,i)=>{g+=`<text x="${x(i)}" y="${CH-6}" text-anchor="middle">${l.split("–")[0]}</text>`});
+  const line=(arr,color,id)=>{const pts=arr.map((v,i)=>v==null?null:[x(i),y(v)]).filter(Boolean);const dstr=pts.map((p,i)=>(i?"L":"M")+p[0].toFixed(1)+" "+p[1].toFixed(1)).join(" ");
+    const area=dstr+` L${pts.at(-1)[0].toFixed(1)} ${y(0)} L${pts[0][0].toFixed(1)} ${y(0)} Z`;
+    return `<defs><linearGradient id="a${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${color}" stop-opacity=".35"/><stop offset="1" stop-color="${color}" stop-opacity="0"/></linearGradient></defs><path d="${area}" fill="url(#a${id})"/><path d="${dstr}" fill="none" stroke="${color}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 6px ${color})"/>`+pts.map(p=>`<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="3.4" fill="${color}"/>`).join("")};
+  $("health").innerHTML=`<svg id="hsvg" viewBox="0 0 ${CW} ${CH}" role="img" aria-label="${cond}">${g}${line(d.Man,"#4aa8ff","m")}${line(d.Kvinna,"#ff5fb0","k")}<line id="cross" y1="${mT}" y2="${CH-mB}" stroke="rgba(255,255,255,.3)" stroke-dasharray="3 4" opacity="0"/></svg>`;
   const svg=$("hsvg"),cross=$("cross"),tip=$("tip");
-  svg.addEventListener("pointermove",e=>{
-    const r=svg.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*CW;
+  svg.addEventListener("pointermove",e=>{const r=svg.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*CW;
     const i=Math.max(0,Math.min(stats.decades.length-1,Math.round((px-mL)/((CW-mL-mR)/(stats.decades.length-1)))));
     cross.setAttribute("x1",x(i));cross.setAttribute("x2",x(i));cross.setAttribute("opacity","1");
     const f=v=>v==null?"–":(v<10?v.toFixed(1):Math.round(v))+"%";
-    tip.innerHTML=`${stats.decades[i]} ${T[lang].ages}<br>${T[lang].man} ${f(d.Man[i])} · ${T[lang].kvinna} ${f(d.Kvinna[i])}`;
-    tip.style.left=(x(i)/CW*r.width)+"px";tip.style.top=(Math.min(y(d.Man[i]??0),y(d.Kvinna[i]??0))/CH*r.height)+"px";tip.style.opacity="1";
-  });
+    tip.innerHTML=`${stats.decades[i]} ${T[lang].ages}<br><span style="color:#4aa8ff">●</span> ${T[lang].man} ${f(d.Man[i])} &nbsp; <span style="color:#ff5fb0">●</span> ${T[lang].kvinna} ${f(d.Kvinna[i])}`;
+    tip.style.left=(x(i)/CW*r.width)+"px";tip.style.top=(Math.min(y(d.Man[i]??0),y(d.Kvinna[i]??0))/CH*r.height)+"px";tip.style.opacity="1"});
   svg.addEventListener("pointerleave",()=>{cross.setAttribute("opacity","0");tip.style.opacity="0"});
 }
 $("pills").addEventListener("click",e=>{const b=e.target.closest(".pill");if(!b)return;cond=b.dataset.c;renderPills();renderHealth()});
 
-/* chrome */
+/* ---------- chrome ---------- */
 const hd=document.querySelector("header");addEventListener("scroll",()=>hd.classList.toggle("scrolled",scrollY>8),{passive:true});
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.1});
 document.querySelectorAll(".reveal").forEach(e=>io.observe(e));
-
 try{const l=localStorage.getItem("lang");if(l&&T[l])lang=l;else if((navigator.language||"").toLowerCase().startsWith("en"))lang="en"}catch(e){}
 setLang(lang);
-Promise.all([fetch("sample.json").then(r=>r.json()),fetch("stats.json").then(r=>r.json())]).then(([s,st])=>{
-  sample=s;stats=st;idx=Math.min(7,s.length-1);$("s-cols").textContent=st.columns;
-  renderPersona(false);renderPyramid();renderPills();renderHealth();
-}).catch(()=>{$("story").textContent="Preview unavailable."});
+
+Promise.all([fetch("sample.json").then(r=>r.json()),fetch("stats.json").then(r=>r.json()),fetch("people.json").then(r=>r.json())]).then(([s,st,p])=>{
+  sample=s;stats=st;P=p;idx=Math.min(7,s.length-1);$("s-cols").textContent=st.columns;
+  // county rank by mean latitude (south to north) for the rainbow
+  const sums=P.lans.map(()=>[0,0]);P.lan.forEach((l,i)=>{sums[l][0]+=P.y[i];sums[l][1]++});
+  const order=sums.map((s,i)=>[s[0]/Math.max(1,s[1]),i]).sort((a,b)=>b[0]-a[0]);rank=new Array(P.lans.length);order.forEach(([,i],r)=>rank[i]=r);
+  // reveal order radiates from Stockholm
+  const sl=P.lans.indexOf("Stockholm");let cx=0,cy=0,n=0;P.lan.forEach((l,i)=>{if(l===sl){cx+=P.x[i];cy+=P.y[i];n++}});cx/=n;cy/=n;
+  delay=new Float32Array(P.x.length);let md=0;for(let i=0;i<P.x.length;i++){delay[i]=Math.hypot(P.x[i]-cx,(P.y[i]-cy)*1.0);md=Math.max(md,delay[i])}for(let i=0;i<delay.length;i++)delay[i]=delay[i]/md*.9+Math.random()*.1;
+  layout();recolor();t0=performance.now();select(Math.floor(Math.random()*P.x.length));
+  renderLegend();renderPersona(false);renderPyramid();renderPills();renderHealth();schedule();
+  setInterval(()=>{if(!interacted&&document.visibilityState==="visible"&&scrollY<innerHeight)select(Math.floor(Math.random()*P.x.length))},6500);
+}).catch(e=>{console.error(e);$("c-txt").textContent="Preview unavailable."});
 </script>
 </body>
 </html>

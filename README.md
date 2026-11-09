@@ -15,6 +15,8 @@ python3 src/fetch_health.py
 python3 src/generate.py --size 100000 --seed 20251005
 python3 src/validate.py
 python3 src/make_site_data.py
+python3 src/make_map_data.py   # dot map for the website (downloads municipality outlines)
+python3 src/make_site_data.py
 ```
 
 The SCB download step requires internet access. It writes the exact source cells to `data/` with the table URL and retrieval date in `data/source.json`. The generation step writes `data/swedish_personas_100k.parquet` and `data/generation_report.json`. The same source files, Python version and seed produce the same sample. Parquet output may differ byte for byte across Arrow versions.
