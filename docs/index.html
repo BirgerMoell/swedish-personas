@@ -339,7 +339,11 @@ footer a{border-bottom:1px solid var(--line2)}footer a:hover{color:var(--ink)}
 <span class="k">from</span> datasets <span class="k">import</span> load_dataset
 
 ds = <span class="f">load_dataset</span>(<span class="s">"birgermoell/swedish-personas"</span>, split=<span class="s">"train"</span>)
-<span class="f">print</span>(ds[<span class="s">0</span>][<span class="s">"persona"</span>])</div>
+<span class="f">print</span>(ds[<span class="s">0</span>][<span class="s">"healthcare_persona"</span>])
+
+<span class="c"># Sampled conditions, keyed by uuid</span>
+conds = <span class="f">load_dataset</span>(<span class="s">"birgermoell/swedish-personas"</span>,
+    data_files=<span class="s">"data/swedish_personas_100k_conditions.parquet"</span>, split=<span class="s">"train"</span>)</div>
     <div class="code" id="c2"><button class="copy" data-copy="c2" data-i18n="copy">Kopiera</button><span class="c"># Återskapa från källorna</span>
 pip install -r requirements.txt
 python3 src/fetch_scb.py
