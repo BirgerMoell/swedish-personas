@@ -19,6 +19,7 @@ repo_id = f"{username}/swedish-personas"
 api.create_repo(repo_id=repo_id, repo_type="dataset", private=False, exist_ok=True)
 for local, remote in (
     (ROOT / "hub/README.md", "README.md"),
+    (ROOT / "docs/og.png", "images/banner.png"),
     (ROOT / "LICENSE-DATA", "LICENSE"),
     (PARQUET, "data/swedish_personas_100k.parquet"),
     (DATA / "generation_report.json", "sources/generation_report.json"),
