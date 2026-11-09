@@ -1,42 +1,449 @@
 <!doctype html>
 <html lang="sv">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="100 000 fiktiva svenska personbeskrivningar med demografisk grund från SCB. Öppen kod och reproducerbar metod.">
-  <title>Swedish Personas · öppna syntetiska personbeskrivningar</title>
-  <style>
-    :root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#173325;background:#f4f5ec;font-synthesis:none}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0}a{color:inherit}button{font:inherit}
-    .shell{max-width:1180px;margin:auto;padding:0 28px}.top{border-bottom:1px solid #d8ded2;background:#f4f5ec;position:sticky;top:0;z-index:5}.top .shell{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-weight:850;letter-spacing:-.07em;font-size:1.36rem;text-decoration:none}.brand span{color:#e86f42}.nav{display:flex;gap:26px;font-size:.9rem;font-weight:650}.nav a{text-decoration:none}.nav a:hover,.text-link:hover{text-decoration:underline}
-    .hero{background:#173325;color:#f5f5eb;overflow:hidden}.hero .shell{padding-top:92px;padding-bottom:92px;display:grid;grid-template-columns:1.22fr .78fr;align-items:center;gap:55px}.eyebrow{text-transform:uppercase;letter-spacing:.17em;font-weight:800;font-size:.72rem;color:#e89c70}.hero h1{font-size:clamp(3.4rem,7.2vw,7rem);line-height:.97;letter-spacing:-.075em;margin:18px 0 28px}.hero h1 em{font-style:normal;color:#f0aa83}.lead{font-size:1.16rem;line-height:1.65;max-width:680px;color:#d9e4d8}.actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:34px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 19px;border-radius:8px;font-weight:750;text-decoration:none;border:1px solid #f3a47a;background:#f3a47a;color:#173325}.button.secondary{background:transparent;color:#f6f2e7;border-color:#789280}.button:hover{transform:translateY(-2px)}.hero-art{min-height:380px;position:relative}.orb{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.24);display:grid;place-items:center;font-weight:800;box-shadow:0 15px 50px #0b211740}.orb.one{width:280px;height:280px;top:20px;left:15px;background:#dce6c7;color:#143a30;font-size:7rem;transform:rotate(-12deg)}.orb.two{width:215px;height:215px;top:140px;right:-10px;background:#f1a37c;color:#173325;font-size:5.7rem;transform:rotate(14deg)}.orb.three{width:140px;height:140px;top:10px;right:30px;background:#7e9f8c;color:#fff;font-size:3.3rem}.art-label{position:absolute;bottom:0;left:15px;color:#c3d4c8;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
-    section{padding:84px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:32px}.kicker{color:#bd6544;text-transform:uppercase;letter-spacing:.15em;font-size:.73rem;font-weight:850}.section-head h2,h2{font-size:clamp(2.2rem,4vw,3.7rem);letter-spacing:-.065em;line-height:1.05;margin:10px 0 0}.section-head p{max-width:420px;line-height:1.55;color:#506256}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:-34px;position:relative}.stat{background:#fff;border:1px solid #e0e5d9;border-radius:12px;padding:24px}.stat b{font-size:2.2rem;letter-spacing:-.07em;display:block}.stat span{font-size:.83rem;color:#64766a}
-    .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}.card{background:#fff;border:1px solid #dce3d9;border-radius:14px;padding:30px}.card h3{font-size:1.35rem;letter-spacing:-.04em;margin:0 0 14px}.card p{line-height:1.65;color:#485e51}.persona{min-height:255px;font-size:1.15rem;line-height:1.7}.card-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}.pill{border:1px solid #d5e1d4;background:#f6f9f3;color:#356042;border-radius:100px;padding:7px 10px;font-size:.76rem;font-weight:750}.card-foot{border-top:1px solid #e7ebe4;padding-top:18px;margin-top:22px;display:flex;justify-content:space-between;align-items:center;gap:15px}.small{font-size:.82rem;color:#6f8074}.next{border:1px solid #234f38;border-radius:7px;background:#234f38;color:white;padding:9px 13px;cursor:pointer}.next:hover{background:#35684c}
-    .bars{display:grid;gap:18px;margin-top:22px}.bar-head{display:flex;justify-content:space-between;font-size:.86rem;margin-bottom:6px}.track{height:11px;border-radius:20px;background:#e7ede4;overflow:hidden}.fill{height:100%;background:#eaa27e;border-radius:20px}.method{background:#e6ecdf}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{background:#f7f9f4;border-radius:12px;padding:27px}.num{color:#ce6949;font-weight:850;font-size:.82rem;letter-spacing:.15em}.step h3{font-size:1.3rem;margin:20px 0 10px}.step p{margin:0;line-height:1.62;color:#536758;font-size:.92rem}.notice{margin-top:25px;border-left:4px solid #b7674a;background:#fff;padding:18px 22px;line-height:1.6;color:#43594a}
-    .code{background:#193628;color:#e5f1e2;border-radius:12px;padding:23px;overflow-x:auto;font: .9rem/1.65 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.code .comment{color:#95b69a}.resources{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.resource{background:#fff;border:1px solid #dce3d9;border-radius:12px;padding:25px;text-decoration:none;min-height:165px}.resource:hover{border-color:#376449;transform:translateY(-2px)}.resource b{font-size:1.18rem}.resource p{color:#607367;line-height:1.5;font-size:.88rem}.resource .arrow{display:block;color:#bf6948;font-size:1.5rem;margin-top:16px}.footer{background:#173325;color:#dce9dc;padding:38px 0}.footer .shell{display:flex;justify-content:space-between;gap:20px;line-height:1.5}.footer a{color:#f3aa84}
-    @media(max-width:800px){.hero .shell,.grid{grid-template-columns:1fr}.hero-art{display:none}.stats{grid-template-columns:repeat(2,1fr)}.steps,.resources{grid-template-columns:1fr}.section-head{display:block}.nav{gap:13px;font-size:.78rem}.nav a:nth-child(2){display:none}section{padding:65px 0}.hero .shell{padding-top:70px;padding-bottom:94px}}
-    @media(max-width:480px){.shell{padding:0 18px}.stats{gap:8px}.stat{padding:15px}.stat b{font-size:1.7rem}.hero h1{font-size:3.7rem}.nav a:nth-child(3){display:none}.footer .shell{display:block}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Swedish Personas</title>
+<meta name="description" content="100 000 fictional Swedish personas in the Nemotron-Personas format, grounded in open statistics from SCB, Socialstyrelsen and Folkhälsomyndigheten.">
+<meta property="og:title" content="Swedish Personas">
+<meta property="og:description" content="100 000 fiktiva svenskar. Öppna syntetiska personas i Nemotron-formatet.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23f2c230'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbfaf7; --surface:#ffffff; --ink:#111110; --muted:#6c6b66; --faint:#a3a19a; --line:#e8e6df;
+  --accent:#1c4fd6; --sun:#f2c230; --code:#f3f1ea;
+  --serif:"Instrument Serif","Iowan Old Style","Times New Roman",serif;
+  --sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0c0c0d; --surface:#141415; --ink:#f3f2ee; --muted:#9a9993; --faint:#5f5e59; --line:#232324; --accent:#7b9cff; --code:#131314;
+}}
+:root[data-theme="dark"]{--bg:#0c0c0d; --surface:#141415; --ink:#f3f2ee; --muted:#9a9993; --faint:#5f5e59; --line:#232324; --accent:#7b9cff; --code:#131314}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+::selection{background:var(--sun);color:#111}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono)}
+.eyebrow{font:500 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.015em}
+h2{font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1.04}
+h2 em,h1 em{font-style:italic}
+p{margin:0}
+section{padding:112px 0}
+.lede{color:var(--muted);font-size:1.125rem;line-height:1.6;max-width:34rem}
+
+/* header */
+header{position:sticky;top:0;z-index:20;backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid transparent;transition:border-color .3s}
+header.scrolled{border-bottom-color:var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.mark{display:flex;align-items:center;gap:10px;font-weight:500;letter-spacing:-.01em}
+.mark i{width:10px;height:10px;border-radius:50%;background:var(--sun);display:block}
+nav{display:flex;align-items:center;gap:28px;font-size:14px;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.lang{display:flex;gap:2px;padding:3px;border:1px solid var(--line);border-radius:99px;font-size:12px}
+.lang button{padding:3px 10px;border-radius:99px;color:var(--muted);transition:.2s}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+
+/* hero */
+.hero{padding:120px 0 72px}
+.hero h1{font-size:clamp(3.6rem,10.5vw,9.2rem);line-height:.92;letter-spacing:-.035em;margin:28px 0 36px}
+.hero .row{display:flex;gap:48px;justify-content:space-between;align-items:flex-end;flex-wrap:wrap}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 20px;border-radius:99px;font-size:14.5px;font-weight:500;border:1px solid var(--ink);transition:transform .25s var(--ease),background .2s,color .2s}
+.btn.solid{background:var(--ink);color:var(--bg)}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+
+/* explorer */
+.explorer{background:var(--surface);border:1px solid var(--line);border-radius:28px;overflow:hidden}
+.ex-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 28px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.ex-title{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.ex-title b{font:400 clamp(1.7rem,3vw,2.3rem)/1 var(--serif);letter-spacing:-.01em}
+.ex-title span{color:var(--muted);font-size:14px}
+.ctrl{display:flex;gap:6px;align-items:center}
+.ico{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;transition:.2s;color:var(--muted)}
+.ico:hover{border-color:var(--ink);color:var(--ink)}
+.count{font:400 12px var(--mono);color:var(--faint);min-width:54px;text-align:center}
+.ex-body{display:grid;grid-template-columns:220px 1fr;min-height:400px}
+.tabs{display:flex;flex-direction:column;padding:20px 12px;border-right:1px solid var(--line);gap:2px}
+.tab{text-align:left;padding:9px 14px;border-radius:10px;color:var(--muted);font-size:14.5px;transition:.2s}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{background:var(--bg);color:var(--ink)}
+.tab small{display:block;font:400 11px var(--mono);color:var(--faint);margin-top:1px}
+.panel{padding:40px clamp(24px,4vw,56px);display:flex;flex-direction:column;justify-content:space-between;gap:32px}
+.story{font:400 clamp(1.5rem,2.6vw,2.15rem)/1.32 var(--serif);letter-spacing:-.008em;max-width:34ch;transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.story.swap{opacity:0;transform:translateY(6px)}
+.raw{display:none;font:400 12.5px/1.75 var(--mono);color:var(--muted);overflow:auto;max-height:340px;white-space:pre-wrap;word-break:break-word}
+.raw b{color:var(--ink);font-weight:500}
+.explorer.israw .story{display:none}.explorer.israw .raw{display:block}
+.facts{display:flex;flex-wrap:wrap;gap:8px}
+.fact{border:1px solid var(--line);border-radius:99px;padding:5px 12px;font-size:12.5px;color:var(--muted)}
+.view{display:flex;gap:2px;padding:3px;border:1px solid var(--line);border-radius:99px;font-size:12px}
+.view button{padding:3px 11px;border-radius:99px;color:var(--muted)}
+.view button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:72px}
+.stat{padding:32px 0 0}
+.stat b{display:block;font:400 clamp(2.6rem,5vw,4.2rem)/1 var(--serif);letter-spacing:-.03em}
+.stat span{font-size:13.5px;color:var(--muted)}
+
+/* schema */
+.split{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:start}
+.cols{display:grid;gap:36px}
+.group h3{font:500 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:400 12.5px var(--mono);padding:6px 11px;border:1px solid var(--line);border-radius:8px;background:var(--surface);transition:.2s}
+.chip:hover{border-color:var(--ink)}
+.chip.new{border-color:var(--sun);box-shadow:inset 0 0 0 1px var(--sun)}
+.note{font-size:13.5px;color:var(--muted);margin-top:28px;display:flex;gap:10px;align-items:center}
+.note i{width:9px;height:9px;border-radius:3px;border:1px solid var(--sun);box-shadow:inset 0 0 0 1px var(--sun);display:block;flex:none}
+
+/* charts */
+.chart-card{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:32px}
+.legend{display:flex;gap:20px;font-size:13px;color:var(--muted);margin-bottom:16px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:-1px}
+svg{display:block;width:100%;height:auto;overflow:visible}
+svg text{font:400 11px var(--mono);fill:var(--faint)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.pill{padding:6px 14px;border:1px solid var(--line);border-radius:99px;font-size:13px;color:var(--muted);transition:.2s}
+.pill:hover{color:var(--ink);border-color:var(--ink)}
+.pill[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12px;padding:8px 10px;border-radius:8px;opacity:0;transition:opacity .15s;white-space:nowrap;transform:translate(-50%,-110%)}
+.rel{position:relative}
+.caption{font-size:13.5px;color:var(--muted);margin-top:20px;max-width:60ch}
+
+/* method */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);margin-top:56px}
+.step{padding:28px 28px 0 0}
+.step .n{font:400 12px var(--mono);color:var(--faint)}
+.step h3{font:400 1.7rem/1.1 var(--serif);margin:14px 0 10px}
+.step p{font-size:14.5px;color:var(--muted)}
+.limits{margin-top:56px;padding:28px 32px;border:1px solid var(--line);border-radius:20px;background:var(--surface);font-size:14.5px;color:var(--muted)}
+.limits b{color:var(--ink);font-weight:500}
+
+/* code */
+.code{position:relative;background:var(--code);border:1px solid var(--line);border-radius:18px;padding:22px 24px;font:400 13px/1.75 var(--mono);overflow:auto;white-space:pre}
+.code .c{color:var(--faint)}
+.copy{position:absolute;top:12px;right:12px;font:500 11.5px var(--sans);color:var(--muted);border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:4px 11px}
+.copy:hover{color:var(--ink);border-color:var(--ink)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}
+.links{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.link{display:flex;flex-direction:column;justify-content:space-between;gap:36px;padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--surface);transition:transform .3s var(--ease),border-color .2s;min-height:150px}
+.link:hover{transform:translateY(-3px);border-color:var(--ink)}
+.link b{font-weight:500}.link span{font-size:13.5px;color:var(--muted)}
+.link i{font-style:normal;align-self:flex-end;font-size:20px}
+
+footer{border-top:1px solid var(--line);padding:48px 0 64px;font-size:13.5px;color:var(--muted)}
+footer .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px}
+footer p+p{margin-top:8px}
+footer a{border-bottom:1px solid var(--line)}footer a:hover{color:var(--ink);border-color:var(--ink)}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+
+@media (max-width:860px){
+  section{padding:80px 0}
+  nav a.hide{display:none}
+  .ex-body{grid-template-columns:1fr}
+  .tabs{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line);padding:10px}
+  .tab{white-space:nowrap}.tab small{display:none}
+  .split,.grid2,footer .wrap{grid-template-columns:1fr}
+  .split{gap:40px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr 1fr;row-gap:32px}
+  .links{grid-template-columns:1fr}
+  .hero{padding-top:72px}
+  .chart-card{padding:20px}
+}
+@media (max-width:520px){.wrap{padding:0 16px}.steps{grid-template-columns:1fr}nav{gap:16px}.ex-head{padding:16px 18px}}
+</style>
 </head>
 <body>
-  <header class="top"><div class="shell"><a class="brand" href="#top">swedish<span>·</span>personas</a><nav class="nav" aria-label="Huvudmeny"><a href="#exempel">Exempel</a><a href="#metod">Metod</a><a href="#kom-igang">Kom igång</a><a href="https://github.com/BirgerMoell/swedish-personas">GitHub ↗</a></nav></div></header>
-  <main id="top">
-    <div class="hero"><div class="shell"><div><div class="eyebrow">Öppna syntetiska data · Sverige</div><h1>100 000<br><em>fiktiva</em><br>personer.</h1><p class="lead">Svenska personbeskrivningar för prototyper, tester och språkexperiment. Ålder, kön enligt SCB:s tabell, civilstånd och län samplas från öppna befolkningsdata. Varje rad är skapad från grunden.</p><div class="actions"><a class="button" href="#kom-igang">Utforska datasetet ↓</a><a class="button secondary" href="https://github.com/BirgerMoell/swedish-personas">Se koden ↗</a></div></div><div class="hero-art" aria-hidden="true"><div class="orb one">S</div><div class="orb two">E</div><div class="orb three">100k</div><div class="art-label">Fiction with structure</div></div></div></div>
-    <div class="shell stats" aria-label="Dataset i siffror"><div class="stat"><b id="count-rows">100 000</b><span>syntetiska beskrivningar</span></div><div class="stat"><b id="count-counties">21</b><span>län</span></div><div class="stat"><b id="count-municipalities">290</b><span>kommuner</span></div><div class="stat"><b>2025</b><span>SCB:s referensår</span></div></div>
-    <section id="exempel"><div class="shell"><div class="section-head"><div><div class="kicker">En titt på innehållet</div><h2>En rad, en vardag.</h2></div><p>Bläddra bland exempel från datasetet. Namn och livsdetaljer är påhittade; statistiken beskriver fördelningar, inte verkliga individer.</p></div><div class="grid"><article class="card"><h3>Exempelpersona</h3><div class="persona" id="persona-text">Läser in ett exempel …</div><div class="card-meta" id="persona-meta"></div><div class="card-foot"><span class="small" id="persona-index">Exempel 1 av 10</span><button class="next" id="next-persona" type="button">Nästa exempel →</button></div></article><article class="card"><h3>Åldersfördelning</h3><p>Andel av det syntetiska urvalet. De gemensamma demografiska cellerna viktas med SCB:s befolkningstal.</p><div class="bars" id="age-bars"></div><p class="small">Källa: SCB, tabell 000007ME, 2025. Slumpurvalet har naturlig variation.</p></article></div></div></section>
-    <section class="method" id="metod"><div class="shell"><div class="section-head"><div><div class="kicker">Så fungerar det</div><h2>Öppen metod.<br>Synliga begränsningar.</h2></div></div><div class="steps"><div class="step"><div class="num">01 / HÄMTA</div><h3>SCB:s aggregat</h3><p>Kod hämtar 2025 års gemensamma fördelning för län, ålder, registrerat kön och civilstånd samt separata kommuntotaler.</p></div><div class="step"><div class="num">02 / SAMPLA</div><h3>100 000 profiler</h3><p>En fast slumpfrö gör urvalet reproducerbart. Kommun väljs inom län efter kommuntotal, utan kommunvis ålderskalibrering.</p></div><div class="step"><div class="num">03 / SKRIV</div><h3>Svensk text</h3><p>Regler och textmallar bygger fiktiva livsdetaljer. Inga personregister eller språkmodeller används för dessa texter.</p></div></div><div class="notice"><strong>Viktigt att veta.</strong> Födelseland, utbildning, sysselsättning, bransch och intressen är illustrativa antaganden, inte mått från SCB. Materialet ska inte användas för slutsatser om befolkningen eller beslut om människor. SCB:s 2025-celler är sekretesskyddade med statistisk osäkerhet.</div></div></section>
-    <section id="kom-igang"><div class="shell"><div class="section-head"><div><div class="kicker">Kom igång</div><h2>Data och kod<br>inom räckhåll.</h2></div><p>Parquet-formatet fungerar direkt med Hugging Face Datasets, pandas och PyArrow. Alla steg för att återskapa filen finns på GitHub.</p></div><pre class="code"><span class="comment"># Installera och skapa datasetet från SCB:s öppna API</span>
-python3 -m pip install -r requirements.txt
+<header id="top"><div class="wrap bar">
+  <a class="mark" href="#top"><i></i>Swedish Personas</a>
+  <nav>
+    <a class="hide" href="#explore" data-i18n="nav_explore">Utforska</a>
+    <a class="hide" href="#format" data-i18n="nav_format">Format</a>
+    <a class="hide" href="#grounding" data-i18n="nav_data">Data</a>
+    <a href="#start" data-i18n="nav_start">Kom igång</a>
+    <div class="lang" role="group" aria-label="Language"><button data-lang="sv" aria-pressed="true">SV</button><button data-lang="en" aria-pressed="false">EN</button></div>
+  </nav>
+</div></header>
+
+<main>
+<div class="wrap hero">
+  <div class="eyebrow reveal" data-i18n="eyebrow">Öppna syntetiska data · Sverige · Nemotron-format</div>
+  <h1 class="reveal"><span data-i18n="h1a">100 000</span><br><em data-i18n="h1b">fiktiva</em> <span data-i18n="h1c">svenskar.</span></h1>
+  <div class="row reveal">
+    <p class="lede" data-i18n="lede">Personas med yrke, hälsa, fritid och bakgrund, grundade i öppen statistik från SCB, Socialstyrelsen och Folkhälsomyndigheten. Inga riktiga personer.</p>
+    <div class="cta">
+      <a class="btn solid" href="#explore"><span data-i18n="cta1">Utforska</span> ↓</a>
+      <a class="btn ghost" href="https://huggingface.co/datasets/birgermoell/swedish-personas" target="_blank" rel="noopener"><span>Hugging Face</span> ↗</a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap" id="explore">
+  <div class="explorer reveal" id="explorer">
+    <div class="ex-head">
+      <div class="ex-title"><b id="ex-name">—</b><span id="ex-meta"></span></div>
+      <div class="ctrl">
+        <div class="view" role="group"><button data-view="story" aria-pressed="true" data-i18n="v_story">Berättelse</button><button data-view="raw" aria-pressed="false" data-i18n="v_raw">Rådata</button></div>
+        <button class="ico" id="prev" aria-label="Previous">←</button>
+        <span class="count" id="count"></span>
+        <button class="ico" id="next" aria-label="Next">→</button>
+      </div>
+    </div>
+    <div class="ex-body">
+      <div class="tabs" role="tablist" id="tabs"></div>
+      <div class="panel">
+        <p class="story" id="story"></p>
+        <pre class="raw" id="raw"></pre>
+        <div class="facts" id="facts"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats reveal">
+    <div class="stat"><b>100 000</b><span data-i18n="s1">personas</span></div>
+    <div class="stat"><b id="s-cols">23</b><span data-i18n="s2">kolumner</span></div>
+    <div class="stat"><b>21</b><span data-i18n="s3">län</span></div>
+    <div class="stat"><b>290</b><span data-i18n="s4">kommuner</span></div>
+  </div>
+</div>
+
+<section id="format"><div class="wrap split">
+  <div class="reveal">
+    <div class="eyebrow" data-i18n="f_eyebrow">Format</div>
+    <h2 style="margin:18px 0 22px" data-i18n-html="f_h">Samma form som <em>Nemotron.</em></h2>
+    <p class="lede" data-i18n="f_p">Kolumnerna följer NVIDIA:s Nemotron-Personas, så datasetet fungerar där de används: som frö för chatt, verktygsanrop och syntetisk träningsdata. Kommun och län ersätter franska commune och département.</p>
+    <p class="note"><i></i><span data-i18n="f_note">Markerade kolumner finns inte i den publika franska utgåvan.</span></p>
+  </div>
+  <div class="cols reveal">
+    <div class="group"><h3 data-i18n="g1">Personas</h3><div class="chips">
+      <span class="chip">uuid</span><span class="chip">persona</span><span class="chip">professional_persona</span><span class="chip new">healthcare_persona</span><span class="chip">sports_persona</span><span class="chip">arts_persona</span><span class="chip">travel_persona</span><span class="chip">culinary_persona</span></div></div>
+    <div class="group"><h3 data-i18n="g2">Profil</h3><div class="chips">
+      <span class="chip">cultural_background</span><span class="chip">skills_and_expertise</span><span class="chip">skills_and_expertise_list</span><span class="chip">hobbies_and_interests</span><span class="chip">hobbies_and_interests_list</span><span class="chip">career_goals_and_ambitions</span></div></div>
+    <div class="group"><h3 data-i18n="g3">Demografi</h3><div class="chips">
+      <span class="chip">sex</span><span class="chip">age</span><span class="chip">marital_status</span><span class="chip">household_type</span><span class="chip">education_level</span><span class="chip">occupation</span><span class="chip">kommun</span><span class="chip">lan</span><span class="chip">country</span></div></div>
+  </div>
+</div></section>
+
+<section id="grounding" style="padding-top:0"><div class="wrap">
+  <div class="reveal" style="max-width:40rem">
+    <div class="eyebrow" data-i18n="p_eyebrow">Demografi</div>
+    <h2 style="margin:18px 0 22px" data-i18n-html="p_h">Sveriges <em>befolkning,</em> i miniatyr.</h2>
+    <p class="lede" data-i18n="p_p">Län, ålder, kön och civilstånd samplas ur SCB:s gemensamma fördelning för 2025. Pyramiden nedan är datasetets egen, inte SCB:s.</p>
+  </div>
+  <div class="chart-card reveal" style="margin-top:48px">
+    <div class="legend"><span><i style="background:var(--ink)"></i><span data-i18n="men">Män</span></span><span><i style="background:var(--accent)"></i><span data-i18n="women">Kvinnor</span></span></div>
+    <div id="pyramid"></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="reveal" style="max-width:40rem">
+    <div class="eyebrow" data-i18n="h_eyebrow">Hälsa</div>
+    <h2 style="margin:18px 0 22px" data-i18n-html="h_h">Hälsa som <em>följer åldern.</em></h2>
+    <p class="lede" data-i18n="h_p">Sjukdomar dras ur verkliga åldersoch könsfördelade tal från Socialstyrelsen och Folkhälsomyndigheten. Välj ett tillstånd.</p>
+  </div>
+  <div class="chart-card reveal" style="margin-top:48px">
+    <div class="pills" id="pills"></div>
+    <div class="legend"><span><i style="background:var(--ink)"></i><span data-i18n="men">Män</span></span><span><i style="background:var(--accent)"></i><span data-i18n="women">Kvinnor</span></span></div>
+    <div class="rel" id="health-wrap"><div id="health"></div><div class="tip" id="tip"></div></div>
+    <p class="caption" data-i18n="h_cap">Andel personer i datasetet med tillståndet, per tioårsgrupp. Registerdata mäter vård i sjukhus och specialistvård; enkätdata är självrapporterade. Tillstånden dras oberoende av varandra.</p>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="reveal" style="max-width:40rem">
+    <div class="eyebrow" data-i18n="m_eyebrow">Metod</div>
+    <h2 style="margin:18px 0 0" data-i18n-html="m_h">Öppen metod. <em>Synliga gränser.</em></h2>
+  </div>
+  <div class="steps reveal">
+    <div class="step"><div class="n">01</div><h3 data-i18n="m1h">Hämta</h3><p data-i18n="m1p">SCB:s befolkningstabell 2025, samt hälsotal från Socialstyrelsen och Folkhälsomyndigheten via öppna API:er.</p></div>
+    <div class="step"><div class="n">02</div><h3 data-i18n="m2h">Sampla</h3><p data-i18n="m2p">Län, ålder, kön och civilstånd viktas efter SCB. Kommun väljs inom länet. Fast slumpfrö ger samma resultat varje gång.</p></div>
+    <div class="step"><div class="n">03</div><h3 data-i18n="m3h">Berätta</h3><p data-i18n="m3p">Regler och textmallar skriver yrke, fritid, bakgrund och hälsa på svenska. Ingen språkmodell används.</p></div>
+    <div class="step"><div class="n">04</div><h3 data-i18n="m4h">Kontrollera</h3><p data-i18n="m4p">Ett valideringsskript jämför urvalet med källorna: län, ålder, kön, civilstånd och 33 sjukdomar.</p></div>
+  </div>
+  <div class="limits reveal" data-i18n-html="limits"><b>Begränsningar.</b> Utbildning, hushåll, yrke och all text är heuristik, inte kalibrerad mot statistik. Texten är mer formelartad än språkmodellsgenererad text. Datasetet passar prototyper, tester och språkexperiment, inte slutsatser om befolkningen eller beslut om människor.</div>
+</div></section>
+
+<section id="start" style="padding-top:0"><div class="wrap">
+  <div class="reveal" style="max-width:40rem">
+    <div class="eyebrow" data-i18n="c_eyebrow">Kom igång</div>
+    <h2 style="margin:18px 0 0" data-i18n-html="c_h">Ladda. <em>Läs. Bygg.</em></h2>
+  </div>
+  <div class="grid2 reveal">
+    <div class="code" id="c1"><button class="copy" data-copy="c1" data-i18n="copy">Kopiera</button><span class="c"># Hugging Face</span>
+from datasets import load_dataset
+
+ds = load_dataset("birgermoell/swedish-personas", split="train")
+print(ds[0]["persona"])</div>
+    <div class="code" id="c2"><button class="copy" data-copy="c2" data-i18n="copy">Kopiera</button><span class="c"># Återskapa från källorna</span>
+pip install -r requirements.txt
 python3 src/fetch_scb.py
-python3 src/generate.py --size 100000 --seed 20251005</pre><div class="resources"><a class="resource" href="https://github.com/BirgerMoell/swedish-personas"><b>Generator på GitHub</b><p>All källkod, dokumentation och ursprungstabeller.</p><span class="arrow">↗</span></a><a class="resource" id="hf-resource" href="https://huggingface.co/datasets/birgermoell/swedish-personas"><b>Dataset på Hugging Face</b><p>Parquet-fil, datasetkort och visning av rader.</p><span class="arrow">↗</span></a><a class="resource" href="https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BE__BE0101__BE0101A/BefolkningCKM/"><b>Källan hos SCB</b><p>Befolkning efter region, civilstånd, ålder och kön 2025.</p><span class="arrow">↗</span></a></div></div></section>
-  </main>
-  <footer class="footer"><div class="shell"><span>Swedish Personas · Fiktiva data, reproducerbar metod.</span><span>Dataset: CC BY 4.0 · Kod: MIT · Källa: <a href="https://www.scb.se/">SCB</a></span></div></footer>
-  <script>
-    let sample=[], current=0;
-    const el=id=>document.getElementById(id);
-    function showPersona(){if(!sample.length)return; const row=sample[current]; el('persona-text').textContent=row.persona_sv; el('persona-meta').replaceChildren(...[`${row.age_100_plus?'100+':row.age} år`,row.municipality,row.county,row.employment_status].map(value=>{const tag=document.createElement('span');tag.className='pill';tag.textContent=value;return tag}));el('persona-index').textContent=`Exempel ${current+1} av ${sample.length}`}
-    el('next-persona').addEventListener('click',()=>{current=(current+1)%sample.length;showPersona()});
-    Promise.all([fetch('sample.json').then(r=>r.json()),fetch('stats.json').then(r=>r.json())]).then(([rows,stats])=>{sample=rows;showPersona();el('count-rows').textContent=stats.rows.toLocaleString('sv-SE');el('count-counties').textContent=stats.counties;el('count-municipalities').textContent=stats.municipalities;const bars=el('age-bars');Object.entries(stats.age_bins).forEach(([label,count])=>{const pct=100*count/stats.rows;const item=document.createElement('div');item.innerHTML=`<div class="bar-head"><span>${label} år</span><strong>${pct.toFixed(1).replace('.',',')} %</strong></div><div class="track"><div class="fill" style="width:${pct}%"></div></div>`;bars.appendChild(item)})}).catch(()=>{el('persona-text').textContent='Förhandsvisningen kunde inte läsas in. Dataset och kod finns i projektarkivet.'});
-  </script>
+python3 src/fetch_health.py
+python3 src/generate.py --size 100000
+python3 src/validate.py</div>
+  </div>
+  <div class="links reveal">
+    <a class="link" href="https://github.com/BirgerMoell/swedish-personas" target="_blank" rel="noopener"><div><b>GitHub</b><br><span data-i18n="l1">Kod, metod och källtabeller.</span></div><i>↗</i></a>
+    <a class="link" href="https://huggingface.co/datasets/birgermoell/swedish-personas" target="_blank" rel="noopener"><div><b>Hugging Face</b><br><span data-i18n="l2">Parquet och datasetkort.</span></div><i>↗</i></a>
+    <a class="link" href="https://docs.nvidia.com/nemo/datadesigner/dev-notes/designing-nemotron-personas" target="_blank" rel="noopener"><div><b>Nemotron-Personas</b><br><span data-i18n="l3">Formatet och pipelinen bakom.</span></div><i>↗</i></a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div><p data-i18n="foot1">Fiktiva data. Alla personer är påhittade; likheter med verkliga personer är en slump.</p><p data-i18n="foot2">Dataset: CC BY 4.0. Kod: MIT.</p></div>
+  <div><p><span data-i18n="foot3">Källor</span>: <a href="https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BE__BE0101__BE0101A/BefolkningCKM/" target="_blank" rel="noopener">SCB</a>, <a href="https://sdb.socialstyrelsen.se/if_dia_sluten_oppen/" target="_blank" rel="noopener">Socialstyrelsen</a>, <a href="https://fohm-app.folkhalsomyndigheten.se/Folkhalsodata/pxweb/sv/A_Folkhalsodata/A_Folkhalsodata__B_HLV/" target="_blank" rel="noopener">Folkhälsomyndigheten</a></p><p data-i18n="foot4">Format efter NVIDIA Nemotron-Personas. Inte affilierat med NVIDIA.</p></div>
+</div></footer>
+
+<script>
+const T={
+sv:{nav_explore:"Utforska",nav_format:"Format",nav_data:"Data",nav_start:"Kom igång",
+eyebrow:"Öppna syntetiska data · Sverige · Nemotron-format",h1a:"100 000",h1b:"fiktiva",h1c:"svenskar.",
+lede:"Personas med yrke, hälsa, fritid och bakgrund, grundade i öppen statistik från SCB, Socialstyrelsen och Folkhälsomyndigheten. Inga riktiga personer.",cta1:"Utforska",
+v_story:"Berättelse",v_raw:"Rådata",s1:"personas",s2:"kolumner",s3:"län",s4:"kommuner",
+f_eyebrow:"Format",f_h:"Samma form som <em>Nemotron.</em>",f_p:"Kolumnerna följer NVIDIA:s Nemotron-Personas, så datasetet fungerar där de används: som frö för chatt, verktygsanrop och syntetisk träningsdata. Kommun och län ersätter franska commune och département.",f_note:"Markerade kolumner finns inte i den publika franska utgåvan.",
+g1:"Personas",g2:"Profil",g3:"Demografi",
+p_eyebrow:"Demografi",p_h:"Sveriges <em>befolkning,</em> i miniatyr.",p_p:"Län, ålder, kön och civilstånd samplas ur SCB:s gemensamma fördelning för 2025. Pyramiden nedan är datasetets egen, inte SCB:s.",men:"Män",women:"Kvinnor",
+h_eyebrow:"Hälsa",h_h:"Hälsa som <em>följer åldern.</em>",h_p:"Sjukdomar dras ur verkliga ålders- och könsfördelade tal från Socialstyrelsen och Folkhälsomyndigheten. Välj ett tillstånd.",h_cap:"Andel personer i datasetet med tillståndet, per tioårsgrupp. Registerdata mäter vård i sjukhus och specialistvård; enkätdata är självrapporterade. Tillstånden dras oberoende av varandra.",
+m_eyebrow:"Metod",m_h:"Öppen metod. <em>Synliga gränser.</em>",
+m1h:"Hämta",m1p:"SCB:s befolkningstabell 2025, samt hälsotal från Socialstyrelsen och Folkhälsomyndigheten via öppna API:er.",
+m2h:"Sampla",m2p:"Län, ålder, kön och civilstånd viktas efter SCB. Kommun väljs inom länet. Fast slumpfrö ger samma resultat varje gång.",
+m3h:"Berätta",m3p:"Regler och textmallar skriver yrke, fritid, bakgrund och hälsa på svenska. Ingen språkmodell används.",
+m4h:"Kontrollera",m4p:"Ett valideringsskript jämför urvalet med källorna: län, ålder, kön, civilstånd och 33 sjukdomar.",
+limits:"<b>Begränsningar.</b> Utbildning, hushåll, yrke och all text är heuristik, inte kalibrerad mot statistik. Texten är mer formelartad än språkmodellsgenererad text. Datasetet passar prototyper, tester och språkexperiment, inte slutsatser om befolkningen eller beslut om människor.",
+c_eyebrow:"Kom igång",c_h:"Ladda. <em>Läs. Bygg.</em>",copy:"Kopiera",copied:"Kopierat",l1:"Kod, metod och källtabeller.",l2:"Parquet och datasetkort.",l3:"Formatet och pipelinen bakom.",
+foot1:"Fiktiva data. Alla personer är påhittade; likheter med verkliga personer är en slump.",foot2:"Dataset: CC BY 4.0. Kod: MIT.",foot3:"Källor",foot4:"Format efter NVIDIA Nemotron-Personas. Inte affilierat med NVIDIA.",
+tabs:{persona:"Persona",professional_persona:"Yrke",healthcare_persona:"Hälsa",sports_persona:"Sport",arts_persona:"Kultur",travel_persona:"Resor",culinary_persona:"Mat",cultural_background:"Bakgrund"},
+years:"år",man:"Man",kvinna:"Kvinna",share:"Andel",ages:"år"},
+en:{nav_explore:"Explore",nav_format:"Format",nav_data:"Data",nav_start:"Get started",
+eyebrow:"Open synthetic data · Sweden · Nemotron format",h1a:"100,000",h1b:"fictional",h1c:"Swedes.",
+lede:"Personas with work, health, leisure and background, grounded in open statistics from SCB, Socialstyrelsen and Folkhälsomyndigheten. No real people.",cta1:"Explore",
+v_story:"Story",v_raw:"Raw",s1:"personas",s2:"columns",s3:"counties",s4:"municipalities",
+f_eyebrow:"Format",f_h:"The same shape as <em>Nemotron.</em>",f_p:"The columns follow NVIDIA's Nemotron-Personas, so the dataset slots in where those are used: seeding chat, tool-use and synthetic training data. Kommun and län replace the French commune and département.",f_note:"Highlighted columns are not in the public French release.",
+g1:"Personas",g2:"Profile",g3:"Demographics",
+p_eyebrow:"Demographics",p_h:"Sweden's <em>population,</em> in miniature.",p_p:"County, age, sex and marital status are sampled from SCB's 2025 joint distribution. The pyramid below is the dataset's own, not SCB's.",men:"Men",women:"Women",
+h_eyebrow:"Health",h_h:"Health that <em>follows age.</em>",h_p:"Conditions are drawn from real age- and sex-specific rates from Socialstyrelsen and Folkhälsomyndigheten. Pick a condition.",h_cap:"Share of personas in the dataset with the condition, by ten-year age group. Register data counts hospital and specialist care; survey data is self-reported. Conditions are drawn independently of each other.",
+m_eyebrow:"Method",m_h:"Open method. <em>Visible limits.</em>",
+m1h:"Fetch",m1p:"SCB's 2025 population table, plus health rates from Socialstyrelsen and Folkhälsomyndigheten through their open APIs.",
+m2h:"Sample",m2p:"County, age, sex and marital status are weighted by SCB. Municipality is drawn within the county. A fixed seed gives the same result every time.",
+m3h:"Write",m3p:"Rules and text templates write work, leisure, background and health in Swedish. No language model is used.",
+m4h:"Check",m4p:"A validation script compares the sample with the sources: county, age, sex, marital status and 33 conditions.",
+limits:"<b>Limits.</b> Education, household, occupation and all text are heuristics, not calibrated to statistics. The text is more formulaic than language-model text. Use it for prototypes, tests and language experiments, not for conclusions about the population or decisions about people.",
+c_eyebrow:"Get started",c_h:"Load. <em>Read. Build.</em>",copy:"Copy",copied:"Copied",l1:"Code, method and source tables.",l2:"Parquet and dataset card.",l3:"The format and pipeline behind it.",
+foot1:"Fictional data. Every person is invented; any resemblance to a real person is coincidence.",foot2:"Dataset: CC BY 4.0. Code: MIT.",foot3:"Sources",foot4:"Format after NVIDIA Nemotron-Personas. Not affiliated with NVIDIA.",
+tabs:{persona:"Persona",professional_persona:"Work",healthcare_persona:"Health",sports_persona:"Sport",arts_persona:"Culture",travel_persona:"Travel",culinary_persona:"Food",cultural_background:"Background"},
+years:"years",man:"Male",kvinna:"Female",share:"Share",ages:"years"}
+};
+const COND_EN={"högt blodtryck":"High blood pressure","astma":"Asthma","allergi":"Allergy","depression":"Depression","svår oro och ångest":"Severe anxiety","fetma":"Obesity","ADHD":"ADHD","förmaksflimmer":"Atrial fibrillation","demenssjukdom":"Dementia","knäartros":"Knee osteoarthritis","kranskärlssjukdom":"Coronary disease","stroke":"Stroke"};
+const TAB_KEYS=["persona","professional_persona","healthcare_persona","sports_persona","arts_persona","travel_persona","culinary_persona","cultural_background"];
+let lang="sv",sample=[],stats=null,idx=0,tab="persona",cond="högt blodtryck";
+const $=id=>document.getElementById(id);
+
+function setLang(l){
+  lang=l;document.documentElement.lang=l;
+  document.querySelectorAll("[data-i18n]").forEach(e=>{const v=T[l][e.dataset.i18n];if(v!=null)e.textContent=v});
+  document.querySelectorAll("[data-i18n-html]").forEach(e=>{const v=T[l][e.dataset.i18nHtml];if(v!=null)e.innerHTML=v});
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===l));
+  try{localStorage.setItem("lang",l)}catch(e){}
+  renderTabs();renderPersona(false);if(stats){renderPyramid();renderPills();renderHealth()}
+}
+function nameOf(r){return r.professional_persona.split(" ").slice(0,2).join(" ")}
+function renderTabs(){
+  $("tabs").innerHTML=TAB_KEYS.map(k=>`<button class="tab" role="tab" aria-selected="${k===tab}" data-tab="${k}">${T[lang].tabs[k]}<small>${k}</small></button>`).join("");
+}
+function renderPersona(animate=true){
+  if(!sample.length)return;
+  const r=sample[idx],s=$("story");
+  const apply=()=>{
+    $("ex-name").textContent=nameOf(r);
+    $("ex-meta").textContent=`${r.age} ${T[lang].years} · ${r.kommun}, ${r.lan}`;
+    s.textContent=r[tab];
+    $("count").textContent=`${idx+1} / ${sample.length}`;
+    const facts=[r.occupation==="not_in_workforce"?null:r.occupation,r.marital_status,r.household_type,r.education_level].filter(Boolean);
+    $("facts").innerHTML=facts.map(f=>`<span class="fact">${f}</span>`).join("");
+    const o={};Object.keys(r).forEach(k=>o[k]=r[k]);
+    $("raw").innerHTML=Object.entries(o).map(([k,v])=>`<b>${k}</b>: ${typeof v==="string"?JSON.stringify(v):v}`).join("\n");
+    s.classList.remove("swap");
+  };
+  if(animate){s.classList.add("swap");setTimeout(apply,170)}else apply();
+}
+function go(d){idx=(idx+d+sample.length)%sample.length;renderPersona()}
+$("prev").onclick=()=>go(-1);$("next").onclick=()=>go(1);
+document.addEventListener("keydown",e=>{if(e.target.closest("input,textarea"))return;if(e.key==="ArrowRight")go(1);if(e.key==="ArrowLeft")go(-1)});
+$("tabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(!b)return;tab=b.dataset.tab;renderTabs();renderPersona()});
+document.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll("[data-view]").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  $("explorer").classList.toggle("israw",b.dataset.view==="raw");
+});
+document.querySelectorAll(".lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
+document.querySelectorAll("[data-copy]").forEach(b=>b.onclick=()=>{
+  const el=$(b.dataset.copy);const t=[...el.childNodes].filter(n=>n!==b).map(n=>n.textContent).join("").trim();
+  navigator.clipboard&&navigator.clipboard.writeText(t).then(()=>{b.textContent=T[lang].copied;setTimeout(()=>b.textContent=T[lang].copy,1400)});
+});
+
+/* charts */
+function renderPyramid(){
+  const P=stats.pyramid,W=720,rowH=22,H=P.length*rowH,gap=64,mid=W/2,max=Math.max(...P.flatMap(p=>[p.Man,p.Kvinna]));
+  const half=mid-gap/2-4;let out="";
+  P.forEach((p,i)=>{
+    const y=(P.length-1-i)*rowH,mw=p.Man/max*half,ww=p.Kvinna/max*half;
+    out+=`<rect x="${mid-gap/2-mw}" y="${y+3}" width="${mw}" height="${rowH-6}" rx="2" fill="var(--ink)" opacity=".88"><title>${p.band}: ${p.Man.toLocaleString(lang)}</title></rect>`;
+    out+=`<rect x="${mid+gap/2}" y="${y+3}" width="${ww}" height="${rowH-6}" rx="2" fill="var(--accent)" opacity=".9"><title>${p.band}: ${p.Kvinna.toLocaleString(lang)}</title></rect>`;
+    if(i%2===0||i===P.length-1)out+=`<text x="${mid}" y="${y+rowH/2+4}" text-anchor="middle">${p.band}</text>`;
+  });
+  $("pyramid").innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Population pyramid">${out}</svg>`;
+}
+function renderPills(){
+  $("pills").innerHTML=Object.keys(stats.health).map(c=>`<button class="pill" aria-pressed="${c===cond}" data-c="${c}">${lang==="en"?COND_EN[c]:c[0].toUpperCase()+c.slice(1)}</button>`).join("");
+}
+const mL=34,mT=10,mB=26,mR=10,CW=720,CH=300;
+function renderHealth(){
+  const d=stats.health[cond],all=[...d.Man,...d.Kvinna].filter(v=>v!=null),max=Math.max(1,...all),top=Math.max(2,Math.ceil(max*1.12/ (max>20?10:max>8?5:2))*(max>20?10:max>8?5:2));
+  const x=i=>mL+i*(CW-mL-mR)/(stats.decades.length-1),y=v=>mT+(1-v/top)*(CH-mT-mB);
+  let g="";
+  for(let k=0;k<=4;k++){const v=top*k/4;g+=`<line x1="${mL}" x2="${CW-mR}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${mL-8}" y="${y(v)+4}" text-anchor="end">${Number.isInteger(v)?v:v.toFixed(1)}%</text>`}
+  stats.decades.forEach((l,i)=>{if(i%1===0)g+=`<text x="${x(i)}" y="${CH-6}" text-anchor="middle">${l.split("–")[0]}</text>`});
+  const line=(arr,color)=>{const pts=arr.map((v,i)=>v==null?null:[x(i),y(v)]).filter(Boolean);return `<path d="${pts.map((p,i)=>(i?"L":"M")+p[0].toFixed(1)+" "+p[1].toFixed(1)).join(" ")}" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`+pts.map(p=>`<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="3" fill="${color}"/>`).join("")};
+  $("health").innerHTML=`<svg id="hsvg" viewBox="0 0 ${CW} ${CH}" role="img" aria-label="${cond}">${g}${line(d.Man,"var(--ink)")}${line(d.Kvinna,"var(--accent)")}<line id="cross" y1="${mT}" y2="${CH-mB}" stroke="var(--faint)" stroke-dasharray="3 4" opacity="0"/></svg>`;
+  const svg=$("hsvg"),cross=$("cross"),tip=$("tip");
+  svg.addEventListener("pointermove",e=>{
+    const r=svg.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*CW;
+    const i=Math.max(0,Math.min(stats.decades.length-1,Math.round((px-mL)/((CW-mL-mR)/(stats.decades.length-1)))));
+    cross.setAttribute("x1",x(i));cross.setAttribute("x2",x(i));cross.setAttribute("opacity","1");
+    const f=v=>v==null?"–":(v<10?v.toFixed(1):Math.round(v))+"%";
+    tip.innerHTML=`${stats.decades[i]} ${T[lang].ages}<br>${T[lang].man} ${f(d.Man[i])} · ${T[lang].kvinna} ${f(d.Kvinna[i])}`;
+    tip.style.left=(x(i)/CW*r.width)+"px";tip.style.top=(Math.min(y(d.Man[i]??0),y(d.Kvinna[i]??0))/CH*r.height)+"px";tip.style.opacity="1";
+  });
+  svg.addEventListener("pointerleave",()=>{cross.setAttribute("opacity","0");tip.style.opacity="0"});
+}
+$("pills").addEventListener("click",e=>{const b=e.target.closest(".pill");if(!b)return;cond=b.dataset.c;renderPills();renderHealth()});
+
+/* chrome */
+const hd=document.querySelector("header");addEventListener("scroll",()=>hd.classList.toggle("scrolled",scrollY>8),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(e=>io.observe(e));
+
+try{const l=localStorage.getItem("lang");if(l&&T[l])lang=l;else if((navigator.language||"").toLowerCase().startsWith("en"))lang="en"}catch(e){}
+setLang(lang);
+Promise.all([fetch("sample.json").then(r=>r.json()),fetch("stats.json").then(r=>r.json())]).then(([s,st])=>{
+  sample=s;stats=st;idx=Math.min(7,s.length-1);$("s-cols").textContent=st.columns;
+  renderPersona(false);renderPyramid();renderPills();renderHealth();
+}).catch(()=>{$("story").textContent="Preview unavailable."});
+</script>
 </body>
 </html>
