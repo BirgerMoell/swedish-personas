@@ -40,11 +40,11 @@ configs:
 <p align="center"><b>Sverige, en person i taget.</b><br>100,000 fictional Swedish personas in the Nemotron-Personas format.</p>
 
 <p align="center">
-[![License: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-8a6bff?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
-[![Personas](https://img.shields.io/badge/personas-100%2C000-3df5d0?style=flat-square)](https://huggingface.co/datasets/birgermoell/swedish-personas)
-[![Format](https://img.shields.io/badge/format-Nemotron--Personas-ff5fb0?style=flat-square)](https://docs.nvidia.com/nemo/datadesigner/dev-notes/designing-nemotron-personas)
-[![Language](https://img.shields.io/badge/language-Svenska-4aa8ff?style=flat-square)](https://huggingface.co/datasets/birgermoell/swedish-personas)
-[![Website](https://img.shields.io/badge/website-live-ffb36c?style=flat-square)](https://birgermoell.github.io/swedish-personas/)
+<a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://img.shields.io/badge/data-CC%20BY%204.0-8a6bff?style=flat-square" alt="License: CC BY 4.0"></a>
+<a href="https://huggingface.co/datasets/birgermoell/swedish-personas"><img src="https://img.shields.io/badge/personas-100%2C000-3df5d0?style=flat-square" alt="Personas"></a>
+<a href="https://docs.nvidia.com/nemo/datadesigner/dev-notes/designing-nemotron-personas"><img src="https://img.shields.io/badge/format-Nemotron--Personas-ff5fb0?style=flat-square" alt="Format"></a>
+<a href="https://huggingface.co/datasets/birgermoell/swedish-personas"><img src="https://img.shields.io/badge/language-Svenska-4aa8ff?style=flat-square" alt="Language"></a>
+<a href="https://birgermoell.github.io/swedish-personas/"><img src="https://img.shields.io/badge/website-live-ffb36c?style=flat-square" alt="Website"></a>
 </p>
 
 <p align="center"><a href="https://birgermoell.github.io/swedish-personas/">Website</a> · <a href="https://github.com/BirgerMoell/swedish-personas">GitHub</a> · <a href="https://docs.nvidia.com/nemo/datadesigner/dev-notes/designing-nemotron-personas">Nemotron-Personas</a></p>
