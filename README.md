@@ -27,7 +27,7 @@
 
 ## v2 in progress
 
-Branch `v2-structured` rebuilds the dataset after an external quality review of v1. A preview is on Hugging Face at [RenaissanceLabsEU/swedish-personas-v2](https://huggingface.co/datasets/RenaissanceLabsEU/swedish-personas-v2); its card (`hub_v2/README.md`) has the numbers and the known limits.
+`main` now holds v2, which rebuilds the dataset after an external quality review of v1. The last v1 commit is `1534856`. A preview is on Hugging Face at [RenaissanceLabsEU/swedish-personas-v2](https://huggingface.co/datasets/RenaissanceLabsEU/swedish-personas-v2); its card (`hub_v2/README.md`) has the numbers and the known limits.
 
 | Step | Script |
 |---|---|
