@@ -30,6 +30,6 @@
     "Man": 50344,
     "Kvinna": 49656
   },
-  "conditions_rows": 143551,
-  "note": "SCB-weighted: joint county/age/sex/marital status; municipality by county totals. Health conditions: independent draws from Socialstyrelsen (specialist-care patients per 100k) and Folkhälsomyndigheten (self-reported share) age/sex rates. Household type, education, occupation and all text fields are rule-based heuristics, not calibrated to SCB and not LLM generated."
+  "conditions_rows": 143786,
+  "note": "SCB-weighted: joint county/age/sex/marital status; municipality by county totals. Names, background, country of birth, education, employment and occupation are sampled from SCB tables (see src/structure.py). Health conditions keep the Socialstyrelsen and Folkhälsomyndigheten age/sex rates, with assumed within-cluster correlation. Household type and all text fields are rule-based placeholders, not LLM generated."
 }

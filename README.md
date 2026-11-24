@@ -24,6 +24,23 @@
 
 ---
 
+
+## v2 in progress
+
+Branch `v2-structured` rebuilds the dataset after an external quality review of v1. A preview is on Hugging Face at [RenaissanceLabsEU/swedish-personas-v2](https://huggingface.co/datasets/RenaissanceLabsEU/swedish-personas-v2); its card (`hub_v2/README.md`) has the numbers and the known limits.
+
+| Step | Script |
+|---|---|
+| Review metrics (variety, conditioning, comorbidity) | `src/metrics.py` |
+| SCB tables for names, background, education, occupation | `src/fetch_scb_v2.py` |
+| Structured sampler | `src/structure.py`, used by `src/generate.py` |
+| Occupation descriptions and job titles (JobTech Taxonomy) | `src/fetch_jobtech.py` |
+| Seed records for the language model | `src/prose_seeds.py` |
+| Task catalogue, work profiles and persona text | `src/prose_generate.py`, `slurm/prose_pilot.sbatch` |
+| Merge, score and export | `src/prose_merge.py`, `src/export_hub.py` |
+
+The rest of this README describes v1.
+
 ## At a glance
 
 | | |

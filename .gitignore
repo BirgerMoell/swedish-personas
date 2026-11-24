@@ -4,3 +4,7 @@ __pycache__/
 data/*.parquet
 data/geo/
 data/fonts/
+
+# v2: data files live on Hugging Face, not in git
+data/pilot/
+hub_v2/data/

@@ -1,0 +1,142 @@
+{
+  "rows": 1000,
+  "fields": {
+    "cultural_background": {
+      "openings_2": 4,
+      "openings_4": 5,
+      "commonest_opening_share": 0.273,
+      "top3_opening_share": 0.72,
+      "distinct_texts": 996,
+      "distinct_frames": 375,
+      "fivegram_overlap": 0.07838379713332948
+    },
+    "persona": {
+      "openings_2": 8,
+      "openings_4": 12,
+      "commonest_opening_share": 0.092,
+      "top3_opening_share": 0.275,
+      "distinct_texts": 1000,
+      "distinct_frames": 984,
+      "fivegram_overlap": 0.14416594531533938
+    },
+    "healthcare_persona": {
+      "openings_2": 3,
+      "openings_4": 20,
+      "commonest_opening_share": 0.18,
+      "top3_opening_share": 0.438,
+      "distinct_texts": 1000,
+      "distinct_frames": 439,
+      "fivegram_overlap": 0.04343308535503906
+    },
+    "travel_persona": {
+      "openings_2": 9,
+      "openings_4": 15,
+      "commonest_opening_share": 0.092,
+      "top3_opening_share": 0.273,
+      "distinct_texts": 1000,
+      "distinct_frames": 242,
+      "fivegram_overlap": 0.05920094942553423
+    },
+    "arts_persona": {
+      "openings_2": 13,
+      "openings_4": 16,
+      "commonest_opening_share": 0.092,
+      "top3_opening_share": 0.255,
+      "distinct_texts": 1000,
+      "distinct_frames": 185,
+      "fivegram_overlap": 0.06678501620358081
+    },
+    "career_goals_and_ambitions": {
+      "openings_2": 8,
+      "openings_4": 15,
+      "commonest_opening_share": 0.116,
+      "top3_opening_share": 0.279,
+      "distinct_texts": 905,
+      "distinct_frames": 42,
+      "fivegram_overlap": 0.06647846907993953
+    },
+    "culinary_persona": {
+      "openings_2": 8,
+      "openings_4": 20,
+      "commonest_opening_share": 0.123,
+      "top3_opening_share": 0.344,
+      "distinct_texts": 1000,
+      "distinct_frames": 791,
+      "fivegram_overlap": 0.0746122837383097
+    },
+    "sports_persona": {
+      "openings_2": 11,
+      "openings_4": 22,
+      "commonest_opening_share": 0.072,
+      "top3_opening_share": 0.213,
+      "distinct_texts": 1000,
+      "distinct_frames": 86,
+      "fivegram_overlap": 0.03380799170769899
+    },
+    "professional_persona": {
+      "openings_2": 5,
+      "openings_4": 213,
+      "commonest_opening_share": 0.192,
+      "top3_opening_share": 0.374,
+      "distinct_texts": 1000,
+      "distinct_frames": 332,
+      "fivegram_overlap": 0.02163704332125464
+    },
+    "skills_and_expertise": {
+      "openings_2": 4,
+      "openings_4": 56,
+      "commonest_opening_share": 0.192,
+      "top3_opening_share": 0.374,
+      "distinct_texts": 993,
+      "distinct_frames": 299,
+      "fivegram_overlap": 0.05078921387736838
+    },
+    "hobbies_and_interests": {
+      "openings_2": 1,
+      "openings_4": 40,
+      "commonest_opening_share": 0.047,
+      "top3_opening_share": 0.132,
+      "distinct_texts": 1000,
+      "distinct_frames": 996,
+      "fivegram_overlap": 0.00023591269841269846
+    }
+  },
+  "names": {
+    "distinct_given": 579,
+    "distinct_surnames": 716,
+    "distinct_full": 996,
+    "top10_surname_share": 0.165,
+    "most_frequent_full_name": 2
+  },
+  "association_cramers_v": {
+    "occupation_x_education (workers)": 0.6930480096441237,
+    "county_x_education (25+)": 0.16307266755511884,
+    "county_x_occupation (workers)": 0.6315009953478857,
+    "county_x_household (25+)": 0.17424287291465468,
+    "county_x_country_of_birth": 0.20252914056725246,
+    "v1_tradition_x_county": 0.155899461154663,
+    "v1_tradition_x_age_band": 0.05965139371852601,
+    "v1_tradition_x_occupation": 0.47186540263890614,
+    "v1_tradition_x_education": 0.10234387266294476,
+    "v1_tradition_x_sex": 0.07687932096903567
+  },
+  "nurses_compulsory_only_share": 0.0,
+  "distinct_occupations": 197,
+  "comorbidity_lift": {
+    "diabetes + högt blodtryck": {
+      "observed": 0.041,
+      "expected_given_age_sex": 0.029206818033232915,
+      "ratio": 1.4037818140048066
+    },
+    "fetma + högt blodtryck": {
+      "observed": 0.06,
+      "expected_given_age_sex": 0.03734105818488485,
+      "ratio": 1.6068103829014462
+    },
+    "svår oro och ångest + depression": {
+      "observed": 0.021,
+      "expected_given_age_sex": 0.0047138341894354075,
+      "ratio": 4.4549721428608935
+    }
+  }
+}

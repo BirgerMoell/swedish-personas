@@ -12,8 +12,12 @@ import random
 from collections import Counter, defaultdict
 from pathlib import Path
 
+from statistics import NormalDist
+
 import pyarrow as pa
 import pyarrow.parquet as pq
+
+from structure import BACKGROUND, EDUCATION, Structure, birth_region
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -40,6 +44,11 @@ SCHEMA = pa.schema([
     ("household_type", pa.string()),
     ("education_level", pa.string()),
     ("occupation", pa.string()),
+    ("occupation_code", pa.string()),
+    ("industry", pa.string()),
+    ("employment_status", pa.string()),
+    ("country_of_birth", pa.string()),
+    ("background", pa.string()),
     ("kommun", pa.string()),
     ("lan", pa.string()),
     ("country", pa.string()),
@@ -48,6 +57,18 @@ SCHEMA = pa.schema([
 # Optional companion table: one row per sampled condition, keyed by persona uuid.
 CONDITION_SCHEMA = pa.schema([("uuid", pa.string()), ("source", pa.string()), ("code", pa.string()), ("condition", pa.string())])
 
+# Companion table with the latent attributes behind each persona (not part of the Nemotron schema).
+# The Big Five T-scores (mean 50, sd 10, clipped to 20-80) follow the Nemotron-Personas design.
+SEED_SCHEMA = pa.schema([
+    ("uuid", pa.string()), ("first_name", pa.string()), ("last_name", pa.string()), ("name_heritage", pa.string()),
+    ("parents_country_of_birth", pa.string()), ("birth_year", pa.int64()),
+    ("openness", pa.int64()), ("conscientiousness", pa.int64()), ("extraversion", pa.int64()),
+    ("agreeableness", pa.int64()), ("neuroticism", pa.int64()),
+])
+# Typical age at the end of each education level, used for years of work experience.
+WORK_START = {"1": 16, "2": 16, "3": 18, "4": 19, "5": 21, "6": 23, "7": 28, "US": 19}
+
+# v1 name lists, kept for reference only; v2 samples names in structure.py.
 GIVEN_NAMES = {
     "1": ("Erik", "Lars", "Johan", "Anders", "Karl", "Oskar", "Nils", "David", "Ali", "Amir", "Mikael", "Daniel", "Axel", "Noah", "Elias", "Simon", "Linus", "Arvid", "Hugo", "William"),
     "2": ("Anna", "Maria", "Emma", "Sara", "Elin", "Linnéa", "Sofia", "Maja", "Fatima", "Amina", "Karin", "Eva", "Elsa", "Alma", "Ingrid", "Julia", "Nora", "Freja", "Olivia", "Ida"),
@@ -202,8 +223,39 @@ CAREER_GOALS_OLD = (
 
 
 # ---------------------------------------------------------------- health model
-# Sampled from open Swedish statistics (see src/fetch_health.py). Conditions are drawn
-# independently per person from age- and sex-specific rates; no comorbidity structure.
+# Sampled from open Swedish statistics (see src/fetch_health.py). Each condition keeps its
+# age- and sex-specific rate exactly. Conditions in the same cluster share a latent factor
+# (a one-factor Gaussian copula), so they co-occur more often than independent draws would.
+# ASSUMPTION: the loadings are judgement, chosen to give co-occurrence of a realistic order;
+# they are not fitted to a joint source table (none is openly available).
+COMORBIDITY = {
+    "cardiometabolic": {"Diabetes": 0.6, "Högt blodtryck": 0.6, "Obesitas (BMI 30,0 eller högre)": 0.55,
+                        "I25": 0.55, "I21": 0.55, "I50": 0.55, "I48": 0.45, "I63": 0.45, "I73": 0.5, "N18": 0.5, "E10": 0.3},
+    "mental": {"Svår ängslan, oro eller ångest": 0.8, "Diagnosen depression av läkare": 0.8, "Svåra sömnbesvär": 0.6,
+               "F31": 0.5, "F90": 0.4, "F84": 0.3, "F20": 0.3},
+    "pain": {"Svår värk i rygg mm": 0.7, "Svår värk i rörelseorganen": 0.7, "Huvudvärk": 0.4,
+             "M17": 0.45, "M16": 0.45, "M05": 0.4, "M06": 0.4, "G43": 0.35},
+    "atopic": {"Allergi": 0.6, "Astma": 0.6, "Eksem": 0.55, "L20": 0.5, "J45": 0.5},
+}
+FACTOR_OF = {code: (factor, loading) for factor, codes in COMORBIDITY.items() for code, loading in codes.items()}
+_NORMAL = NormalDist()
+_THRESHOLD = {}
+
+
+def has_condition(rng, factors, code, p):
+    """Draw one condition with marginal probability p, correlated through its cluster factor."""
+    if p <= 0:
+        return False
+    link = FACTOR_OF.get(code)
+    if link is None or p >= 1:
+        return rng.random() < p
+    threshold = _THRESHOLD.get(p)
+    if threshold is None:
+        threshold = _THRESHOLD[p] = _NORMAL.inv_cdf(p)
+    factor, loading = link
+    if factor not in factors:
+        factors[factor] = rng.gauss(0, 1)
+    return loading * factors[factor] + (1 - loading * loading) ** 0.5 * rng.gauss(0, 1) < threshold
 SOS_NAMES = {
     "I25": "kranskärlssjukdom", "I21": "hjärtinfarkt", "I48": "förmaksflimmer", "I50": "hjärtsvikt", "I63": "stroke",
     "I73": "kärlkramp i benen", "J44": "KOL", "J45": "astma", "F03": "demenssjukdom", "G20": "Parkinsons sjukdom",
@@ -259,16 +311,17 @@ def sample_conditions(rng, health, age, sex):
     """Return [(source, code, swedish_name)] for one person."""
     sos, fohm = health
     out = []
+    factors = {}
     band_low = min(85, (age // 5) * 5)
     for code, table in sos.items():
         if code not in SOS_NAMES or (age >= 16 and code in SOS_ADULT_EXCLUDED):
             continue
-        if rng.random() < table.get((band_low, sex), 0.0):
+        if has_condition(rng, factors, code, table.get((band_low, sex), 0.0)):
             out.append(("socialstyrelsen", code, SOS_NAMES[code]))
     if age >= 16:
         band = next(name for name, lo, hi in FOHM_BANDS if lo <= age <= hi)
         for condition, table in fohm.items():
-            if rng.random() < table.get((band, sex), 0.0):
+            if has_condition(rng, factors, condition, table.get((band, sex), 0.0)):
                 out.append(("folkhalsomyndigheten", condition, FOHM_NAMES[condition]))
     return out
 
@@ -293,40 +346,49 @@ def read_csv(name):
         return list(csv.DictReader(handle))
 
 
-def employment(rng, age):
+def employment(rng, structure, county_code, age, sex_code, edu, region):
+    """Return (status, occupation code, occupation label, industry)."""
     if age < 6:
-        return "barn", "", ""
+        return "barn", "", "", ""
     if age < 16:
-        return "elev", "", ""
-    if age < 20:
-        status = rng.choices(("studerande", "anställd", "arbetssökande"), (76, 19, 5))[0]
+        return "elev", "", "", ""
+    if rng.random() < structure.employee_probability(county_code, age, sex_code, edu):
+        status = "anställd"
+    elif age < 20:
+        status = rng.choices(("studerande", "arbetssökande"), (94, 6))[0]
     elif age < 25:
-        status = rng.choices(("studerande", "anställd", "arbetssökande", "egenföretagare"), (38, 48, 10, 4))[0]
+        status = rng.choices(("studerande", "arbetssökande", "utanför arbetskraften"), (75, 20, 5))[0]
     elif age < 65:
-        status = rng.choices(("anställd", "arbetssökande", "egenföretagare", "studerande", "utanför arbetskraften"), (72, 8, 9, 4, 7))[0]
+        # ASSUMPTION: split of people who are not employees; the register covers employees only.
+        status = rng.choices(("egenföretagare", "arbetssökande", "studerande", "utanför arbetskraften"), (28, 22, 12, 38))[0]
     elif age < 70:
-        status = rng.choices(("pensionär", "anställd", "egenföretagare"), (75, 20, 5))[0]
+        status = rng.choices(("pensionär", "egenföretagare"), (93, 7))[0]
     else:
         status = "pensionär"
     if status not in ("anställd", "egenföretagare"):
-        return status, "", ""
-    sector, occupation = rng.choice(TEEN_JOBS) if age < 21 else rng.choice(ALL_OCCUPATIONS)
-    return status, sector, occupation
+        return status, "", "", ""
+    code, label, industry = structure.occupation(rng, county_code, age, sex_code, edu, region)
+    return status, code, label, industry
 
 
-def education(rng, age):
+def education(rng, structure, county_code, age, sex_code):
+    """Return (SCB level code or '', label)."""
     if age < 6:
-        return "förskola"
+        return "", "förskola"
     if age < 16:
-        return "pågående grundskola"
-    if age < 20:
-        return rng.choice(("grundskola", "pågående gymnasium"))
-    if age < 24:
-        return rng.choices(("grundskola", "gymnasieexamen", "yrkeshögskola eller kandidatexamen"), (15, 65, 20))[0]
-    return rng.choices(
-        ("grundskola", "gymnasieexamen", "yrkeshögskoleutbildning", "kandidatexamen", "masterexamen", "doktorsexamen"),
-        (14, 38, 9, 14, 23, 2),
-    )[0]
+        return "", "pågående grundskola"
+    code = structure.education(rng, county_code, age, sex_code)
+    return code, EDUCATION[code]
+
+
+def lower_first(text):
+    """Lower-case the first letter unless the word is an acronym (IT-arkitekter)."""
+    return text if text[1:2].isupper() else text[:1].lower() + text[1:]
+
+
+def tidy_name(name):
+    """SCB writes double names as 'Lars-erik' or 'Anna Karin'; restore the capitals."""
+    return "-".join(" ".join(w[:1].upper() + w[1:] for w in part.split(" ")) for part in name.split("-"))
 
 
 def household(rng, age, marital):
@@ -351,22 +413,27 @@ def join_list(items):
     return items[0] if len(items) == 1 else ", ".join(items[:-1]) + " och " + items[-1]
 
 
-def build_row(rng, health, cell, municipality):
+def build_row(rng, health, structure, cell, municipality):
     age = 100 if cell["age"].startswith("100+") else int(cell["age"])
     sex_code = cell["sex_code"]
-    first = rng.choice(GIVEN_NAMES[sex_code])
-    name = f"{first} {rng.choice(SURNAMES)}"
+    county_code = cell["county_code"]
+    background = structure.background(rng, county_code, age, sex_code)
+    birth = structure.country(rng, county_code, age, sex_code) if background == "08" else "Sverige"
+    parents = birth if background == "08" else structure.country(rng, county_code, age, sex_code, parents=True) if background in ("4", "5") else "Sverige"
+    heritage = structure.heritage(rng, parents)
+    first, last, name_heritage = structure.names(rng, sex_code, age, background, heritage)
+    first, last = tidy_name(first), tidy_name(last)
+    name = f"{first} {last}"
     pron, poss = PRONOUN[sex_code], POSSESSIVE[sex_code]
     marital_code = cell["marital_code"]
-    status, sector, occupation = employment(rng, age)
-    edu = education(rng, age)
+    edu_code, edu = education(rng, structure, county_code, age, sex_code)
+    status, occupation_code, occupation, sector = employment(rng, structure, county_code, age, sex_code, edu_code, birth_region(birth))
     house = household(rng, age, marital_code)
     place, county = municipality["municipality"], cell["county"]
-    outdoors, dish, landmark = REGION[cell["county_code"]]
-    birth = rng.choices(COUNTRY_OF_BIRTH, weights=COUNTRY_WEIGHTS, k=1)[0]
+    outdoors, dish, landmark = REGION[county_code]
     quirks = rng.sample(QUIRKS, 2)
     working = status in ("anställd", "egenföretagare")
-    skills = list(OCCUPATIONS[sector][occupation]) if working else []
+    ocean = [int(round(min(80, max(20, rng.gauss(50, 10))))) for _ in range(5)]
 
     # hobbies / sports / arts / travel pools by life stage
     if age < 6:
@@ -386,7 +453,9 @@ def build_row(rng, health, cell, municipality):
     value = rng.choice(CULTURE_VALUES)
 
     # --- cultural background
-    if birth == "Sverige":
+    if background == "4":
+        origin = f"{first} är född i Sverige av föräldrar från {parents} och uppvuxen i {place}"
+    elif birth == "Sverige":
         origin = rng.choice((f"{first} är uppvuxen i trakten av {place}", f"{first} växte upp i {county}", f"{first} har rötter i {county} sedan flera generationer"))
     else:
         origin = f"{first} är född i {birth} och har sedan flytten till Sverige gjort {place} till sitt hem"
@@ -406,10 +475,12 @@ def build_row(rng, health, cell, municipality):
         skills_list = ["läsning", "samarbete", hobby_list[0]]
         goals = f"{first} funderar redan på vad {pron} vill bli och drömmer om ett yrke kopplat till {hobby_list[1]}."
     elif working:
-        years = max(1, age - 22) if age >= 25 else 1
-        prof = f"{name} arbetar som {occupation} inom {sector} i {place} med fokus på {skills[0]} och {skills[1]}."
-        skills_text = f"{first} har cirka {years} års erfarenhet och är särskilt stark inom {join_list(skills[:3])}."
-        skills_list = skills
+        years = max(1, age - WORK_START[edu_code])
+        group = lower_first(occupation)
+        role = "driver eget företag" if status == "egenföretagare" else "arbetar"
+        prof = f"{name} {role} i {place} inom yrkesgruppen {group}" + (f", i branschen {sector}." if sector else ".")
+        skills_text = f"{first} har cirka {years} års erfarenhet inom yrkesgruppen {group}."
+        skills_list = [group] + ([sector] if sector else [])
         goals = f"{first} {rng.choice(CAREER_GOALS if age >= 25 else CAREER_GOALS_YOUNG)}."
     elif status == "studerande":
         prof = f"{name} studerar i {place} och kombinerar studierna med ett aktivt privatliv."
@@ -457,10 +528,19 @@ def build_row(rng, health, cell, municipality):
         "household_type": house,
         "education_level": edu,
         "occupation": occupation if working else "not_in_workforce",
+        "occupation_code": occupation_code,
+        "industry": sector,
+        "employment_status": status,
+        "country_of_birth": birth,
+        "background": BACKGROUND[background],
         "kommun": place,
         "lan": county,
         "country": "Sverige",
-    }, [{"uuid": uuid, "source": c[0], "code": c[1], "condition": c[2]} for c in conditions]
+    }, [{"uuid": uuid, "source": c[0], "code": c[1], "condition": c[2]} for c in conditions], {
+        "uuid": uuid, "first_name": first, "last_name": last, "name_heritage": name_heritage,
+        "parents_country_of_birth": parents, "birth_year": 2025 - age,
+        "openness": ocean[0], "conscientiousness": ocean[1], "extraversion": ocean[2], "agreeableness": ocean[3], "neuroticism": ocean[4],
+    }
 
 
 def generate(size, seed, output):
@@ -474,21 +554,24 @@ def generate(size, seed, output):
     rng = random.Random(seed)
     sampled_cells = rng.choices(cells, weights=[int(c["population"]) for c in cells], k=size)
     health = load_health()
-    records, condition_rows = [], []
+    structure = Structure()
+    records, condition_rows, seed_rows = [], [], []
     for cell in sampled_cells:
         options = municipalities[cell["county_code"]]
         municipality = rng.choices(options, weights=[int(m["population"]) for m in options], k=1)[0]
-        row, conditions = build_row(rng, health, cell, municipality)
+        row, conditions, seeds = build_row(rng, health, structure, cell, municipality)
         records.append(row)
+        seed_rows.append(seeds)
         condition_rows.extend(conditions)
     output.parent.mkdir(parents=True, exist_ok=True)
     pq.write_table(pa.Table.from_pylist(records, schema=SCHEMA), output, compression="zstd")
     pq.write_table(pa.Table.from_pylist(condition_rows, schema=CONDITION_SCHEMA), output.with_name(output.stem + "_conditions.parquet"), compression="zstd")
+    pq.write_table(pa.Table.from_pylist(seed_rows, schema=SEED_SCHEMA), output.with_name(output.stem + "_seeds.parquet"), compression="zstd")
     report = {
         "rows": len(records), "seed": seed, "source_year": 2025, "schema": "Nemotron-Personas (nvidia/Nemotron-Personas-France columns; kommun/lan replace commune/departement)",
         "county_counts": dict(Counter(row["lan"] for row in records)),
         "sex_counts": dict(Counter(row["sex"] for row in records)),
-        "conditions_rows": len(condition_rows), "note": "SCB-weighted: joint county/age/sex/marital status; municipality by county totals. Health conditions: independent draws from Socialstyrelsen (specialist-care patients per 100k) and Folkhälsomyndigheten (self-reported share) age/sex rates. Household type, education, occupation and all text fields are rule-based heuristics, not calibrated to SCB and not LLM generated."
+        "conditions_rows": len(condition_rows), "note": "SCB-weighted: joint county/age/sex/marital status; municipality by county totals. Names, background, country of birth, education, employment and occupation are sampled from SCB tables (see src/structure.py). Health conditions keep the Socialstyrelsen and Folkhälsomyndigheten age/sex rates, with assumed within-cluster correlation. Household type and all text fields are rule-based placeholders, not LLM generated."
     }
     (output.parent / "generation_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Wrote {len(records):,} personas to {output}")

@@ -1,0 +1,60 @@
+{
+  "accessed": "2026-11-19",
+  "api": "https://api.scb.se/OV0104/v1/doris/sv/ssd/",
+  "tables": {
+    "birth_country_by_age_2025": {
+      "path": "BE/BE0101/BE0101E/FodelselandArKCKM",
+      "title": "Befolkning, antal efter födelseland, ålder, kön, tabellinnehåll och år",
+      "rows": 6283,
+      "sum": 42422062
+    },
+    "education_by_county_age_sex_2025": {
+      "path": "UF/UF0506/UF0506B/UtbBefRegionR",
+      "title": "Befolkning 16–95+ år, antal efter region, utbildningsnivå, ålder, kön, tabellinnehåll och år",
+      "rows": 25625,
+      "sum": 8729822
+    },
+    "background_by_county_age_sex_2025": {
+      "path": "BE/BE0101/BE0101Q/UtlSvBakgFinCKM",
+      "title": "Antal personer efter region, utländsk/svensk bakgrund, ålder, kön, tabellinnehåll och år",
+      "rows": 15785,
+      "sum": 10605788
+    },
+    "occupation3_by_county_age_sex_2024": {
+      "path": "AM/AM0208/AM0208C/YREG55BAS",
+      "title": "Anställda med bostad i regionen (nattbef), antal efter region, Yrke (SSYK 2012), ålder, kön, tabellinnehåll och år",
+      "rows": 56886,
+      "sum": 5006642
+    },
+    "occupation4_by_education_age_sex_2024": {
+      "path": "AM/AM0208/AM0208E/YREG51BAS",
+      "title": "Anställda (yrkesregistret), antal efter Yrke (SSYK 2012), utbildningsnivå SUN 2020, ålder, kön, tabellinnehåll och år",
+      "rows": 49298,
+      "sum": 5006642
+    },
+    "occupation4_by_industry_2024": {
+      "path": "AM/AM0208/AM0208E/YREG54BAS",
+      "title": "Anställda, antal efter Yrke (SSYK 2012), näringsgren SNI 2007, ålder, kön, tabellinnehåll och år",
+      "rows": 79911,
+      "sum": 5006642
+    },
+    "occupation4_by_birth_region_2024": {
+      "path": "AM/AM0208/AM0208E/YREG53BAS",
+      "title": "Anställda (yrkesregistret), antal efter Yrke (SSYK 2012), födelseregion, kön, tabellinnehåll och år",
+      "rows": 6574,
+      "sum": 5006642
+    },
+    "newborn_names_1998_2022": {
+      "path": "BE/BE0001/BE0001D/BE0001Nyfodda",
+      "title": "Antal nyfödda efter tilltalsnamn, kön, tabellinnehåll och år",
+      "rows": 85058,
+      "sum": 2461122
+    },
+    "given_names_mean_age_2020": {
+      "path": "BE/BE0001/BE0001G/BE0001T08AR",
+      "title": "Medelålder efter tilltalsnamn, tabellinnehåll och år",
+      "rows": 27888,
+      "sum": 1044945.8000000094
+    }
+  }
+}

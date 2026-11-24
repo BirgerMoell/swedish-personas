@@ -46,6 +46,37 @@ def validate_health(rows, conditions_path):
     print(f"health: {checked} conditions match source rates")
 
 
+def validate_structure(rows):
+    """The v2 structured columns must reproduce the national margins of their SCB source tables."""
+    from structure import BACKGROUND, EDUCATION, read
+
+    def source(table, key, keep=lambda r: True):
+        return normalized_counts([r for r in read(table) if keep(r)], key, lambda r: float(r["count"]))
+
+    skip = ("Sverige", "okänt födelseland", "övriga födelseländer")
+    checks = {
+        "background": (source("background_by_county_age_sex_2025", lambda r: BACKGROUND[r["UtlBakgrund"]]),
+                       normalized_counts(rows, lambda r: r["background"], lambda r: 1), .01),
+        "country of birth (foreign-born)": (
+            source("birth_country_by_county_2025", lambda r: r["Fodelseregion_text"].strip(),
+                   lambda r: r["Fodelseregion"] != "TOTfod" and r["Fodelseregion_text"].strip() not in skip),
+            normalized_counts([r for r in rows if r["country_of_birth"] != "Sverige"], lambda r: r["country_of_birth"], lambda r: 1), .05),
+        "education (16+)": (source("education_by_county_age_sex_2025", lambda r: EDUCATION[r["UtbildningsNiva"]]),
+                            normalized_counts([r for r in rows if r["age"] >= 16], lambda r: r["education_level"], lambda r: 1), .02),
+        "occupation major group (employees)": (
+            source("occupation3_by_county_age_sex_2024", lambda r: r["Yrke2012"][0], lambda r: r["Yrke2012"] != "0002"),
+            normalized_counts([r for r in rows if r["employment_status"] == "anställd"], lambda r: r["occupation_code"][0], lambda r: 1), .04),
+    }
+    for name, (target, observed, ceiling) in checks.items():
+        distance = total_variation(target, observed)
+        assert distance < ceiling, f"{name} differs from SCB: TV={distance:.3f}"
+        print(f"{name}: total variation {distance:.4f}")
+    licensed = [r for r in rows if r["occupation_code"][:2] in ("22", "23")]
+    assert all(r["education_level"].startswith(("eftergymnasial", "forskar")) for r in licensed), "licensed profession without post-secondary education"
+    assert all((r["country_of_birth"] != "Sverige") == (r["background"] == "utrikes född") for r in rows), "background and country of birth disagree"
+    assert all((r["occupation"] == "not_in_workforce") == (r["employment_status"] not in ("anställd", "egenföretagare")) for r in rows)
+
+
 def validate(path=ROOT / "data/swedish_personas_100k.parquet"):
     rows = pq.read_table(path).to_pylist()
     with (ROOT / "data/scb_county_age_sex_marital_2025.csv").open(encoding="utf-8") as handle:
@@ -73,6 +104,7 @@ def validate(path=ROOT / "data/swedish_personas_100k.parquet"):
         distance = total_variation(target, observed)
         assert distance < ceiling, f"{name} distribution differs from SCB: TV={distance:.3f}"
         print(f"{name}: total variation {distance:.4f}")
+    validate_structure(rows)
     validate_health(rows, path.with_name(path.stem + "_conditions.parquet"))
     print("Release validation passed")
 
