@@ -17,11 +17,15 @@ under a naive-Bayes assumption; those places are marked ASSUMPTION.
 import bisect
 import csv
 import math
+import random
 import re
 from array import array
 from collections import defaultdict
 from itertools import accumulate
 from pathlib import Path
+
+from name_kommun import KommunNames, weight_exponent
+from surname_tilt import COUNTY_LANDSDEL, SurnameTilt
 
 ROOT = Path(__file__).resolve().parents[1]
 SCB = ROOT / "data" / "scb"
@@ -146,7 +150,10 @@ class Table:
         return bool(self.items)
 
     def sample(self, rng):
-        return self.items[bisect.bisect_right(self.cum, rng.random() * self.cum[-1])]
+        return self.pick(rng.random())
+
+    def pick(self, u):
+        return self.items[bisect.bisect_right(self.cum, u * self.cum[-1])]
 
 
 class Structure:
@@ -230,6 +237,11 @@ class Structure:
             if heritage:
                 surnames[heritage][name] = float(r["count"])
         self.surnames = {h: Table(v) for h, v in surnames.items()}
+        self.surname_counts = surnames
+        self.kommun_names = KommunNames()
+        # North-south tilt of Swedish surnames, calibrated on SCB's landsdel table (see surname_tilt.py).
+        tilt = SurnameTilt()
+        self.surnames_by_landsdel = {k: Table(v) for k, v in tilt.tilt(surnames["SV"]).items()}
 
     def _given_table(self, sex, heritage, birth_year, swedish_born):
         key = ("given", sex, heritage, birth_year, swedish_born)
@@ -268,8 +280,11 @@ class Structure:
         table = self._cache[key] = Table(weights) or Table(pool)
         return table
 
-    def names(self, rng, sex, age, background, heritage):
-        """Return (given name, surname, name heritage)."""
+    def names(self, rng, sex, age, background, heritage, county_code=None, kommun_code=None):
+        """Return (given name, surname, name heritage). With county_code, Swedish surnames are
+        tilted north-south; with kommun_code, Swedish-heritage given names follow the municipality's local
+        newborn-name pattern. Both use exactly the random draws of the untilted version, so nothing else
+        generated afterwards changes."""
         birth_year = YEAR - age
         swedish_born = background != "08"
         given_heritage = surname_heritage = heritage
@@ -282,9 +297,30 @@ class Structure:
             surname_heritage = "SV"  # ASSUMPTION: surname taken through marriage
         if not self.given.get((sex, given_heritage)):
             given_heritage = "SV"
-        given = self._given_table(sex, given_heritage, birth_year, swedish_born).sample(rng)
-        surname = self.surnames.get(surname_heritage, self.surnames["SV"]).sample(rng)
+        table = self._given_table(sex, given_heritage, birth_year, swedish_born)
+        u = rng.random()
+        given = self._local_given(table, u, sex, kommun_code, birth_year) if given_heritage == "SV" and kommun_code else table.pick(u)
+        if surname_heritage == "SV" and county_code in COUNTY_LANDSDEL:
+            surname = self.surnames_by_landsdel[COUNTY_LANDSDEL[county_code]].sample(rng)
+        else:
+            surname = self.surnames.get(surname_heritage, self.surnames["SV"]).sample(rng)
         return given, surname, heritage if surname_heritage == heritage else "SV" if background != "5" else heritage
+
+    def _local_given(self, table, u, sex, kommun_code, birth_year):
+        """Rejection sampling: the national draw u is kept with probability (local factor / largest factor)^w,
+        otherwise a new name is drawn from a stream seeded by u, so the main random stream is untouched."""
+        w = weight_exponent(birth_year)
+        factors = self.kommun_names.factors.get((sex, kommun_code))
+        name = table.pick(u)
+        if w == 0 or not factors:
+            return name
+        top = self.kommun_names.fmax[(sex, kommun_code)] ** w
+        sub = random.Random(repr(u))
+        for _ in range(500):
+            if sub.random() < factors.get(name.casefold(), 1.0) ** w / top:
+                return name
+            name = table.pick(sub.random())
+        return name
 
     # ------------------------------------------------------------- education
     def _load_education(self):

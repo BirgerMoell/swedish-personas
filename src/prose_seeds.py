@@ -63,7 +63,7 @@ OPENINGS = (
     "med en bisats (till exempel med Eftersom, När, Trots att, Sedan eller Om)",
     "med en sak, ett föremål eller en maträtt",
     "med en annan människa i personens liv",
-    "med en konkret handling eller vana, utan att nämna namnet först",
+    "med en konkret handling eller vana (namnet ska stå i första eller andra meningen, så att meningen har ett tydligt subjekt)",
 )
 # Leisure ideas with an age span. Twelve are shown per persona as inspiration, not as facts: the
 # shares are not statistics, the draw only keeps the model from giving everyone the same hobbies.
@@ -72,6 +72,19 @@ LEISURE = (
     (6, 12, "fotboll i knattelag, innebandy, simskola, ridskola, scouterna, kulturskolan, pärlplattor, samlarkort, kojbygge, minecraft, schackklubb, gymnastik, bandy, friidrott, serieteckning, fiske från brygga, bakning, lego, cykelcross, kör, blockflöjt, programmering på fritids, skidor, skridskor, pingis"),
     (13, 19, "e-sport, moped, fotboll, handboll, basket, gym, skateboard, replokal med band, epa-traktor, ridning, dans, teater, cosplay, fotografering, second hand-kläder, anime, ungdomsgård, konfirmationsläger, jakt med en förälder, innebandy, kampsport, sy om kläder, podcast, teckna manga, spela gitarr, klättring, längdskidor"),
     (16, 100, "kolonilott, släktforskning, körsång, bridge, boule, älgjakt, flugfiske, pimpelfiske, biodling, vävning, stickning, virkning, lapptäcken, träsvarvning, veteranbilar, mc-åkning, segling, kajak, långfärdsskridskor, orientering, löpning, cykelpendling, padel, golf, bowling, dart, linedance, bugg, folkdans, spelmanslag, blåsorkester, rockband, vinylskivor, amatörteater, revy, akvarell, keramik, silversmide, fågelskådning, svampplockning, bärplockning, surdegsbakning, ölbryggning, syltning och saftning, vinprovning, grilla och röka kött, brädspel, rollspel, schack, frågesport, tv-spel, fantasyfotboll, travet, speedway, ishockey på läktaren, supporterklubb, hembygdsförening, idrottsledare, valberedning i bostadsrättsförening, röda korset, kyrkans syförening, moskéns ungdomsverksamhet, kulturförening, läxhjälp som volontär, hundkurs, agility, hästar, höns, akvarium, husrenovering, möbelrenovering, loppisfynd, antikviteter, släpvagnssemester med husvagn, fjällvandring, tältning, vinterbad, bastu, yoga, styrketräning, simning, vattengympa, promenadgrupp, stavgång, korsord, sudoku, ljudböcker, deckare, poesi, lokalhistoria, dokumentärer, bio, opera, stand-up, museer, fotoklubb, drönarflygning, amatörradio, modelljärnväg, 3d-skrivare, programmering, elektronikbyggen, mekande med bilar, båtmotorer, snöskoter, fyrhjuling, skogsarbete på egen mark, vedhuggning, trädgårdsodling, växthus, krukväxter, biodlarförening, matlagning från hemlandet, bakning till kalas, teceremoni, dominospel, backgammon, kortspel, cricket, futsal, basket, bordtennis, brottning, boxning, zumba, dans för seniorer, pensionärsförening, bingo, resor med buss, sommarstuga, skärgårdsbåt"),
+)
+
+
+# How the person mostly meets health care. Drawn per persona, because pilot 2 sent 59% of them to "vårdcentralen".
+HEALTH_ADULT = (
+    "går sällan till vården och söker först när det blir besvärligt", "ringer 1177 först och går sedan dit rådet pekar",
+    "har fast läkarkontakt på vårdcentralen", "sköter det mesta genom appar och videobesök", "går till företagshälsovården genom jobbet",
+    "har en privat vårdförsäkring genom arbetsgivaren", "är mest hos tandläkare, optiker eller sjukgymnast", "går på regelbundna kontroller på sjukhusets mottagning",
+    "tar hjälp av apotekspersonalen och egenvård före läkare", "går på vårdcentralen först när familjen tjatar",
+)
+HEALTH_CHILD = (
+    "går på barnavårdscentralen (BVC) för kontroller och vaccin", "träffar skolsköterskan och skolläkaren i skolan",
+    "är sällan sjuk; föräldrarna ringer 1177 vid behov", "går på tandvården för barn", "har kontakt med vårdcentralen när något händer",
 )
 
 
@@ -111,6 +124,7 @@ def main():
             style = random.Random(f"{SEED}:{row['uuid']}")  # separate stream: does not disturb the sample
             record["openings"] = {field: style.choice(OPENINGS) for field in TEXT_FIELDS}
             record["leisure_ideas"] = leisure_ideas(style, row["age"])
+            record["health_contact"] = style.choice(HEALTH_CHILD if row["age"] < 16 else HEALTH_ADULT)
             handle.write(json.dumps(record, ensure_ascii=False) + "\n")
     print(f"{args.n} seed records -> {out}")
 

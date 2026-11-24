@@ -421,7 +421,7 @@ def build_row(rng, health, structure, cell, municipality):
     birth = structure.country(rng, county_code, age, sex_code) if background == "08" else "Sverige"
     parents = birth if background == "08" else structure.country(rng, county_code, age, sex_code, parents=True) if background in ("4", "5") else "Sverige"
     heritage = structure.heritage(rng, parents)
-    first, last, name_heritage = structure.names(rng, sex_code, age, background, heritage)
+    first, last, name_heritage = structure.names(rng, sex_code, age, background, heritage, county_code, municipality["municipality_code"])
     first, last = tidy_name(first), tidy_name(last)
     name = f"{first} {last}"
     pron, poss = PRONOUN[sex_code], POSSESSIVE[sex_code]

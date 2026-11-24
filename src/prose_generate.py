@@ -207,6 +207,8 @@ def facts(seed, work=None):
         lines.append(f"Arbetsplats: {work['workplace']}")
         lines.append("Arbetsuppgifter: " + "; ".join(t["detail"] for t in work["tasks"][:4]))
     lines.append("Hälsobesvär: " + (", ".join(seed["conditions"]) if seed["conditions"] else "inga angivna"))
+    if seed.get("health_contact"):
+        lines.append("Kontakt med vården (utgå från detta): " + seed["health_contact"])
     lines.append("Personlighet (anpassa efter åldern): " + "; ".join(seed["personality"]))
     return "\n".join(lines)
 
@@ -222,7 +224,7 @@ def describe(fields, seed):
 
 
 def prose_problems(result, fields, seed):
-    found = []
+    found, unnamed = [], []
     for name in fields:
         value = result.get(name)
         if name in LISTS:
@@ -231,10 +233,14 @@ def prose_problems(result, fields, seed):
             continue
         if not isinstance(value, str) or len(value.split()) < 8:
             found.append(f"{name}: missing or too short")
-        elif seed["first_name"] not in value:
-            found.append(f"{name}: name missing")
         else:
+            if seed["first_name"] not in value and seed["last_name"] not in value:
+                unnamed.append(name)
             found += [f"{name}: says '{b}'" for b in BANNED if b in value.lower()]
+    # Pilot 2 rejected 1.3% of personas because one field used a pronoun instead of the name.
+    # That reads naturally, so only a text that mostly leaves the name out is retried.
+    if len(unnamed) > 2:
+        found.append(f"name missing in {', '.join(unnamed)}")
     return found
 
 
@@ -320,8 +326,15 @@ def main():
     ap.add_argument("--workers", type=int, default=48)
     ap.add_argument("--temperature", type=float, default=0.9)
     ap.add_argument("--limit", type=int)
+    ap.add_argument("--shard", help="K/N: write only every N-th persona, starting at K (0-based), so N jobs can split the data")
+    ap.add_argument("--catalogue-only", action="store_true", help="write the task catalogue and stop")
     args = ap.parse_args()
-    seeds = [json.loads(line) for line in open(args.seeds, encoding="utf-8")][:args.limit]
+    seeds = [json.loads(line) for line in open(args.seeds, encoding="utf-8")]
+    catalogue_seeds = seeds  # the catalogue always covers every group, whatever the shard
+    if args.shard:
+        k, n = map(int, args.shard.split("/"))
+        seeds = seeds[k::n]
+    seeds = seeds[:args.limit]
     taxonomy = json.load(open(args.taxonomy, encoding="utf-8"))
     done = set()
     try:
@@ -331,7 +344,9 @@ def main():
     todo = [s for s in seeds if s["uuid"] not in done]
     client = Client(args.url, args.temperature)
     print(f"model {client.model}: {len(todo)} to write, {len(done)} already done", flush=True)
-    catalogue = build_catalogue(client, seeds, taxonomy, args.catalogue, args.workers)
+    catalogue = build_catalogue(client, catalogue_seeds, taxonomy, args.catalogue, args.workers)
+    if args.catalogue_only:
+        return
     lock = threading.Lock()
     count = {"ok": 0, "failed": 0, "tokens": 0, "retries": 0}
     with open(args.out, "a", encoding="utf-8") as handle:
