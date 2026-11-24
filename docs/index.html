@@ -205,6 +205,43 @@ footer a{border-bottom:1px solid var(--line2)}footer a:hover{color:var(--ink)}
   .chart-card{padding:20px}
 }
 @media (max-width:520px){.wrap{padding:0 18px}.steps{grid-template-columns:1fr}nav{gap:14px}.ex-head{padding:18px}.hero h1{font-size:3.5rem}}
+
+/* v3: reading view, work profile, browse */
+.story{font:400 clamp(1.15rem,1.55vw,1.4rem)/1.62 var(--serif);max-width:62ch;letter-spacing:-.003em}
+.panel{gap:26px}
+.explorer.israw .wk,.explorer.iswork .story,.explorer.iswork .raw{display:none}
+.wk{display:none}.explorer.iswork .wk{display:block}
+.explorer.iswork .facts{display:none}
+.wk .jt{font:400 clamp(1.7rem,2.6vw,2.3rem)/1.1 var(--serif)}
+.wk .ws{color:var(--muted);font-size:14px;margin:6px 0 16px}
+.stack{display:flex;height:14px;border-radius:99px;overflow:hidden;gap:2px;margin:4px 0 8px}.stack i{display:block;min-width:4px}
+.kl{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-bottom:10px}.kl span{display:flex;gap:6px;align-items:center}.kl i{width:9px;height:9px;border-radius:50%;display:block}
+.tk{display:grid;grid-template-columns:54px 1fr;gap:14px;padding:13px 0;border-top:1px solid var(--line)}
+.tk .pc{font:400 1.7rem/1 var(--serif);color:var(--c)}.tk .pc small{font-size:.9rem;color:var(--muted)}
+.tk h5{margin:0 0 3px;font:500 14.5px/1.45 var(--sans)}.tk p{font-size:13.5px;color:var(--muted);line-height:1.55;margin:0}
+.tk .m{display:flex;gap:10px;margin-top:6px;font:400 11px var(--mono);color:var(--faint);align-items:center}
+.tk .bd{padding:1px 8px;border-radius:99px;font:500 10.5px var(--sans);color:#0a0d1a;background:var(--c)}
+.nw{color:var(--muted);font:italic 1.4rem var(--serif);padding:30px 0}
+.browse{margin-top:70px}
+.b-head h3{font:400 clamp(1.8rem,3.2vw,2.6rem)/1.05 var(--serif)}
+.b-head p{color:var(--muted);max-width:44rem;margin-top:10px}
+.b-filters{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0 8px;align-items:center}
+.b-filters input,.b-filters select{height:40px;border-radius:99px;border:1px solid var(--line2);background:rgba(255,255,255,.04);padding:0 16px;font-size:14px;color:var(--ink);outline:none;font-family:inherit}
+.b-filters input{flex:1;min-width:210px}
+.b-filters input:focus,.b-filters select:focus{border-color:var(--violet)}
+.b-filters select option{background:#0e1322}
+.b-filters button{height:40px;padding:0 16px;border-radius:99px;border:1px solid var(--line2);font-size:14px;color:var(--muted)}
+.b-filters button[aria-pressed="true"]{background:var(--ink);color:#0a0d1a;border-color:var(--ink)}
+.b-count{font:400 12.5px var(--mono);color:var(--faint);margin:6px 2px 16px}
+.b-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.pcard{text-align:left;border:1px solid var(--line);border-radius:18px;padding:16px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));display:flex;flex-direction:column;gap:8px;transition:transform .25s var(--ease),border-color .25s,box-shadow .25s}
+.pcard:hover{transform:translateY(-3px);border-color:var(--line2);box-shadow:0 16px 44px rgba(0,0,0,.35)}
+.pcard b{font:400 1.35rem/1.1 var(--serif)}.pcard span{font-size:12.5px;color:var(--muted)}
+.pcard .t{font-size:12px;padding:2px 9px;border-radius:99px;background:rgba(255,255,255,.07);color:var(--muted);align-self:flex-start}
+.pcard .t.w{background:rgba(61,245,208,.12);color:var(--teal)}
+.pcard p{font-size:13.5px;color:var(--muted);line-height:1.55;margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.b-more{display:block;margin:22px auto 0}
+.pick[hidden]{display:none}
 </style>
 </head>
 <body>
@@ -241,7 +278,7 @@ footer a{border-bottom:1px solid var(--line2)}footer a:hover{color:var(--ink)}
         <p id="c-txt"></p>
         <p class="h" id="c-health"></p>
       </div>
-      <div class="row"><span class="legend" style="min-height:0" id="c-hint" data-i18n="hint">Håll över eller klicka på en punkt</span><button class="pick" id="shuffle"><span data-i18n="shuffle">Slumpa</span> ↻</button></div>
+      <div class="row"><span class="legend" style="min-height:0" id="c-hint" data-i18n="hint">Håll över eller klicka på en punkt</span><button class="pick" id="open-full" hidden data-i18n="open_full">Läs hela berättelsen →</button><button class="pick" id="shuffle"><span data-i18n="shuffle">Slumpa</span> ↻</button></div>
     </div>
   </div>
   <div class="mapbox"><canvas id="map" aria-label="Map of Sweden, one dot per persona"></canvas><div class="hover" id="hover"></div></div>
@@ -265,7 +302,7 @@ footer a{border-bottom:1px solid var(--line2)}footer a:hover{color:var(--ink)}
     <div class="ex-head">
       <div class="ex-title"><b id="ex-name">—</b><span id="ex-meta"></span></div>
       <div class="ctrl">
-        <div class="seg" id="views" role="group"><button data-view="story" aria-pressed="true" data-i18n="v_story">Berättelse</button><button data-view="raw" aria-pressed="false" data-i18n="v_raw">Rådata</button></div>
+        <div class="seg" id="views" role="group"><button data-view="story" aria-pressed="true" data-i18n="v_story">Berättelse</button><button data-view="work" aria-pressed="false" data-i18n="v_work">Arbete</button><button data-view="raw" aria-pressed="false" data-i18n="v_raw">Rådata</button></div>
         <button class="ico" id="prev" aria-label="Previous">←</button>
         <span class="count" id="count"></span>
         <button class="ico" id="next" aria-label="Next">→</button>
@@ -275,10 +312,23 @@ footer a{border-bottom:1px solid var(--line2)}footer a:hover{color:var(--ink)}
       <div class="tabs" role="tablist" id="tabs"></div>
       <div class="panel">
         <p class="story" id="story"></p>
+        <div class="wk" id="work"></div>
         <pre class="raw" id="raw"></pre>
         <div class="facts" id="facts"></div>
       </div>
     </div>
+  </div>
+  <div class="browse reveal" id="browse">
+    <div class="b-head"><h3 data-i18n="b_h">Tusen personer att bläddra bland</h3><p data-i18n="b_p"></p></div>
+    <div class="b-filters">
+      <input id="b-q" type="search" data-i18n-ph="b_ph" placeholder="Sök i texterna" aria-label="Search">
+      <select id="b-sex" aria-label="Sex"><option value="" data-i18n="b_sex">Alla kön</option><option value="Kvinna">Kvinna</option><option value="Man">Man</option></select>
+      <select id="b-lan" aria-label="County"><option value="" data-i18n="b_lan">Alla län</option></select>
+      <button id="b-work" aria-pressed="false" data-i18n="b_work">Med arbetsprofil</button>
+    </div>
+    <div class="b-count" id="b-count"></div>
+    <div class="b-grid" id="b-grid"></div>
+    <button class="pick b-more" id="b-more" hidden data-i18n="b_more">Visa fler</button>
   </div>
 </div></section>
 
@@ -296,6 +346,8 @@ footer a{border-bottom:1px solid var(--line2)}footer a:hover{color:var(--ink)}
       <span class="chip">cultural_background</span><span class="chip">skills_and_expertise</span><span class="chip">skills_and_expertise_list</span><span class="chip">hobbies_and_interests</span><span class="chip">hobbies_and_interests_list</span><span class="chip">career_goals_and_ambitions</span></div></div>
     <div class="group" style="--c:var(--amber)"><h3 data-i18n="g3">Demografi</h3><div class="chips">
       <span class="chip">sex</span><span class="chip">age</span><span class="chip">marital_status</span><span class="chip">household_type</span><span class="chip">education_level</span><span class="chip">occupation</span><span class="chip">kommun</span><span class="chip">lan</span><span class="chip">country</span></div></div>
+    <div class="group" style="--c:var(--pink)"><h3 data-i18n="g4">Arbete</h3><div class="chips">
+      <span class="chip new">job_title</span><span class="chip new">workplace</span><span class="chip new">seniority</span><span class="chip new">work_tools</span><span class="chip new">work_tasks</span></div></div>
   </div>
 </div></section>
 
@@ -348,22 +400,23 @@ footer a{border-bottom:1px solid var(--line2)}footer a:hover{color:var(--ink)}
     <div class="code" id="c1"><button class="copy" data-copy="c1" data-i18n="copy">Kopiera</button><span class="c"># Hugging Face</span>
 <span class="k">from</span> datasets <span class="k">import</span> load_dataset
 
-ds = <span class="f">load_dataset</span>(<span class="s">"birgermoell/swedish-personas"</span>, split=<span class="s">"train"</span>)
+repo = <span class="s">"RenaissanceLabsEU/swedish-personas-v3"</span>
+ds = <span class="f">load_dataset</span>(repo, <span class="s">"personas_100k"</span>, split=<span class="s">"train"</span>)
 <span class="f">print</span>(ds[<span class="s">0</span>][<span class="s">"healthcare_persona"</span>])
 
-<span class="c"># Sampled conditions, keyed by uuid</span>
-conds = <span class="f">load_dataset</span>(<span class="s">"birgermoell/swedish-personas"</span>,
-    data_files=<span class="s">"data/swedish_personas_100k_conditions.parquet"</span>, split=<span class="s">"train"</span>)</div>
+<span class="c"># Work tasks, one row per task and occupation group</span>
+tasks = <span class="f">load_dataset</span>(repo, <span class="s">"task_catalogue"</span>, split=<span class="s">"train"</span>)</div>
     <div class="code" id="c2"><button class="copy" data-copy="c2" data-i18n="copy">Kopiera</button><span class="c"># Återskapa från källorna</span>
 pip install -r requirements.txt
-python3 src/fetch_scb.py
-python3 src/fetch_health.py
+python3 src/fetch_scb_v2.py
 python3 src/generate.py --size 100000
-python3 src/validate.py</div>
+python3 src/prose_generate.py ...  <span class="c"># needs a GPU</span>
+python3 src/name_swap.py ...
+python3 src/export_hub_v3.py</div>
   </div>
   <div class="links reveal">
     <a class="link" style="--c:var(--teal)" href="https://github.com/BirgerMoell/swedish-personas" target="_blank" rel="noopener"><div><b>GitHub</b><br><span data-i18n="l1"></span></div><i>↗</i></a>
-    <a class="link" style="--c:var(--amber)" href="https://huggingface.co/datasets/birgermoell/swedish-personas" target="_blank" rel="noopener"><div><b>Hugging Face</b><br><span data-i18n="l2"></span></div><i>↗</i></a>
+    <a class="link" style="--c:var(--amber)" href="https://huggingface.co/datasets/RenaissanceLabsEU/swedish-personas-v3" target="_blank" rel="noopener"><div><b>Hugging Face</b><br><span data-i18n="l2"></span></div><i>↗</i></a>
     <a class="link" style="--c:var(--violet)" href="https://docs.nvidia.com/nemo/datadesigner/dev-notes/designing-nemotron-personas" target="_blank" rel="noopener"><div><b>Nemotron-Personas</b><br><span data-i18n="l3"></span></div><i>↗</i></a>
   </div>
 </div></section>
@@ -376,51 +429,54 @@ python3 src/validate.py</div>
 
 <script>
 const T={
-sv:{nav_explore:"Berättelser",nav_format:"Format",nav_data:"Data",nav_start:"Kom igång",
+sv:{v_work:"Arbete",e_h2:"",b_h:"Tusen personer att bläddra bland",b_p:"Sök i texterna, filtrera på kön, län eller arbetsprofil och öppna en person i läsaren ovan. Här finns 1 000 av de 100 000; resten laddar du från Hugging Face.",b_ph:"Sök i texterna, till exempel fiske eller sjuksköterska",b_sex:"Alla kön",b_lan:"Alla län",b_work:"Med arbetsprofil",b_more:"Visa fler",b_none:"Ingen träff. Prova ett annat ord.",b_count:"personer",open_full:"Läs hela berättelsen →",g4:"Arbete",no_work:"har ingen arbetsprofil",ck_helt:"Vid dator",ck_delvis:"Delvis vid dator",ck_nej:"Inte vid dator",ver:"version 3",nav_explore:"Berättelser",nav_format:"Format",nav_data:"Data",nav_start:"Kom igång",
 eyebrow:"Öppna syntetiska data · Nemotron-format",h1:"Sverige, <em>en person</em> i taget.",
-lede:"100 000 fiktiva personas med yrke, hälsa, fritid och bakgrund, grundade i öppen statistik. Varje punkt på kartan är en av dem.",
+lede:"100 000 fiktiva personer med yrke, arbetsuppgifter, hälsa, fritid och bakgrund, grundade i öppen statistik och skrivna på svenska av en språkmodell. Varje punkt på kartan är en av dem.",
 color_by:"Färga efter",m_age:"Ålder",m_sex:"Kön",m_lan:"Län",m_cond:"Hälsa",hint:"Håll över eller klicka på en punkt",shuffle:"Slumpa",
 leg_lan:"Färg följer län, från söder till norr",lg_age:"år",healthy:"inga kända",c1:"ett",c2:"två",c3:"tre+",conds:"tillstånd",man:"Man",kvinna:"Kvinna",
 s1:"personas",s2:"kolumner",s3:"län",s4:"kommuner",
-e_eyebrow:"Berättelser",e_h:"Åtta sätt att <em>se en människa.</em>",v_story:"Berättelse",v_raw:"Rådata",
+e_eyebrow:"Berättelser",e_h:"Elva sätt att <em>se en människa.</em>",v_story:"Berättelse",v_raw:"Rådata",
 f_eyebrow:"Format",f_h:"Samma form som <em>Nemotron.</em>",f_p:"Kolumnerna följer NVIDIA:s Nemotron-Personas, så datasetet fungerar där de används: som frö för chatt, verktygsanrop och syntetisk träningsdata. Kommun och län ersätter franska commune och département.",f_note:"Markerad kolumn finns inte i den publika franska utgåvan.",
 g1:"Personas",g2:"Profil",g3:"Demografi",
 p_eyebrow:"Demografi",p_h:"Sveriges befolkning, <em>i miniatyr.</em>",p_p:"Län, ålder, kön och civilstånd samplas ur SCB:s gemensamma fördelning för 2025. Pyramiden är datasetets egen, färgad efter ålder.",men:"Män",women:"Kvinnor",yrs:"år",
 h_eyebrow:"Hälsa",h_h:"Hälsa som <em>följer åldern.</em>",h_p:"Sjukdomar dras ur verkliga ålders- och könsfördelade tal från Socialstyrelsen och Folkhälsomyndigheten. Välj ett tillstånd.",h_cap:"Andel personer i datasetet med tillståndet, per tioårsgrupp. Registerdata mäter vård i sjukhus och specialistvård; enkätdata är självrapporterade. Tillstånden dras oberoende av varandra.",
 m_eyebrow:"Metod",m_h:"Öppen metod. <em>Synliga gränser.</em>",
 m1h:"Hämta",m1p:"SCB:s befolkningstabell 2025, samt hälsotal från Socialstyrelsen och Folkhälsomyndigheten via öppna API:er.",
-m2h:"Sampla",m2p:"Län, ålder, kön och civilstånd viktas efter SCB. Kommun väljs inom länet. Fast slumpfrö ger samma resultat varje gång.",
-m3h:"Berätta",m3p:"Regler och textmallar skriver yrke, fritid, bakgrund och hälsa på svenska. Ingen språkmodell används.",
-m4h:"Kontrollera",m4p:"Ett valideringsskript jämför urvalet med källorna: län, ålder, kön, civilstånd och 33 sjukdomar.",
-limits:"<b>Begränsningar.</b> Utbildning, hushåll, yrke och all text är heuristik, inte kalibrerad mot statistik. Texten är mer formelartad än språkmodellsgenererad text. Kartpunkterna ligger på slumpmässiga platser inom sin kommun. Datasetet passar prototyper, tester och språkexperiment, inte slutsatser om befolkningen eller beslut om människor.",
+m2h:"Sampla",m2p:"Län, ålder, kön, utbildning, yrke och födelseland viktas efter SCB. Förnamn följer kommunen och efternamn landsdelen. Fast slumpfrö ger samma resultat varje gång.",
+m3h:"Berätta",m3p:"Gemma 4 31B skriver elva texter och en arbetsprofil per person ur fakta, regler och slumpade stilval. Uppgifterna får aldrig ändras.",
+m4h:"Kontrollera",m4p:"Ett valideringsskript jämför urvalet med källorna, och textmått räknar upprepningar. Texterna är kontrollerade med stickprov, inte genomlästa.",
+limits:"<b>Begränsningar.</b> Texter, arbetsuppgifter och verktyg är skrivna av en språkmodell och granskade bara med stickprov. Namngrupper är modellsatta och ungefär 5 % är fel. Lokala namn är ungefärliga: förnamn följer kommun, efternamn bara landsdel. Vissa vändningar upprepas, till exempel \"växte upp i\" och \"vårdcentralen\". Kartpunkterna ligger på slumpmässiga platser inom sin kommun. Datasetet passar prototyper, tester och språkexperiment, inte slutsatser om befolkningen eller beslut om människor.",
 c_eyebrow:"Kom igång",c_h:"Ladda. <em>Läs. Bygg.</em>",copy:"Kopiera",copied:"Kopierat",l1:"Kod, metod och källtabeller.",l2:"Parquet och datasetkort.",l3:"Formatet och pipelinen bakom.",
 foot1:"Fiktiva data. Alla personer är påhittade; likheter med verkliga personer är en slump.",foot2:"Dataset: CC BY 4.0. Kod: MIT.",foot3:"Källor",foot4:"Kommungränser för kartpunkter: okfse/sweden-geojson (Valmyndigheten).",foot5:"Format efter NVIDIA Nemotron-Personas. Inte affilierat med NVIDIA.",
-tabs:{persona:"Persona",professional_persona:"Yrke",healthcare_persona:"Hälsa",sports_persona:"Sport",arts_persona:"Kultur",travel_persona:"Resor",culinary_persona:"Mat",cultural_background:"Bakgrund"},
+tabs:{persona:"Sammanfattning",cultural_background:"Bakgrund",professional_persona:"Yrke",skills_and_expertise:"Kunskaper",hobbies_and_interests:"Fritid",career_goals_and_ambitions:"Mål",sports_persona:"Sport",arts_persona:"Kultur",travel_persona:"Resor",culinary_persona:"Mat",healthcare_persona:"Hälsa"},
 years:"år",share:"Andel",ages:"år",hl:"Hälsa"},
-en:{nav_explore:"Stories",nav_format:"Format",nav_data:"Data",nav_start:"Get started",
+en:{v_work:"Work",e_h2:"",b_h:"A thousand people to browse",b_p:"Search the texts, filter by sex, county or work profile, and open a person in the reader above. This holds 1,000 of the 100,000; load the rest from Hugging Face.",b_ph:"Search the texts, for example fishing or nurse",b_sex:"Any sex",b_lan:"Any county",b_work:"Has work profile",b_more:"Show more",b_none:"No match. Try another word.",b_count:"people",open_full:"Read the full story →",g4:"Work",no_work:"has no work profile",ck_helt:"At a computer",ck_delvis:"Partly at a computer",ck_nej:"Not at a computer",ver:"version 3",nav_explore:"Stories",nav_format:"Format",nav_data:"Data",nav_start:"Get started",
 eyebrow:"Open synthetic data · Nemotron format",h1:"Sweden, <em>one person</em> at a time.",
-lede:"100,000 fictional personas with work, health, leisure and background, grounded in open statistics. Every dot on the map is one of them.",
+lede:"100,000 fictional people with work, tasks, health, leisure and background, grounded in open statistics and written in Swedish by a language model. Every dot on the map is one of them.",
 color_by:"Color by",m_age:"Age",m_sex:"Sex",m_lan:"County",m_cond:"Health",hint:"Hover or click a dot",shuffle:"Shuffle",
 leg_lan:"Color follows county, from south to north",lg_age:"yrs",healthy:"none known",c1:"one",c2:"two",c3:"three+",conds:"conditions",man:"Male",kvinna:"Female",
 s1:"personas",s2:"columns",s3:"counties",s4:"municipalities",
-e_eyebrow:"Stories",e_h:"Eight ways to <em>see a person.</em>",v_story:"Story",v_raw:"Raw",
+e_eyebrow:"Stories",e_h:"Eleven ways to <em>see a person.</em>",v_story:"Story",v_raw:"Raw",
 f_eyebrow:"Format",f_h:"The same shape as <em>Nemotron.</em>",f_p:"The columns follow NVIDIA's Nemotron-Personas, so the dataset slots in where those are used: seeding chat, tool-use and synthetic training data. Kommun and län replace the French commune and département.",f_note:"Highlighted column is not in the public French release.",
 g1:"Personas",g2:"Profile",g3:"Demographics",
 p_eyebrow:"Demographics",p_h:"Sweden's population, <em>in miniature.</em>",p_p:"County, age, sex and marital status are sampled from SCB's 2025 joint distribution. The pyramid is the dataset's own, colored by age.",men:"Men",women:"Women",yrs:"years",
 h_eyebrow:"Health",h_h:"Health that <em>follows age.</em>",h_p:"Conditions are drawn from real age- and sex-specific rates from Socialstyrelsen and Folkhälsomyndigheten. Pick a condition.",h_cap:"Share of personas in the dataset with the condition, by ten-year age group. Register data counts hospital and specialist care; survey data is self-reported. Conditions are drawn independently of each other.",
 m_eyebrow:"Method",m_h:"Open method. <em>Visible limits.</em>",
 m1h:"Fetch",m1p:"SCB's 2025 population table, plus health rates from Socialstyrelsen and Folkhälsomyndigheten through their open APIs.",
-m2h:"Sample",m2p:"County, age, sex and marital status are weighted by SCB. Municipality is drawn within the county. A fixed seed gives the same result every time.",
-m3h:"Write",m3p:"Rules and text templates write work, leisure, background and health in Swedish. No language model is used.",
-m4h:"Check",m4p:"A validation script compares the sample with the sources: county, age, sex, marital status and 33 conditions.",
-limits:"<b>Limits.</b> Education, household, occupation and all text are heuristics, not calibrated to statistics. The text is more formulaic than language-model text. Map dots sit at random places inside their municipality. Use it for prototypes, tests and language experiments, not for conclusions about the population or decisions about people.",
+m2h:"Sample",m2p:"County, age, sex, education, occupation and country of birth are weighted by SCB. First names follow the municipality and surnames the region. A fixed seed gives the same result every time.",
+m3h:"Write",m3p:"Gemma 4 31B writes eleven texts and a work profile per person from facts, rules and random style choices. The facts may never be changed.",
+m4h:"Check",m4p:"A validation script compares the sample with the sources, and text metrics count repetition. The texts have been checked by sampling, not read in full.",
+limits:"<b>Limits.</b> Texts, tasks and tools are written by a language model and have been checked only by sampling. Name groups are model-made and about 5% are wrong. Local names are approximate: first names follow the municipality, surnames only the region. Some phrases repeat, for example \"växte upp i\" and \"vårdcentralen\". Map dots sit at random places inside their municipality. Use it for prototypes, tests and language experiments, not for conclusions about the population or decisions about people.",
 c_eyebrow:"Get started",c_h:"Load. <em>Read. Build.</em>",copy:"Copy",copied:"Copied",l1:"Code, method and source tables.",l2:"Parquet and dataset card.",l3:"The format and pipeline behind it.",
 foot1:"Fictional data. Every person is invented; any resemblance to a real person is coincidence.",foot2:"Dataset: CC BY 4.0. Code: MIT.",foot3:"Sources",foot4:"Municipality outlines for the map: okfse/sweden-geojson (Valmyndigheten).",foot5:"Format after NVIDIA Nemotron-Personas. Not affiliated with NVIDIA.",
-tabs:{persona:"Persona",professional_persona:"Work",healthcare_persona:"Health",sports_persona:"Sport",arts_persona:"Culture",travel_persona:"Travel",culinary_persona:"Food",cultural_background:"Background"},
+tabs:{persona:"Summary",cultural_background:"Background",professional_persona:"Work",skills_and_expertise:"Skills",hobbies_and_interests:"Free time",career_goals_and_ambitions:"Goals",sports_persona:"Sport",arts_persona:"Culture",travel_persona:"Travel",culinary_persona:"Food",healthcare_persona:"Health"},
 years:"years",share:"Share",ages:"years",hl:"Health"}
 };
 const COND_EN={"högt blodtryck":"High blood pressure","astma":"Asthma","allergi":"Allergy","depression":"Depression","svår oro och ångest":"Severe anxiety","fetma":"Obesity","ADHD":"ADHD","förmaksflimmer":"Atrial fibrillation","demenssjukdom":"Dementia","knäartros":"Knee osteoarthritis","kranskärlssjukdom":"Coronary disease","stroke":"Stroke"};
-const TAB_KEYS=["persona","professional_persona","healthcare_persona","sports_persona","arts_persona","travel_persona","culinary_persona","cultural_background"];
+const TAB_KEYS=["persona","cultural_background","professional_persona","skills_and_expertise","hobbies_and_interests","career_goals_and_ambitions","sports_persona","arts_persona","travel_persona","culinary_persona","healthcare_persona"];
+const LISTS={skills_and_expertise:"skills_and_expertise_list",hobbies_and_interests:"hobbies_and_interests_list"};
+const KB={helt:"#3df5d0",delvis:"#8a6bff",nej:"#ffb36c"};
+const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const AGE_STOPS=[[0,[61,245,208]],[20,[74,168,255]],[40,[138,107,255]],[60,[255,95,176]],[80,[255,154,90]],[100,[255,227,106]]];
 const COND_COL=["#46e3b0","#ffd166","#ff8a5b","#ff4d6d"];
 const SEX_COL=["#4aa8ff","#ff6fa8"];
@@ -433,10 +489,11 @@ const ageHex=a=>hex(ageRGB(a));
 function setLang(l){
   lang=l;document.documentElement.lang=l;
   document.querySelectorAll("[data-i18n]").forEach(e=>{const v=T[l][e.dataset.i18n];if(v!=null)e.textContent=v});
+  document.querySelectorAll("[data-i18n-ph]").forEach(e=>{const v=T[l][e.dataset.i18nPh];if(v!=null)e.placeholder=v});
   document.querySelectorAll("[data-i18n-html]").forEach(e=>{const v=T[l][e.dataset.i18nHtml];if(v!=null)e.innerHTML=v});
   document.querySelectorAll("#lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===l));
   try{localStorage.setItem("lang",l)}catch(e){}
-  renderTabs();renderPersona(false);renderLegend();if(P)renderCard(false);if(stats){renderPyramid();renderPills();renderHealth()}
+  renderTabs();renderPersona(false);renderLegend();if(sample.length)renderBrowse(false);if(P)renderCard(false);if(stats){renderPyramid();renderPills();renderHealth()}
 }
 
 /* ---------- hero map ---------- */
@@ -497,7 +554,8 @@ cv.addEventListener("pointermove",e=>{
 });
 cv.addEventListener("pointerleave",()=>{hoverI=-1;$("hover").style.opacity="0";schedule()});
 cv.addEventListener("click",e=>{const r=cv.getBoundingClientRect(),i=nearest(e.clientX-r.left,e.clientY-r.top);if(i>=0){interacted=true;select(i)}});
-function select(i){sel=i;renderCard(true);schedule()}
+function select(i){sel=i;renderCard(true);schedule();$("open-full").hidden=!(P&&sample.length&&i<(P.full||0))}
+$("open-full").onclick=()=>{if(sel>=0)openFull(sel)};
 function renderCard(animate){
   if(sel<0||!P)return;const i=sel,box=$("card-in");
   const apply=()=>{
@@ -522,27 +580,57 @@ $("shuffle").onclick=()=>{interacted=true;select(Math.floor(Math.random()*P.x.le
 addEventListener("resize",()=>{layout();recolor()});
 
 /* ---------- story explorer ---------- */
-function nameOf(r){return r.professional_persona.split(" ").slice(0,2).join(" ")}
+function nameOf(r){return r.first_name+" "+r.last_name}
 function renderTabs(){$("tabs").innerHTML=TAB_KEYS.map(k=>`<button class="tab" role="tab" aria-selected="${k===tab}" data-tab="${k}">${T[lang].tabs[k]}<small>${k}</small></button>`).join("")}
+function renderWork(r){
+  if(!r.job_title)return `<p class="nw">${esc(r.first_name)} ${T[lang].no_work}: ${esc(r.employment_status)}.</p>`;
+  const t=r.work_tasks||[],sum={helt:0,delvis:0,nej:0};t.forEach(x=>sum[x.computer_based]=(sum[x.computer_based]||0)+x.share_percent);
+  return `<div class="jt">${esc(r.job_title)}</div><p class="ws">${esc(r.workplace)} · ${esc(r.seniority)} · SSYK ${esc(r.occupation_code)}</p>
+  <div class="stack">${t.map(x=>`<i style="flex:${x.share_percent};background:${KB[x.computer_based]||KB.nej}"></i>`).join("")}</div>
+  <div class="kl">${["helt","delvis","nej"].map(k=>`<span><i style="background:${KB[k]}"></i>${T[lang]["ck_"+k]} ${sum[k]}%</span>`).join("")}</div>
+  ${t.map(x=>`<div class="tk" style="--c:${KB[x.computer_based]||KB.nej}"><div class="pc">${x.share_percent}<small>%</small></div><div><h5>${esc(x.task)}</h5><p>${esc(x.detail)}</p><div class="m"><span class="bd">${T[lang]["ck_"+x.computer_based]||""}</span><span>${esc(x.task_id)}</span></div></div></div>`).join("")}
+  <div class="facts" style="margin-top:16px;display:flex">${(r.work_tools||[]).map(x=>`<span class="fact">${esc(x)}</span>`).join("")}</div>`;
+}
 function renderPersona(animate=true){
   if(!sample.length)return;const r=sample[idx],s=$("story");
   const apply=()=>{
     $("ex-name").textContent=nameOf(r);$("ex-meta").textContent=`${r.age} ${T[lang].years} · ${r.kommun}, ${r.lan}`;
     s.textContent=r[tab];$("count").textContent=`${idx+1} / ${sample.length}`;
-    const facts=[r.occupation==="not_in_workforce"?null:r.occupation,r.marital_status,r.household_type,r.education_level].filter(Boolean);
-    $("facts").innerHTML=facts.map(f=>`<span class="fact">${f}</span>`).join("");
-    $("raw").innerHTML=Object.entries(r).map(([k,v])=>`<b>${k}</b>: ${typeof v==="string"?JSON.stringify(v):v}`).join("\n");
+    const lst=LISTS[tab]?r[LISTS[tab]]:[];
+    const facts=[...lst,...(lst.length?[]:[r.occupation==="not_in_workforce"?null:r.occupation,r.marital_status,r.household_type,r.education_level,...(r.conditions||[])]).filter(Boolean)];
+    $("facts").innerHTML=facts.map(f=>`<span class="fact">${esc(f)}</span>`).join("");
+    $("work").innerHTML=renderWork(r);
+    $("raw").innerHTML=Object.entries(r).map(([k,v])=>`<b>${k}</b>: ${esc(typeof v==="string"?JSON.stringify(v):JSON.stringify(v))}`).join("\n");
     $("explorer").style.setProperty("--tint",`linear-gradient(90deg,${ageHex(Math.max(0,r.age-25))},${ageHex(r.age)},${ageHex(Math.min(100,r.age+25))})`);
     $("explorer").style.setProperty("--tintc",ageHex(r.age));
     s.classList.remove("swap");
   };
   if(animate){s.classList.add("swap");setTimeout(apply,170)}else apply();
 }
+/* ---------- browse ---------- */
+let bshow=24,bsel=[];
+function renderBrowse(reset){
+  if(!sample.length)return;
+  const q=$("b-q").value.trim().toLowerCase().split(/\s+/).filter(Boolean),sx=$("b-sex").value,ln=$("b-lan").value,wk=$("b-work").getAttribute("aria-pressed")==="true";
+  if(reset)bshow=24;
+  bsel=[];sample.forEach((r,i)=>{if(sx&&r.sex!==sx)return;if(ln&&r.lan!==ln)return;if(wk&&!r.job_title)return;
+    if(q.length){const hay=r._h||(r._h=(r.first_name+" "+r.last_name+" "+TAB_KEYS.map(k=>r[k]).join(" ")+" "+r.occupation+" "+(r.job_title||"")+" "+r.workplace+" "+r.kommun).toLowerCase());if(!q.every(w=>hay.includes(w)))return}
+    bsel.push(i)});
+  $("b-count").textContent=`${bsel.length.toLocaleString(lang)} ${T[lang].b_count}`;
+  $("b-grid").innerHTML=bsel.length?bsel.slice(0,bshow).map(i=>{const r=sample[i];return `<button class="pcard" data-i="${i}"><b>${esc(nameOf(r))}</b><span>${r.age} ${T[lang].years} · ${esc(r.kommun)}</span><div class="t${r.job_title?" w":""}">${esc(r.job_title||r.employment_status)}</div><p>${esc(r.persona)}</p></button>`}).join(""):`<p class="nw">${T[lang].b_none}</p>`;
+  $("b-more").hidden=bsel.length<=bshow;
+}
+function openFull(i){idx=i;tab="persona";renderTabs();renderPersona(false);$("explorer").scrollIntoView({behavior:"smooth",block:"start"})}
+$("b-grid").addEventListener("click",e=>{const c=e.target.closest(".pcard");if(c)openFull(+c.dataset.i)});
+$("b-more").onclick=()=>{bshow+=24;renderBrowse(false)};
+let bdeb;$("b-q").addEventListener("input",()=>{clearTimeout(bdeb);bdeb=setTimeout(()=>renderBrowse(true),180)});
+$("b-sex").onchange=()=>renderBrowse(true);$("b-lan").onchange=()=>renderBrowse(true);
+$("b-work").onclick=e=>{const b=e.currentTarget;b.setAttribute("aria-pressed",b.getAttribute("aria-pressed")!=="true");renderBrowse(true)};
 function go(d){idx=(idx+d+sample.length)%sample.length;renderPersona()}
 $("prev").onclick=()=>go(-1);$("next").onclick=()=>go(1);
 document.addEventListener("keydown",e=>{if(e.target.closest("input,textarea"))return;if(e.key==="ArrowRight")go(1);if(e.key==="ArrowLeft")go(-1)});
 $("tabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(!b)return;tab=b.dataset.tab;renderTabs();renderPersona()});
-document.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>{document.querySelectorAll("[data-view]").forEach(x=>x.setAttribute("aria-pressed",x===b));$("explorer").classList.toggle("israw",b.dataset.view==="raw")});
+document.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>{document.querySelectorAll("[data-view]").forEach(x=>x.setAttribute("aria-pressed",x===b));$("explorer").classList.toggle("israw",b.dataset.view==="raw");$("explorer").classList.toggle("iswork",b.dataset.view==="work")});
 document.querySelectorAll("#lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
 document.querySelectorAll("[data-copy]").forEach(b=>b.onclick=()=>{const el=$(b.dataset.copy);const t=el.textContent.replace(b.textContent,"").trim();navigator.clipboard&&navigator.clipboard.writeText(t).then(()=>{b.textContent=T[lang].copied;setTimeout(()=>b.textContent=T[lang].copy,1400)})});
 
@@ -586,8 +674,8 @@ document.querySelectorAll(".reveal").forEach(e=>io.observe(e));
 try{const l=localStorage.getItem("lang");if(l&&T[l])lang=l;else if((navigator.language||"").toLowerCase().startsWith("en"))lang="en"}catch(e){}
 setLang(lang);
 
-Promise.all([fetch("sample.json").then(r=>r.json()),fetch("stats.json").then(r=>r.json()),fetch("people.json").then(r=>r.json())]).then(([s,st,p])=>{
-  sample=s;stats=st;P=p;idx=Math.min(7,s.length-1);$("s-cols").textContent=st.columns;
+Promise.all([fetch("stats.json").then(r=>r.json()),fetch("people.json").then(r=>r.json())]).then(([st,p])=>{
+  stats=st;P=p;$("s-cols").textContent=st.columns;
   // county rank by mean latitude (south to north) for the rainbow
   const sums=P.lans.map(()=>[0,0]);P.lan.forEach((l,i)=>{sums[l][0]+=P.y[i];sums[l][1]++});
   const order=sums.map((s,i)=>[s[0]/Math.max(1,s[1]),i]).sort((a,b)=>b[0]-a[0]);rank=new Array(P.lans.length);order.forEach(([,i],r)=>rank[i]=r);
@@ -598,6 +686,9 @@ Promise.all([fetch("sample.json").then(r=>r.json()),fetch("stats.json").then(r=>
   renderLegend();renderPersona(false);renderPyramid();renderPills();renderHealth();schedule();
   setInterval(()=>{if(!interacted&&document.visibilityState==="visible"&&scrollY<innerHeight)select(Math.floor(Math.random()*P.x.length))},6500);
 }).catch(e=>{console.error(e);$("c-txt").textContent="Preview unavailable."});
+fetch("browse.json").then(r=>r.json()).then(b=>{sample=b;idx=0;
+  const lans=[...new Set(b.map(r=>r.lan))].sort((a,c)=>a.localeCompare(c,"sv"));$("b-lan").insertAdjacentHTML("beforeend",lans.map(l=>`<option>${esc(l)}</option>`).join(""));
+  renderPersona(false);renderBrowse(true);if(sel>=0)$("open-full").hidden=!(P&&sel<(P.full||0))}).catch(e=>console.error(e));
 </script>
 </body>
 </html>
