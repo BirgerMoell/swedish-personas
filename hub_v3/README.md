@@ -142,7 +142,7 @@ Read these before relying on the data.
 
 **Text and work layer**
 - **Names were swapped into finished text** (see above). 64 texts have a new first name that also occurs as an ordinary word, and a few more reuse a word from the old surname; these were not all regenerated.
-- **Repetition.** 23.8% of `cultural_background` texts open with "[Name] växte upp i", and "vårdcentral" appears in 52% of persona texts (healthcare_persona 51%), more than real-life variety would give. "Fika" appears in 18%. Many texts say a parent grew up somewhere ("Lisas pappa växte upp i ...") as a way of describing family origin.
+- **Repetition.** 23.8% of `cultural_background` texts open with "[Name] växte upp i", and "vårdcentral" appears in 16.7% of `healthcare_persona` texts (it was 51% before a targeted rewrite with a wider mix of care routes), still the most common single setting. "Fika" appears in 18%. Many texts say a parent grew up somewhere ("Lisas pappa växte upp i ...") as a way of describing family origin.
 - **No native-speaker review of the full set.** Occasional misspellings occur.
 - **Tasks, tools and time shares are plausible, not measured.** The catalogue is grounded in official occupation text, but no one has checked it, and some named software may not exist.
 - **Details the structured layer does not fix are the model's choice**, including a partner's gender, children, pets and past jobs for pensioners; no year of arrival is in the data.

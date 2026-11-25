@@ -5,7 +5,7 @@ Usage: python3 src/export_hub_v3.py
                            text fields and the work profile (job title, workplace, tasks) for those who work
   task_catalogue.parquet   one row per work task and occupation group (428 groups)
   conditions_100k.parquet  long table of health conditions with source and code
-Reads data/full/prose_100k_v3_final.jsonl (texts and work profile, names already swapped) and data/scratch_names/ (v3 structured
+Reads data/full/prose_100k_v3_health.jsonl (texts and work profile, names already swapped) and data/scratch_names/ (v3 structured
 data and names).
 """
 
@@ -54,7 +54,7 @@ def main():
         + [("job_title", pa.string()), ("workplace", pa.string()), ("seniority", pa.string()),
            ("work_tools", pa.list_(pa.string())), ("work_tasks", task_type)])
     out, missing = [], 0
-    for line in open(ROOT / "data/full/prose_100k_v3_final.jsonl", encoding="utf-8"):
+    for line in open(ROOT / "data/full/prose_100k_v3_health.jsonl", encoding="utf-8"):
         p = json.loads(line)
         u = p["uuid"]
         row = {"uuid": u, "first_name": seeds[u]["first_name"], "last_name": seeds[u]["last_name"],

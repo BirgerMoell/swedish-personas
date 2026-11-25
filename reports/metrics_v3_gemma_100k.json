@@ -20,13 +20,13 @@
       "fivegram_overlap": 0.0003873562013632326
     },
     "healthcare_persona": {
-      "openings_2": 2776,
-      "openings_4": 14808,
-      "commonest_opening_share": 0.01417,
-      "top3_opening_share": 0.03894,
+      "openings_2": 2614,
+      "openings_4": 13111,
+      "commonest_opening_share": 0.02462,
+      "top3_opening_share": 0.05882,
       "distinct_texts": 100000,
-      "distinct_frames": 99907,
-      "fivegram_overlap": 0.0006129631828955199
+      "distinct_frames": 99885,
+      "fivegram_overlap": 0.0008490460022789583
     },
     "travel_persona": {
       "openings_2": 3891,
