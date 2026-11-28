@@ -43,13 +43,15 @@ configs:
 ---
 # Swedish Personas v3
 
+*A NAISS dataset: published by the [National Academic Infrastructure for Supercomputing in Sweden](https://huggingface.co/naiss-se).*
+
 **Sverige, en person i taget.** 100,000 synthetic Swedish personas in the [Nemotron-Personas](https://docs.nvidia.com/nemo/datadesigner/dev-notes/designing-nemotron-personas) format. Every person has an SCB-conditioned structured record, eleven Swedish text fields written by a language model (Gemma 4 31B), and, for the 51% who work, a work profile linked to a catalogue of 4,348 work tasks in 428 occupation groups.
 
-v3 is the first release with model-written text for all 100,000 people. It follows [v2 (preview)](https://huggingface.co/datasets/RenaissanceLabsEU/swedish-personas-v2), which held the structured layer and a 987-person pilot, and an external quality review of [v1](https://huggingface.co/datasets/birgermoell/swedish-personas).
+v3 is the first release with model-written text for all 100,000 people. It follows [v2 (preview)](https://huggingface.co/datasets/naiss-se/swedish-personas-v2), which held the structured layer and a 987-person pilot, and an external quality review of [v1](https://huggingface.co/datasets/birgermoell/swedish-personas).
 
 **What is new since v2:** the text and work profile for all 100,000 people; names that follow where a person lives (first names by kommun for Swedish-heritage people, surnames by landsdel); a catalogue extended from 197 to 428 occupation groups; a sampled health-care contact per person.
 
-Code: [github.com/RenaissanceLabs-EU/swedish-personas](https://github.com/RenaissanceLabs-EU/swedish-personas)
+Code: [github.com/BirgerMoell/swedish-personas](https://github.com/BirgerMoell/swedish-personas)
 
 ## At a glance
 
@@ -64,7 +66,7 @@ All configs join on `uuid`.
 ```python
 from datasets import load_dataset
 
-repo = "RenaissanceLabsEU/swedish-personas-v3"
+repo = "naiss-se/swedish-personas-v3"
 people = load_dataset(repo, "personas_100k", split="train")
 p = people[0]
 print(p["first_name"], p["last_name"], p["age"], p["kommun"])
@@ -172,7 +174,7 @@ Data: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), with attributio
   title  = {Swedish Personas v3: 100,000 synthetic Swedish personas with SCB-conditioned structure, local names, model-written text and work tasks},
   author = {Moell, Birger},
   year   = {2026},
-  publisher = {Renaissance Labs},
-  url    = {https://huggingface.co/datasets/RenaissanceLabsEU/swedish-personas-v3}
+  publisher = {NAISS},
+  url    = {https://huggingface.co/datasets/naiss-se/swedish-personas-v3}
 }
 ```

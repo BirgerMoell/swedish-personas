@@ -27,11 +27,11 @@
 
 ## v3 released
 
-**v3 is out:** 100,000 personas with model-written text, work profiles and local names, at [RenaissanceLabsEU/swedish-personas-v3](https://huggingface.co/datasets/RenaissanceLabsEU/swedish-personas-v3). Its card (`hub_v3/README.md`) has the numbers, the method and the known limits. Build with `src/prose_generate.py` (text), `src/name_swap.py` (names) and `src/export_hub_v3.py` (files).
+**v3 is out:** 100,000 personas with model-written text, work profiles and local names, at [naiss-se/swedish-personas-v3](https://huggingface.co/datasets/naiss-se/swedish-personas-v3). Its card (`hub_v3/README.md`) has the numbers, the method and the known limits. Build with `src/prose_generate.py` (text), `src/name_swap.py` (names) and `src/export_hub_v3.py` (files).
 
 ## v2 (preview)
 
-`main` now holds v2, which rebuilds the dataset after an external quality review of v1. The last v1 commit is `1534856`. A preview is on Hugging Face at [RenaissanceLabsEU/swedish-personas-v2](https://huggingface.co/datasets/RenaissanceLabsEU/swedish-personas-v2); its card (`hub_v2/README.md`) has the numbers and the known limits.
+`main` now holds v2, which rebuilds the dataset after an external quality review of v1. The last v1 commit is `1534856`. A preview is on Hugging Face at [naiss-se/swedish-personas-v2](https://huggingface.co/datasets/naiss-se/swedish-personas-v2); its card (`hub_v2/README.md`) has the numbers and the known limits.
 
 | Step | Script |
 |---|---|

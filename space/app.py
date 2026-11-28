@@ -13,7 +13,7 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
-REPO = os.environ.get("DATASET_REPO", "RenaissanceLabsEU/swedish-personas-v3")
+REPO = os.environ.get("DATASET_REPO", "naiss-se/swedish-personas-v3")
 HERE = Path(__file__).parent
 STATIC = HERE / "static"
 SEARCH_COLUMNS = ("first_name", "last_name", "persona", "cultural_background", "professional_persona", "skills_and_expertise",

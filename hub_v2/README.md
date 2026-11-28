@@ -52,6 +52,8 @@ configs:
 
 # Swedish Personas v2 (preview)
 
+*A NAISS dataset: published by the [National Academic Infrastructure for Supercomputing in Sweden](https://huggingface.co/naiss-se).*
+
 **Sverige, en person i taget.** Synthetic Swedish personas in the [Nemotron-Personas](https://docs.nvidia.com/nemo/datadesigner/dev-notes/designing-nemotron-personas) format, rebuilt after an external quality review of [v1](https://huggingface.co/datasets/birgermoell/swedish-personas).
 
 This is a work-in-progress preview, not a finished release. It holds two things:
@@ -61,7 +63,7 @@ This is a work-in-progress preview, not a finished release. It holds two things:
 
 The full 100,000 personas with model-written text have not been generated yet.
 
-Code: [github.com/RenaissanceLabs-EU/swedish-personas](https://github.com/RenaissanceLabs-EU/swedish-personas)
+Code: [github.com/BirgerMoell/swedish-personas](https://github.com/BirgerMoell/swedish-personas)
 
 ## At a glance
 
@@ -80,7 +82,7 @@ All configs join on `uuid`.
 ```python
 from datasets import load_dataset
 
-repo = "RenaissanceLabsEU/swedish-personas-v2"
+repo = "naiss-se/swedish-personas-v2"
 
 pilot = load_dataset(repo, "pilot", split="train")
 p = pilot[0]
@@ -286,7 +288,7 @@ Data: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), with attributio
   title  = {Swedish Personas v2 (preview): synthetic Swedish personas with SCB-conditioned structure, model-written text and work tasks},
   author = {Moell, Birger},
   year   = {2026},
-  publisher = {Renaissance Labs},
-  url    = {https://huggingface.co/datasets/RenaissanceLabsEU/swedish-personas-v2}
+  publisher = {NAISS},
+  url    = {https://huggingface.co/datasets/naiss-se/swedish-personas-v2}
 }
 ```
